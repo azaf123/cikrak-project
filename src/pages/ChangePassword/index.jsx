@@ -1,6 +1,5 @@
 import React from "react";
 import ProfileSidebar from "../../components/ProfileSidebar";
-import BlueButton from "../../components/BlueButton";
 
 function ChangePassword(props) {
   return (
