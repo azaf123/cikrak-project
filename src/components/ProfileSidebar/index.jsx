@@ -25,7 +25,7 @@ function ProfileSidebar() {
         {/* TODO: center */}
         <div className="place-items-center mt-4 mb-8">
           <img
-            class="w-24 h-24 rounded-full"
+            className="w-24 h-24 rounded-full"
             src="https://img.freepik.com/free-photo/asian-woman-posing-looking-camera_23-2148255359.jpg?t=st=1655398402~exp=1655399002~hmac=49552dd513a59881bd94e6dde197a76ecb808ce13543285ec2d1c9f4cd2d698c&w=740"
             alt="Profile Avatar"
           />
