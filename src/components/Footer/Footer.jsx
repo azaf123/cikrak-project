@@ -1,43 +1,41 @@
 import React from "react";
-import ItemsContainer from "./ItemsContainer";
-import SocialIcons from "./SocialIcons";
-import { Icons } from "./Menus";
-
+import NewsLetter from "./NewsLetter";
+import Logo from "../../assets/logo2.png";
+import SocialMedia from "./SocialMedia";
 const Footer = () => {
+  const Links = [
+    { title : "Location", links: ["America", "Asia", "Eurpoe", "Africa"] },
+    { title: "Contact", links: ["About Me", "Teams", "Profile", "FAQ"] },
+    { title: "Legals", links: ["Privacy", "Disclaimer", "Terms", "Company"] },
+  ];
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[#ffffff19] py-7">
-        <h1
-          className="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal font-semibold
-         md:w-2/5"
-        >
-          <span className="text-teal-400">Free</span> until you're ready to
-          launch
-        </h1>
-        <div>
-          <input
-            type="text"
-            placeholder="Enter Your ph.no"
-            className="text-gray-800
-           sm:w-72 w-full sm:mr-5 mr-1 lg:mb-0 mb-4 py-2.5 rounded px-2 focus:outline-none"
-          />
-          <button
-            className="bg-teal-400 hover:bg-teal-500 duration-300 px-5 py-2.5 font-[Poppins]
-           rounded-md text-white md:w-auto w-full"
-          >
-            Request Code
-          </button>
+    <footer className="pt-20 md:px-24 px-4 bg-lightprimary">
+      <NewsLetter />
+      <div className="flex md:flex-row flex-col gap-20">
+        <div className="flex-1">
+          <img src={Logo} alt="logo" className="h-12" />
+          <p className="md:w-1/2 leading-relaxed text-sm text-white pt-7">
+            We envision a world where everyone feels welcome in the American
+            hiking community.
+          </p>
+          <SocialMedia />
+        </div>
+        <div className="flex-1 flex flex-wrap gap-20">
+          {Links.map((link, i) => (
+            <ul key={i}>
+              <h1 className="font-semibold pb-3">{link.title}</h1>
+              {link.links.map((lk, idx) => (
+                <li key={idx} className="py-2.5 text-sm text-white">
+                  {lk}
+                </li>
+              ))}
+            </ul>
+          ))}
         </div>
       </div>
-      <ItemsContainer />
-      <div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
-      text-center pt-2 text-gray-400 text-sm pb-8"
-      >
-        <span>© 2020 Appy. All rights reserved.</span>
-        <span>Terms · Privacy Policy</span>
-        <SocialIcons Icons={Icons} />
-      </div>
+      <p className="text-center py-10 mt-6 text-sm text-white">
+        Copyright © 2022 - All Rights Reserved Cikrak.
+      </p>
     </footer>
   );
 };
