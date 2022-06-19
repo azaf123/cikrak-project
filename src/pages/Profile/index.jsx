@@ -3,7 +3,6 @@ import BlueButton from "../../components/BlueButton";
 import ProfileSidebar from "../../components/ProfileSidebar";
 
 export default function Profile() {
-  // TODO: change width of input area
   return (
     <>
       <div className="flex">
@@ -58,7 +57,7 @@ export default function Profile() {
               </div>
               <div className="col-span-2">
                 <input
-                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                   id="username"
                   type="text"
                   value="janedoe18@gmail.com"
@@ -70,7 +69,7 @@ export default function Profile() {
               </div>
               <div className="col-span-2">
                 <input
-                  class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                  className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                   id="username"
                   type="text"
                   value="0811223911038"

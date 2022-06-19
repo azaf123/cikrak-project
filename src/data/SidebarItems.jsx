@@ -1,30 +1,30 @@
-import { faMobileAlt, faTabletAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faStar, faClockRotateLeft, faKey, faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
 
 const SidebarItems = [
     {
         id: 1,
         name: "Profile",
-        icon: faMobileAlt,
+        icon: faUser,
     },
     {
         id: 2,
         name: "Redeem Points",
-        icon: faMobileAlt,
+        icon: faStar,
     },
     {
         id: 3,
         name: "History",
-        icon: faTabletAlt,
+        icon: faClockRotateLeft,
     },
     {
         id: 4,
         name: "Change Password",
-        icon: faTabletAlt,
+        icon: faKey,
     },
     {
         id: 5,
         name: "Logout",
-        icon: faTabletAlt,
+        icon: faRightFromBracket,
     }
 ];
 

@@ -22,15 +22,14 @@ function ProfileSidebar() {
         />
 
         {/* profile area */}
-        {/* TODO: center */}
-        <div className="place-items-center mt-4 mb-8">
+        <div className="mt-4 mb-8">
           <img
-            className="w-24 h-24 rounded-full"
+            className="mx-auto my-auto w-24 h-24 rounded-full"
             src="https://img.freepik.com/free-photo/asian-woman-posing-looking-camera_23-2148255359.jpg?t=st=1655398402~exp=1655399002~hmac=49552dd513a59881bd94e6dde197a76ecb808ce13543285ec2d1c9f4cd2d698c&w=740"
             alt="Profile Avatar"
           />
-          <div className="text-xl font-bold text-main-green mt-5">Jane Doe</div>
-          <div className="text-sm font-bold text-main-yellow">9080 Points</div>
+          <div className="text-xl font-bold text-main-green mt-5 text-center">Jane Doe</div>
+          <div className="text-sm font-bold text-main-yellow text-center">9080 Points</div>
         </div>
 
         {/* menu area */}
@@ -41,10 +40,10 @@ function ProfileSidebar() {
                 key={index}
                 className="text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green"
               >
-                <span className="text-lg float-left">
+                <span className="text-lg float-left w-4 hover:text-main-green">
                   <FontAwesomeIcon icon={menuItem.icon} />
                 </span>
-                <span className={`text-base flex-1 ${!open && "hidden"}`}>
+                <span className={`text-base flex-1 ${!open && "hidden"} hover:text-main-green`}>
                   {menuItem.name}
                 </span>
               </li>
