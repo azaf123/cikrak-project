@@ -15,8 +15,7 @@ const Footer = () => {
         <div className="flex-1">
           <img src={Logo} alt="logo" className="h-12" />
           <p className="md:w-1/2 leading-relaxed text-sm text-white pt-7">
-            We envision a world where everyone feels welcome in the American
-            hiking community.
+            Cikrak is a waste pick-up web-application that aims to raise awareness on the importance of waste management and the negative impacts poor waste management has on the environment. 
           </p>
           <SocialMedia />
         </div>

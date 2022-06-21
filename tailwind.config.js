@@ -10,6 +10,10 @@ module.exports = {
         primary: "#3E82FC",
         lightprimary: "#2CB8E4",
       },
+      backgroundcolors: {
+        primary: "#3E82FC",
+        lightprimary: "#2CB8E4",
+      },
       backgroundImage: {
         Hero: "url('assets/background.png')",
       },

@@ -22,7 +22,7 @@ const NavLinks = () => {
   return (
     <>
       {Links.map((link, i) => (
-        <li key={i} className="font-semibold text-white hover:text-primary">
+        <li key={i} className="font-semibold text-white hover:text-lightprimary">
           <a href={link.link}>{link.name}</a>
         </li>
       ))}
