@@ -30,8 +30,8 @@ function HistoryCard(props) {
                 ></BlueOutlineButton>
               </div>
               <div className="border-l-2 border-slate-300 pl-3">
-                <p className="text-sm">points earned:</p>
-                <p className="text-base font-bold">900 points</p>
+                <p className="text-sm">points {props.pointType}</p>
+                <p className="text-base font-bold">{props.point}</p>
               </div>
             </div>
           </div>

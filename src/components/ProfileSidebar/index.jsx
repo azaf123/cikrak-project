@@ -7,7 +7,7 @@ function ProfileSidebar() {
   const [open, setOpen] = useState(true);
   return (
     <>
-      {/* TODO: duration not working */}
+      {/* TODO: duration not working; hapus back */}
       <div
         className={`bg-light-green h-screen p-5 pt-5 ${
           open ? "w-72" : "w:20"
