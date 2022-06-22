@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 // components
 import BlueButton from "../../components/BlueButton";
 import NavBar from "../../components/Navbar";
@@ -12,9 +12,15 @@ export default function Profile() {
   const { userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
-  const [edit, isEdit] = useState(false);
-  const [update, updateData] = useState(false); // use for cancel form; try again in replacement of advanced hooks, make use of update
+  const [edit, isEdit] = useState(false); // to check if form is in edit mode
+  const [update, updateData] = useState(false); // to check if update data is confirmed (clicking save changes returns true, cancel returns false)
   let currentUserData = useRef(userData);
+
+  useEffect(() => {
+    if (update) {
+      currentUserData.current = userData;
+    }
+  }, [update]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -122,7 +128,6 @@ export default function Profile() {
                       onClick={() => {
                         isEdit(false);
                         updateData(false);
-                        // TODO: returns to first inital value, NOT LAST SAVED!
                         dispatch(updateUser(currentUserData.current));
                       }}
                       btnText="Cancel"
