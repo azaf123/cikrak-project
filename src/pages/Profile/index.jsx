@@ -4,6 +4,7 @@ import BlueButton from "../../components/BlueButton";
 import NavBar from "../../components/Navbar";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
+import InputField from "../../components/InputField";
 // third-party
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../redux/userSlice";
@@ -50,21 +51,20 @@ export default function Profile() {
                 </div>
                 <div className="col-span-2">
                   {edit ? (
-                    <input
-                      className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    <InputField
                       name="name"
                       type="text"
                       value={userData.name}
                       onChange={handleChange}
-                    ></input>
+                      readOnly={!edit}
+                    />
                   ) : (
-                    <input
-                      className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    <InputField
                       name="name"
                       type="text"
                       value={userData.name}
-                      readOnly
-                    ></input>
+                      readOnly={edit}
+                    />
                   )}
                 </div>
 
@@ -72,52 +72,89 @@ export default function Profile() {
                   <label>Username</label>
                 </div>
                 <div className="col-span-2">
-                  <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    name="username"
-                    type="text"
-                    defaultValue={userData.username}
-                    onChange={handleChange}
-                  ></input>
+                  {edit ? (
+                    <InputField
+                      name="username"
+                      type="text"
+                      value={userData.username}
+                      onChange={handleChange}
+                      readOnly={!edit}
+                    />
+                  ) : (
+                    <InputField
+                      name="username"
+                      type="text"
+                      value={userData.username}
+                      readOnly={edit}
+                    />
+                  )}
                 </div>
 
                 <div className="col-span-2 mt-1">
                   <label>Address</label>
                 </div>
                 <div className="col-span-3">
-                  <textarea
-                    name="address"
-                    rows={5}
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    value={userData.address}
-                    onChange={handleChange}
-                  />
+                  {edit ? (
+                    <textarea
+                      name="address"
+                      rows={5}
+                      className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                      value={userData.address}
+                      onChange={handleChange}
+                    />
+                  ) : (
+                    <textarea
+                      name="address"
+                      rows={5}
+                      className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                      value={userData.address}
+                      readOnly
+                    />
+                  )}
                 </div>
 
                 <div className="col-span-2 mt-1">
                   <label>Email</label>
                 </div>
                 <div className="col-span-2">
-                  <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    name="email"
-                    type="text"
-                    value={userData.email}
-                    onChange={handleChange}
-                  ></input>
+                  {edit ? (
+                    <InputField
+                      name="email"
+                      type="text"
+                      value={userData.email}
+                      onChange={handleChange}
+                      readOnly={!edit}
+                    />
+                  ) : (
+                    <InputField
+                      name="email"
+                      type="text"
+                      value={userData.email}
+                      readOnly={edit}
+                    />
+                  )}
                 </div>
 
                 <div className="col-span-2 mt-1">
                   <label>Phone</label>
                 </div>
                 <div className="col-span-2">
-                  <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    name="phone"
-                    type="text"
-                    value={userData.phone}
-                    onChange={handleChange}
-                  ></input>
+                  {edit ? (
+                    <InputField
+                      name="phone"
+                      type="text"
+                      value={userData.phone}
+                      onChange={handleChange}
+                      readOnly={!edit}
+                    />
+                  ) : (
+                    <InputField
+                      name="phone"
+                      type="text"
+                      value={userData.phone}
+                      readOnly={edit}
+                    />
+                  )}
                 </div>
 
                 <div className="col-span-4"></div>
