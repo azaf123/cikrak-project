@@ -1,11 +1,12 @@
-const History = [
+const HistoryData = [
   {
     type: "Waste Disposal",
     date: "07 June 2022",
+    mainDetails: "13 kg of waste was disposed",
     details: {
+      points: 1300,
       pickupDate: "Sunday, 07 June 2022",
       pickupTime: "08:00AM",
-      pointsEarned: 1300,
       wasteType: {
         organic: {
           weight: 1,
@@ -24,16 +25,17 @@ const History = [
   {
     type: "Voucher Purchase",
     date: "07 June 2022",
+    mainDetails: "50% Discount Coupon at Chatime",
     details: {
-      name: "50% Discount Coupon at Chatime",
       quantity: 1,
+      points: 300,
     },
   },
-  {
+  { 
     type: "Points Exchange",
     date: "07 June 2022",
     details: {
-      pointsExchanged: 3000,
+      points: 3000,
     },
   },
   {
@@ -48,4 +50,4 @@ const History = [
   },
 ];
 
-export default History;
+export default HistoryData;

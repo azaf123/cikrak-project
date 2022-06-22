@@ -1,6 +1,7 @@
 import React from "react";
 import HistoryCard from "../../components/HistoryCard";
 import ProfileSidebar from "../../components/ProfileSidebar";
+import HistoryData from "../../data/HistoryData";
 
 export default function History() {
   return (
@@ -13,11 +14,15 @@ export default function History() {
           </div>
 
           {/* history area */}
-          <HistoryCard
-            title="Waste Disposal"
-            date="4 June 2022"
-            text="12kg Inorganic Waste"
-          />
+          {HistoryData.map((data, index) => (
+            <HistoryCard
+              key={index}
+              title={data.type}
+              date={data.date}
+              text={data.mainDetails}
+              points={data.details.points}
+            />
+          ))}
         </div>
       </div>
     </>
