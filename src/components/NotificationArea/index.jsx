@@ -16,7 +16,7 @@ function NotificationArea() {
                 <p className="text-sm font-bold">{notifData.type}</p>
                 <p className="text-gray-600 text-sm">{notifData.time}</p>
               </div>
-              <p class="text-gray-600 text-sm mx-2">{notifData.content}</p>
+              <p className="text-gray-600 text-sm mx-2">{notifData.content}</p>
             </div>
           ))}
         </div>

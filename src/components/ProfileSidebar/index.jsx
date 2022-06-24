@@ -36,6 +36,11 @@ function ProfileSidebar() {
         <ul>
           {SidebarItems.map((menuItem, index) => (
             <>
+            {/* TODO: add state for when li is hovered so that icon ikut ubah warna 
+            ***       add active link! (maybe use state)
+            ***       react router nav
+            */}
+
               <li
                 key={index}
                 className="text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green"
