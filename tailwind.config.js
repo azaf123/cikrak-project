@@ -10,6 +10,7 @@ module.exports = {
         primary: "#3E82FC",
         lightprimary: "#2CB8E4",
         greenprimary: "#28DEB2",
+        greenav: "#72CDDF",
       },
       backgroundcolors: {
         primary: "#3E82FC",
@@ -17,6 +18,7 @@ module.exports = {
       },
       backgroundImage: {
         Hero: "url('assets/background.png')",
+        Blur: "url('assets/background2.png')",
       },
     },
   },

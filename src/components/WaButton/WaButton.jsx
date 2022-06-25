@@ -38,7 +38,7 @@ export const WaButton = () => {
         type='button'
         onClick={event => window.open("https://wa.me/6287771613615?text=Hi%20Cikrak%20i%20want%20to%20ask.", '_blank', 'noopener, noreferrer')}
         className={classNames(
-          isVisible ? 'opacity-100' : 'opacity-0',
+          // isVisible ? 'opacity-100' : 'opacity-0',
           'inline-flex items-center p-3 rounded-full shadow-sm text-white bg-green-600 transition-opacity hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600'
         )}
       >

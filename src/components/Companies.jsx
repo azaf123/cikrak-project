@@ -4,7 +4,7 @@ import com2 from "../assets/com-2.png";
 import com3 from "../assets/com-3.png";
 const Companies = () => {
   return (
-    <section className="text-center">
+    <section className="text-center -z-20">
       <h1 className="md:text-3xl text-xl font-semibold">
       Supported By
       </h1>

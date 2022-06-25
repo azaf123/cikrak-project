@@ -1,10 +1,10 @@
-import React from "react";
-import ButtonFill from "./ButtonFill";
+import React from 'react';
+import ButtonFill from './ButtonFill';
 const Blog = ({ content, alternative }) => {
   return (
     <section
       className={`flex ${
-        alternative ? "md:flex-row-reverse" : "md:flex-row"
+        alternative ? 'md:flex-row-reverse' : 'md:flex-row'
       } flex-col gap-6 py-12 md:px-28 px-4 items-center`}
     >
       <div className="flex-1">

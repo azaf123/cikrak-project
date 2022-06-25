@@ -1,18 +1,18 @@
-import React, { useRef, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Nav from "./components/Navbar/Nav";
-import HeroImg from "./assets/Hero.png";
-import ButtonFill from "./components/ButtonFill";
-import ButtonOutline from "./components/ButtonOutline";
-import img1 from "./assets/img1_1.jpg";
-import img2 from "./assets/img2_1.jpg";
-import img3 from "./assets/img3_1.jpg";
-import Icon1 from "./assets/icon-1.png";
-import Icon2 from "./assets/icon-2.png";
-import Icon3 from "./assets/icon-3.png";
-import Companies from "./components/Companies";
-import Review from "./components/Review";
-import Footer from "./components/Footer/Footer";
+import React, { useRef, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Nav from './components/Navbar/Nav';
+import HeroImg from './assets/Hero.png';
+import ButtonFill from './components/ButtonFill';
+import ButtonOutline from './components/ButtonOutline';
+import img1 from './assets/img1_1.jpg';
+import img2 from './assets/img2_1.jpg';
+import img3 from './assets/img3_1.jpg';
+import Icon1 from './assets/icon-1.png';
+import Icon2 from './assets/icon-2.png';
+import Icon3 from './assets/icon-3.png';
+import Companies from './components/Companies';
+import Review from './components/Review';
+import Footer from './components/Footer/Footer';
 import { ScrollToTop } from './components/scroll';
 import { FormModal } from './components/FormModal';
 import { PaymentModal } from './components/PaymentModal';
@@ -20,8 +20,7 @@ import { AgreementModal } from './components/AgreementModal';
 import { SuccessModal } from './components/SuccessModal';
 import { EcommerceModal } from './components/EcommerceModal';
 import { WaButton } from './components/WaButton';
-import { PaymentPage } from './components/PaymentPage';
-
+import { PaymentPage } from './pages/PaymentPage';
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -31,44 +30,43 @@ const App = () => {
   // window.scrollTo({
   //     top: commentSection.current.offsetTop,
   //     behavior: "smooth"
-  // }); 
+  // });
   const Info = [
     {
       icon: Icon1,
-      title: "Pick-up by Location",
-      des: "Users can choose a location based on their respective addresses in the pick-up form.",
+      title: 'Pick-up by Location',
+      des: 'Users can choose a location based on their respective addresses in the pick-up form.',
     },
     {
       icon: Icon2,
-      title: "Exchange Trash For Money",
-      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
+      title: 'Exchange Trash For Money',
+      des: 'Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.',
     },
     {
       icon: Icon3,
-      title: "Exchange Trash With Vouchers",
-      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
+      title: 'Exchange Trash With Vouchers',
+      des: 'Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.',
     },
   ];
   const contents = [
     {
-      title: "Pick-up sampah",
-      des: "The garbage pick-up service serves to make it easier for users to dispose of their household waste by exchanging points that can be exchanged for cash or vouchers.",
+      title: 'Pick-up sampah',
+      des: 'The garbage pick-up service serves to make it easier for users to dispose of their household waste by exchanging points that can be exchanged for cash or vouchers.',
       img: img1,
     },
     {
-      title: "E-commerce",
-      des: "Exclusive buying and selling platform for recycled waste products and environmentally friendly products provided directly from UMKM and Cikrak.",
+      title: 'E-commerce',
+      des: 'Exclusive buying and selling platform for recycled waste products and environmentally friendly products provided directly from UMKM and Cikrak.',
       img: img2,
     },
     {
-      title: "Education",
-      des: "Volunteer trail stewardship projects in America’s parks and forests designed specifically for college student groups and young professionals.",
+      title: 'Education',
+      des: 'Volunteer trail stewardship projects in America’s parks and forests designed specifically for college student groups and young professionals.',
       img: img3,
-
     },
   ];
   const Blog = ({ content, alternative, form, comimgSoon }) => {
-    function openForm(){
+    function openForm() {
       setOpenModal(true);
     }
 
@@ -78,7 +76,7 @@ const App = () => {
     return (
       <section
         className={`flex ${
-          alternative ? "md:flex-row-reverse" : "md:flex-row"
+          alternative ? 'md:flex-row-reverse' : 'md:flex-row'
         } flex-col gap-6 py-12 md:px-28 px-4 items-center`}
       >
         <div className="flex-1">
@@ -95,8 +93,10 @@ const App = () => {
           <p className="text-sm text-gray-600 md:w-2/3 leading-relaxed py-5">
             {content.des}
           </p>
-          <div onClick={form ? openForm : comimgSoon ? openComingSoon : undefined}>
-            <ButtonFill >Find Out More</ButtonFill>
+          <div
+            onClick={form ? openForm : comimgSoon ? openComingSoon : undefined}
+          >
+            <ButtonFill>Find Out More</ButtonFill>
           </div>
         </div>
       </section>
@@ -104,74 +104,92 @@ const App = () => {
   };
   return (
     <BrowserRouter>
-    <div className="font-Poppins">
-      {/* <Headers /> */}
-      <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
-      <Nav />
-      <div className="flex md:flex-row flex-col gap-5 pt-20">
-        <div className="flex-1">
-          <h1
-            className="md:text-5xl text-4xl font-semibold tracking-wide md:leading-tight
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <div className="font-Poppins">
+              {/* <Headers /> */}
+              <Nav />
+              <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
+                <div className="flex md:flex-row flex-col gap-5 pt-20">
+                  <div className="flex-1">
+                    <h1
+                      className="md:text-5xl text-4xl font-semibold tracking-wide md:leading-tight
           leading-snug"
-          >
-            Changemakers, Let's Move and Innovate to Make Change!
-          </h1>
-          <p className="text-gray-600 md:w-2/3 md:py-4 py-2 leading-relaxed" onClick={() => setOpenModal(true)}>
-            Let's start with small things, for example, throwing trash in its place.
-          </p>
-          <br />
-          <div className="flex md:gap-4 gap-2 flex-wrap">
-            <div onClick={() => setOpenModal(true)}>
-              <ButtonFill>Let’s Go</ButtonFill>
-            </div>
-            <ButtonOutline />
-          </div>
-        </div>
-        <div className="flex-1  flex justify-center">
-          <img src={HeroImg} alt="hero" className="h-2/3" />
-        </div>
-      </div>
+                    >
+                      Changemakers, Let's Move and Innovate to Make Change!
+                    </h1>
+                    <p
+                      className="text-gray-600 md:w-2/3 md:py-4 py-2 leading-relaxed"
+                      onClick={() => setOpenModal(true)}
+                    >
+                      Let's start with small things, for example, throwing trash
+                      in its place.
+                    </p>
+                    <br />
+                    <div className="flex md:gap-4 gap-2 flex-wrap">
+                      <div onClick={() => setOpenModal(true)}>
+                        <ButtonFill>Let’s Go</ButtonFill>
+                      </div>
+                      <ButtonOutline />
+                    </div>
+                  </div>
+                  <div className="flex-1  flex justify-center">
+                    <img src={HeroImg} alt="hero" className="h-2/3" />
+                  </div>
+                </div>
 
-      <div className="bg-white shadow-2xl flex md:flex-row flex-col md:-mt-48 gap-10 md:p-14 p-10 mt-5 rounded-md">
-        {Info.map((info, i) => (
-          <div key={i}>
-            <img src={info.icon} alt="icon" className="h-16" />
-            <h1 className="font-semibold text-lg my-3">{info.title}</h1>
-            <p className="text-gray-600 text-sm leading-relaxed">{info.des}</p>
-            <button className="text-rose-600 font-medium text-sm my-1">
-              Read More
-            </button>
-          </div>
-        ))}
-      </div>
-      <p className="py-10 md:text-sm text-xs block text-gray-600 text-center" >
-        Don’t hesitate to contact us to get better Information.
-        <span className="text-rose-600 font-semibold italic px-1">
-          EXPLORE ALL TREKKING.
-        </span>
-      </p>
-    </section>
-      <Companies />
-      <Blog content ={contents[0]} ref={commentSection} form={true} />
-      <Blog content={contents[1]} alternative={true} comimgSoon={true} />
-      <Blog content={contents[2]} />
-      <Review />
-      <Footer />
-      <WaButton />
-      <ScrollToTop />
-      <FormModal open={openModal} 
-      onClose={() => setOpenModal(false)} />
-      {/* <PaymentModal/> */}
-      {/* <AgreementModal/> */}
-      {/* <SuccessModal/> */}
-      <EcommerceModal open={openModalComingSoon} onClose={() => setOpenModalComingSoon(false)}/>
-    </div>
-    <Routes>
-      <Route path="/about" element={<PaymentPage/>} >
-      </Route>
-    </Routes>
+                <div className="bg-white shadow-2xl flex md:flex-row flex-col md:-mt-48 gap-10 md:p-14 p-10 mt-5 rounded-md">
+                  {Info.map((info, i) => (
+                    <div key={i}>
+                      <img src={info.icon} alt="icon" className="h-16" />
+                      <h1 className="font-semibold text-lg my-3">
+                        {info.title}
+                      </h1>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {info.des}
+                      </p>
+                      <button className="text-rose-600 font-medium text-sm my-1">
+                        Read More
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <p className="py-10 md:text-sm text-xs block text-gray-600 text-center">
+                  Don’t hesitate to contact us to get better Information.
+                  <span className="text-rose-600 font-semibold italic px-1">
+                    EXPLORE ALL TREKKING.
+                  </span>
+                </p>
+              </section>
+              <Companies />
+              <Blog content={contents[0]} ref={commentSection} form={true} />
+              <Blog
+                content={contents[1]}
+                alternative={true}
+                comimgSoon={true}
+              />
+              <Blog content={contents[2]} />
+              <Review />
+              <Footer />
+              <WaButton />
+              <ScrollToTop />
+              <FormModal open={openModal} onClose={() => setOpenModal(false)} />
+              {/* <PaymentModal/> */}
+              {/* <AgreementModal/> */}
+              {/* <SuccessModal/> */}
+              <EcommerceModal
+                open={openModalComingSoon}
+                onClose={() => setOpenModalComingSoon(false)}
+              />
+            </div>
+          }
+        />
+        <Route path="/payment" element={<PaymentPage />} />
+      </Routes>
     </BrowserRouter>
-    
   );
 };
 
