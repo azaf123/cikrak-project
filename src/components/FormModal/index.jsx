@@ -21,9 +21,9 @@ if (!open) return null;
         placeholder="janedoe@gmail.com" />
     </div>
     <div class="form-group mb-6">
-    <p>Phone Number<span class="text-red-600"> *</span></p>
-      <input type="number" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none" id="exampleInput8"
-        placeholder="081342536442" />
+    <p>Phone Number<span class="text-red-600 max-w-[50%]"> *</span></p>
+      <input type="text" pattern='\d*' maxLength={14} class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none" id="exampleInput8"
+        placeholder="081342536442"/>
     </div>
     <div class="form-check form-check-inline">
     <p>Type Waste<span class="text-red-600"> *</span></p>

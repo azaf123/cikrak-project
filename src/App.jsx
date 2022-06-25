@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Navbar/Nav";
 import HeroImg from "./assets/Hero.png";
 import ButtonFill from "./components/ButtonFill";
@@ -14,8 +15,17 @@ import Review from "./components/Review";
 import Footer from "./components/Footer/Footer";
 import { ScrollToTop } from './components/scroll';
 import { FormModal } from './components/FormModal';
+import { PaymentModal } from './components/PaymentModal';
+import { AgreementModal } from './components/AgreementModal';
+import { SuccessModal } from './components/SuccessModal';
+import { EcommerceModal } from './components/EcommerceModal';
+import { WaButton } from './components/WaButton';
+import { PaymentPage } from './components/PaymentPage';
+
+
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [openModalComingSoon, setOpenModalComingSoon] = useState(false);
   const commentSection = useRef(null);
   // const blogsection1 = () =>
   // window.scrollTo({
@@ -25,17 +35,17 @@ const App = () => {
   const Info = [
     {
       icon: Icon1,
-      title: "Secret Locations",
-      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
+      title: "Pick-up by Location",
+      des: "Users can choose a location based on their respective addresses in the pick-up form.",
     },
     {
       icon: Icon2,
-      title: "Safe Adventure",
+      title: "Exchange Trash For Money",
       des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
     },
     {
       icon: Icon3,
-      title: "Professional Hikers",
+      title: "Exchange Trash With Vouchers",
       des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
     },
   ];
@@ -51,15 +61,19 @@ const App = () => {
       img: img2,
     },
     {
-      title: "Let’s Enjoy Nature With Us",
+      title: "Education",
       des: "Volunteer trail stewardship projects in America’s parks and forests designed specifically for college student groups and young professionals.",
       img: img3,
 
     },
   ];
-  const Blog = ({ content, alternative, form }) => {
+  const Blog = ({ content, alternative, form, comimgSoon }) => {
     function openForm(){
       setOpenModal(true);
+    }
+
+    function openComingSoon() {
+      setOpenModalComingSoon(true);
     }
     return (
       <section
@@ -81,7 +95,7 @@ const App = () => {
           <p className="text-sm text-gray-600 md:w-2/3 leading-relaxed py-5">
             {content.des}
           </p>
-          <div onClick={form ? openForm : undefined}>
+          <div onClick={form ? openForm : comimgSoon ? openComingSoon : undefined}>
             <ButtonFill >Find Out More</ButtonFill>
           </div>
         </div>
@@ -89,6 +103,7 @@ const App = () => {
     );
   };
   return (
+    <BrowserRouter>
     <div className="font-Poppins">
       {/* <Headers /> */}
       <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
@@ -138,14 +153,24 @@ const App = () => {
     </section>
       <Companies />
       <Blog content ={contents[0]} ref={commentSection} form={true} />
-      <Blog content={contents[1]} alternative={true}/>
+      <Blog content={contents[1]} alternative={true} comimgSoon={true} />
       <Blog content={contents[2]} />
       <Review />
       <Footer />
+      <WaButton />
       <ScrollToTop />
       <FormModal open={openModal} 
       onClose={() => setOpenModal(false)} />
+      {/* <PaymentModal/> */}
+      {/* <AgreementModal/> */}
+      {/* <SuccessModal/> */}
+      <EcommerceModal open={openModalComingSoon} onClose={() => setOpenModalComingSoon(false)}/>
     </div>
+    <Routes>
+      <Route path="/about" element={<PaymentPage/>} >
+      </Route>
+    </Routes>
+    </BrowserRouter>
     
   );
 };
