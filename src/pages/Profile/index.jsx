@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 // components
 import BlueButton from "../../components/BlueButton";
 import NavBar from "../../components/Navbar";
-import ProfileSidebar from "../../components/ProfileSidebar";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
 import InputField from "../../components/InputField";
 // third-party
@@ -25,6 +24,7 @@ export default function Profile() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    e.target.reset();
   };
 
   const handleChange = (e) => {
@@ -34,10 +34,7 @@ export default function Profile() {
 
   return (
     <>
-      <NavBar />
-      <div className="flex">
-        <ProfileSidebar />
-        <div className="flex-1">
+      {/* <NavBar /> */}
           <div className="text-2xl font-bold mt-20 ml-16 text-main-blue">
             Profile
           </div>
@@ -181,8 +178,6 @@ export default function Profile() {
               </div>
             </div>
           </form>
-        </div>
-      </div>
     </>
   );
 }

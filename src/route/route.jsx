@@ -4,14 +4,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "../pages/Profile";
 import History from "../pages/History";
 import ChangePassword from "../pages/ChangePassword";
+import ProfileLayout from "../components/ProfileLayout";
 
 export default function Routing() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Profile />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/changepwd" element={<ChangePassword />} />
+        <Route path="/" element={<ProfileLayout />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="history" element={<History />} />
+          <Route path="changepwd" element={<ChangePassword />} />
+        </Route>
       </Routes>
     </Router>
   );
