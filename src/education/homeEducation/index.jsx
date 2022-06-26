@@ -1,10 +1,11 @@
 import Style from "./style.module.css";
-import imageGreen from "../../assetFaza/ggreen.png";
-import trash from "../../assetFaza/trash.png";
-import reduce from "../../assetFaza/reduce.png";
-import cup from "../../assetFaza/cup.png";
-import green from "../../assetFaza/33.jpg";
-import background from "../../assetFaza/Polygon1.png";
+import imageGreen from "../../assets/ggreen.png";
+import trash from "../../assets/trash.png";
+import reduce from "../../assets/reduce.png";
+import cup from "../../assets/cup.png";
+import green from "../../assets/33.jpg";
+import background from "../../assets/Polygon1.png";
+import App from "../../App";
 const HomeEdu = () => {
     return (
         <div>
@@ -34,7 +35,9 @@ const HomeEdu = () => {
                                         <h1>Organic Waste</h1>
                                     </div>
                                     {/* button */}
+                                    <a href="/edu2">
                                     <button className={Style.btn_learnmore}>Learn More</button>
+                                    </a>
                                     <div className={Style.content_item_text}>
                                         <h1>Inorganic Waste</h1>
                                     </div>
@@ -61,7 +64,9 @@ const HomeEdu = () => {
                                 </div>
                                 <div className={Style.content_item_btn}>
                                     {/* button */}
+                                    <a href="/edu1">
                                     <button className={Style.btn_learnmore}>Learn More</button>
+                                    </a>
                                 </div>
 
                             </div>
@@ -94,7 +99,9 @@ const HomeEdu = () => {
                                 </div>
                                 <div className={Style.content_item_btn}>
                                     {/* button */}
+                                    <a href="/edu2">
                                     <button className={Style.btn_learnmore}>Learn More</button>
+                                    </a>
                                 </div>
                             </div>
 

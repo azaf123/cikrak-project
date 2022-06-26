@@ -1,8 +1,8 @@
-import putih from '../../assetFaza/putih.png'
+import putih from '../../assets/putih.png'
 import Style from './style.module.css';
-import EduTiga from '../../assetFaza/edu3.png'
-import food from '../../assetFaza/food.png'
-import plastic from '../../assetFaza/plastic.png'
+import EduTiga from '../../assets/edu3.png'
+import food from '../../assets/food.png'
+import plastic from '../../assets/plastic.png'
 const ThirdEdu = () => {
 
     return (

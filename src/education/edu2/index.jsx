@@ -1,18 +1,18 @@
 import Style from './style.module.css';
-import grid from '../../assetFaza/grid.png';
-import reduce from "../../assetFaza/reduce.png";
-import reuse from '../../assetFaza/reuse.png';
-import plastic from '../../assetFaza/plastic.png';
-import reduceg from '../../assetFaza/reduceg.png';
-import reuseg from '../../assetFaza/reuseg.png';
-import recycleg from '../../assetFaza/recycleg.png';
-import bring from '../../assetFaza/bring.png'
-import hand from '../../assetFaza/hand.jpg'
-import paje from '../../assetFaza/paje.jpg'
-import stop from '../../assetFaza/stop.jpg'
-import sampah from '../../assetFaza/sampah.jpg'
-import nanem from '../../assetFaza/nanem.jpg'
-import tanah from '../../assetFaza/tanah.jpg'
+import grid from '../../assets/grid.png';
+import reduce from "../../assets/reduce.png";
+import reuse from '../../assets/reuse.png';
+import plastic from '../../assets/plastic.png';
+import reduceg from '../../assets/reduceg.png';
+import reuseg from '../../assets/reuseg.png';
+import recycleg from '../../assets/recycleg.png';
+import bring from '../../assets/bring.png'
+import hand from '../../assets/hand.jpg'
+import paje from '../../assets/paje.jpg'
+import stop from '../../assets/stop.jpg'
+import sampah from '../../assets/sampah.jpg'
+import nanem from '../../assets/nanem.jpg'
+import tanah from '../../assets/tanah.jpg'
 const SecondEdu = () => {
     return (
         <div>

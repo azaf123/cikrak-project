@@ -1,19 +1,17 @@
 import Style from './style.module.css';
-import earth from '../../assetFaza/earth.png';
-import reduce from "../../assetFaza/reduce.png";
-import reuse from '../../assetFaza/reuse.png';
-import plastic from '../../assetFaza/plastic.png';
-import reduceg from '../../assetFaza/reduceg.png';
-import reuseg from '../../assetFaza/reuseg.png';
-import recycleg from '../../assetFaza/recycleg.png';
+import earth from '../../assets/earth.png';
+import reduce from "../../assets/reduce.png";
+import reuse from '../../assets/reuse.png';
+import plastic from '../../assets/plastic.png';
+import reduceg from '../../assets/reduceg.png';
+import reuseg from '../../assets/reuseg.png';
+import recycleg from '../../assets/recycleg.png';
 const FirstEdu = () => {
     return (
         <div>
             <div className={Style.background}>
             </div>
             {/* <img src={background} alt="" /> */}
-
-
             <div className={Style.title}>
                 <h1>3R</h1>
             </div>
