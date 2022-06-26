@@ -35,149 +35,163 @@ export default function Profile() {
   return (
     <>
       {/* <NavBar /> */}
-          <div className="text-2xl font-bold mt-20 ml-16 text-main-blue">
-            Profile
+      <div className="text-2xl font-bold mt-20 ml-16 pb-4 text-main-blue">
+        Profile
+      </div>
+
+      {/* profile form area */}
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+          <div className="mt-1 mr-5 mb-2 w-60">
+            <label>Name</label>
           </div>
+          <div className="w-64">
+            {edit ? (
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                name="name"
+                type="text"
+                value={userData.name}
+                onChange={handleChange}
+                readOnly={!edit}
+              />
+            ) : (
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                name="name"
+                type="text"
+                value={userData.name}
+                readOnly={edit}
+              />
+            )}
+          </div>
+        </div>
 
-          {/* profile form area */}
-          <form onSubmit={handleSubmit}>
-            <div className="flex">
-              <div className="grid grid-cols-5 mt-10 ml-16 mr-5 gap-4">
-                <div className="col-span-2 mt-1">
-                  <label>Name</label>
-                </div>
-                <div className="col-span-2">
-                  {edit ? (
-                    <InputField
-                      name="name"
-                      type="text"
-                      value={userData.name}
-                      onChange={handleChange}
-                      readOnly={!edit}
-                    />
-                  ) : (
-                    <InputField
-                      name="name"
-                      type="text"
-                      value={userData.name}
-                      readOnly={edit}
-                    />
-                  )}
-                </div>
+        <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+          <div className="mt-1 mr-5 mb-2 w-60">
+            <label>Username</label>
+          </div>
+          <div className="w-64">
+            {edit ? (
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                name="username"
+                type="text"
+                value={userData.username}
+                onChange={handleChange}
+                readOnly={!edit}
+              />
+            ) : (
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                name="username"
+                type="text"
+                value={userData.username}
+                readOnly={edit}
+              />
+            )}
+          </div>
+        </div>
 
-                <div className="col-span-2 mt-1">
-                  <label>Username</label>
-                </div>
-                <div className="col-span-2">
-                  {edit ? (
-                    <InputField
-                      name="username"
-                      type="text"
-                      value={userData.username}
-                      onChange={handleChange}
-                      readOnly={!edit}
-                    />
-                  ) : (
-                    <InputField
-                      name="username"
-                      type="text"
-                      value={userData.username}
-                      readOnly={edit}
-                    />
-                  )}
-                </div>
+        <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+          <div className="mt-1 mr-5 mb-2 w-60">
+            <label>Address</label>
+          </div>
+          <div className="w-72">
+            {edit ? (
+              <textarea
+                name="address"
+                rows={5}
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                value={userData.address}
+                onChange={handleChange}
+              />
+            ) : (
+              <textarea
+                name="address"
+                rows={5}
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                value={userData.address}
+                readOnly
+              />
+            )}
+          </div>
+        </div>
 
-                <div className="col-span-2 mt-1">
-                  <label>Address</label>
-                </div>
-                <div className="col-span-3">
-                  {edit ? (
-                    <textarea
-                      name="address"
-                      rows={5}
-                      className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                      value={userData.address}
-                      onChange={handleChange}
-                    />
-                  ) : (
-                    <textarea
-                      name="address"
-                      rows={5}
-                      className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                      value={userData.address}
-                      readOnly
-                    />
-                  )}
-                </div>
+        <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+          <div className="mt-1 mr-5 mb-2 w-60">
+            <label>Email</label>
+          </div>
+          <div className="w-64">
+            {edit ? (
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                name="email"
+                type="text"
+                value={userData.email}
+                onChange={handleChange}
+                readOnly={!edit}
+              />
+            ) : (
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                name="email"
+                type="text"
+                value={userData.email}
+                readOnly={edit}
+              />
+            )}
+          </div>
+        </div>
 
-                <div className="col-span-2 mt-1">
-                  <label>Email</label>
-                </div>
-                <div className="col-span-2">
-                  {edit ? (
-                    <InputField
-                      name="email"
-                      type="text"
-                      value={userData.email}
-                      onChange={handleChange}
-                      readOnly={!edit}
-                    />
-                  ) : (
-                    <InputField
-                      name="email"
-                      type="text"
-                      value={userData.email}
-                      readOnly={edit}
-                    />
-                  )}
-                </div>
+        <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+          <div className="mt-1 mr-5 w-60">
+            <label>Phone</label>
+          </div>
+          <div className="w-64">
+            {edit ? (
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                name="phone"
+                type="text"
+                value={userData.phone}
+                onChange={handleChange}
+                readOnly={!edit}
+              />
+            ) : (
+              <input
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                name="phone"
+                type="text"
+                value={userData.phone}
+                readOnly={edit}
+              />
+            )}
+          </div>
+        </div>
 
-                <div className="col-span-2 mt-1">
-                  <label>Phone</label>
-                </div>
-                <div className="col-span-2">
-                  {edit ? (
-                    <InputField
-                      name="phone"
-                      type="text"
-                      value={userData.phone}
-                      onChange={handleChange}
-                      readOnly={!edit}
-                    />
-                  ) : (
-                    <InputField
-                      name="phone"
-                      type="text"
-                      value={userData.phone}
-                      readOnly={edit}
-                    />
-                  )}
-                </div>
-
-                <div className="col-span-4"></div>
-                <div className="flex mt-14">
-                  {/* TODO: edit padding */}
-                  {edit && (
-                    <BlueOutlineButton
-                      onClick={() => {
-                        isEdit(false);
-                        updateData(false);
-                        dispatch(updateUser(currentUserData.current));
-                      }}
-                      btnText="Cancel"
-                    />
-                  )}
-                  <BlueButton
-                    onClick={() => {
-                      isEdit(!edit);
-                      edit ? updateData(true) : updateData(false);
-                    }}
-                    btnText={`${edit ? "Save Changes" : "Edit Profile"}`}
-                  />
-                </div>
-              </div>
-            </div>
-          </form>
+        <div className="mt-1"></div>
+        <div className="flex mt-14">
+          {/* TODO: edit padding */}
+          {edit && (
+            <BlueOutlineButton
+              onClick={() => {
+                isEdit(false);
+                updateData(false);
+                dispatch(updateUser(currentUserData.current));
+              }}
+              btnText="Cancel"
+            />
+          )}
+          <BlueButton
+            onClick={() => {
+              isEdit(!edit);
+              edit ? updateData(true) : updateData(false);
+            }}
+            btnText={`${edit ? "Save Changes" : "Edit Profile"}`}
+          />
+        </div>
+      </form>
     </>
   );
 }
