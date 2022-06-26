@@ -21,6 +21,10 @@ import { SuccessModal } from './components/SuccessModal';
 import { EcommerceModal } from './components/EcommerceModal';
 import { WaButton } from './components/WaButton';
 import { PaymentPage } from './pages/PaymentPage';
+import HomeEdu from './education/homeEducation';
+import FirstEdu from './education/edu1';
+import SecondEdu from './education/edu2';
+import ThirdEdu from './education/edu3';
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -188,6 +192,10 @@ const App = () => {
           }
         />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/home-edu" element={<HomeEdu />} />
+          <Route path="/edu1" element={<FirstEdu />} />
+          <Route path="/edu2" element={<SecondEdu />} />
+          <Route path="/edu3" element={<ThirdEdu />} />
       </Routes>
     </BrowserRouter>
   );
