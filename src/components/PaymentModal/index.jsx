@@ -59,7 +59,7 @@ export const PaymentModal = ({ open, onClose, paymentData }) => {
             </div>
             <div class="mt-3">
               <h1 class="text-mx">Full Address</h1>
-              <span>{paymentData.address}</span>
+              <div class="w-1">{paymentData.address}</div>
             </div>
           </div>
           <div>

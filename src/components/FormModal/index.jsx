@@ -3,6 +3,7 @@ import cross from '../../assets/cross.png';
 import { Link } from 'react-router-dom';
 
 export const FormModal = ({ open, onClose, props }) => {
+  const [number, setNumber] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -12,6 +13,11 @@ export const FormModal = ({ open, onClose, props }) => {
 
   const isFilled = () => {
     return name && email && phone && address && typeWaste && agree;
+  };
+
+  const checkInput = (e) => {
+    const onlyDigits = e.target.value.replace(/\D/g, '');
+    setNumber(onlyDigits);
   };
 
   if (!open) return null;
@@ -58,13 +64,15 @@ export const FormModal = ({ open, onClose, props }) => {
             Phone Number<span class="text-red-600 max-w-[50%]"> *</span>
           </p>
           <input
-            type="text"
+            type="tel"
             pattern="\d*"
-            maxLength={14}
+            value={number}
+            maxLength="14"
             class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
             id="exampleInput8"
             placeholder="081342536442"
             onChange={(e) => {
+              checkInput(e);
               setPhone(e.target.value);
             }}
           />
