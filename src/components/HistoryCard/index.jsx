@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import BlueOutlineButton from "../BlueOutlineButton";
 import HistoryDetails from "../HistoryDetails";
+import HistoryData from "../../data/HistoryData";
 
 function HistoryCard(props) {
   const [showModal, setShowModal] = useState(false);
 
+  // const historyDetails = HistoryData.details;
+
   return (
     <>
-      <div className="max-w-full ml-16 mr-10 mb-5">
+      <div className="max-w-screen-md ml-16 md:ml-20 mr-10 mb-5">
         <div className="border border-gray-200 bg-slate-50 rounded p-4 flex flex-col justify-between leading-normal">
           <div className="flex justify-between">
             <div className="text-main-blue font-bold text-base mb-2 ">
@@ -20,9 +23,17 @@ function HistoryCard(props) {
 
           <div className="flex justify-between">
             <div className="font-medium text-sm leading-none">{props.text}</div>
-
+            <div className="w-60 text-gray-700">
+                {/* {Object.values(historyDetails.inorganic.weightBreakdown).map(
+                  (value, i) => (
+                    <li className="pl-8" key={i}>
+                      - {value}
+                    </li>
+                  )
+                )} */}
+              </div>
             <div className="flex justify-end">
-              <div className="mr-5">
+              <div className="ml-3 md:ml-0 mr-5">
                 {/* only show for waste disposal */}
                 {props.title === "Waste Disposal" && (
                   <BlueOutlineButton
