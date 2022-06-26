@@ -19,6 +19,8 @@ const FirstEdu = () => {
             </div>
             <div className={Style.container}>
                 <div className={Style.content}>
+                <div className={Style.background}>
+           
                     <div className={Style.content1}>
 
                         {/* text */}
@@ -27,7 +29,7 @@ const FirstEdu = () => {
                                 <div className={Style.content_item_text}>
                                     <h1>3R</h1>
                                 </div>
-                                <div className={Style.content_item_text}>
+                                <div className={Style.content_item_text_judul}>
                                     <h2>Reduce</h2>
                                     <h2>Reuse</h2>
                                     <h2>Recycle</h2>
@@ -38,11 +40,14 @@ const FirstEdu = () => {
                         </div>
                         {/* image */}
                         <div className={Style.content_item}>
-                            <div className={Style.content_item_image}>
+                            <div className={Style.content_item_image_judul}>
                                 <img src={earth} alt="" />
                             </div>
                         </div>
                     </div>
+                    </div>
+                    <div className={Style.background}>
+            
                     <div className={Style.content2}>
 
                         {/* text */}
@@ -90,17 +95,13 @@ const FirstEdu = () => {
 
                         </div>
                     </div>
+                    </div>
                     <div className={Style.content3}>
                         {/* text */}
-                        <div className={Style.content_item_2}>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <h1>How To implement 3 R in Realife</h1>
+                        <div className={Style.content_item_2_judul}>
+                            <h1>HOW TO IMPLEMENT 3R IN REALIFE</h1>
                             </div>
-                            <br />
-                            <br />
+                           
                         <div className={Style.content_item_2}>
                             <div className={Style.content_item_textmaster_2}>
                                 <div className={Style.content_item_text}>

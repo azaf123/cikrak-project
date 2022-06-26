@@ -1,0 +1,103 @@
+/* content 1 */
+.container{
+    display: grid;
+    grid-template-rows: 1fr;
+    background: linear-gradient(180deg, #289CDE -8.03%, rgba(40, 222, 178, 0) 100.72%);
+    z-index: 1;
+}
+
+.image{
+    /* width: 100%; */
+    height: auto;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    z-index: 3;
+}
+.imageEdu
+{
+    /* width: 100%; */
+    height: auto;
+    display: grid;
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    
+    
+
+   
+}
+.text  {
+    /* display: grid; */
+    position: absolute;
+    width: 50%;
+    height: auto;
+    top: 25%;
+  
+    z-index: 3;
+   
+}  
+.text h1{
+    font-size: 65px;
+    font-family: roboto;
+    font-weight: bold;
+}
+
+/* content 2 */
+.textjudul{
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,252,240,1) 100%);
+border-radius: 10px;
+border: 1px solid black;
+width: 25%;
+margin: auto;
+margin-top: 5%;
+margin-bottom: 3%;
+padding: 1%;
+color : white;
+
+}
+.textjudul h1{
+    font-size: 25px;
+    font-family: roboto;
+    font-weight: bold;
+}
+.text2{
+box-shadow: inset 0px 4px 20px rgba(255, 255, 255, 0.9);
+text-align: justify;
+font-size: large;
+
+} 
+.subtitle{
+
+}
+.subtitle p{
+    font-size: 20px;
+    font-family: roboto;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+}
+ul li{
+    font-size: 20px;
+    font-family: roboto;
+
+    color: #000;
+    text-align: left;
+}
+.content_master2
+{
+   margin: auto;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 20px;
+}
+.content_item2{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+}
+.content_organicImage img{
+    width: 80%;
+    height: auto;
+}
