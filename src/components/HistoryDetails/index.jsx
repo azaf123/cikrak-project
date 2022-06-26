@@ -1,29 +1,63 @@
 import React from "react";
 import BlueButton from "../BlueButton";
+import HistoryData from "../../data/HistoryData";
 
 function HistoryDetails({ setShowModal }) {
   const handleClose = () => {
     setShowModal(false);
   };
 
+  const wasteDetails = HistoryData[0].details.wasteType;
+
   return (
     <>
-      <div className="bg-slate-200 opacity-80 fixed inset-0 z-10">
-        <div className="flex h-screen justify-center items-center ">
-          <div className="flex-col bg-white py-12 px-16 rounded-xl">
-            <div className="flex justify-between items-start rounded border-b dark:border-gray-600">
-              <h3 className="text-xl font-bold text-main-blue pb-3">
-                History Details
-              </h3>
+      <div className="flex justify-center items-center fixed inset-0 z-10 backdrop-opacity-10 backdrop-invert">
+        <div className="flex-col bg-white py-12 px-16 rounded-xl">
+          <div className="flex justify-between items-start rounded border-b dark:border-gray-600">
+            <h3 className="text-xl font-bold text-main-blue pb-3">
+              Waste Disposal Details
+            </h3>
+          </div>
+          <div className="flex flex-col md:flex-row mt-10 ml-1 mr-5">
+            <div className="mr-5 mb-2 w-40">
+              <label>Date/ time of pick-up:</label>
             </div>
-            <div className="space-y-6 w-80 py-4">
-              <p className="text-base leading-relaxed text-gray-500">
-                With less than a month to go before the European Union enacts
-                new consumer privacy laws for its citizens, companies around the
-                world are updating their terms of service agreements to comply.
-              </p>
+            <div className="w-60">
+              <div className="py-1 text-gray-700 leading-none">
+                {HistoryData[0].details.pickupDate}
+              </div>
             </div>
-            <div className="flex justify-end">
+          </div>
+
+          <div className="flex flex-col md:flex-row mt-10 ml-1 mr-5">
+            <div className="mr-5 mb-2 w-40">
+              <label>Waste disposed:</label>
+            </div>
+            <ul>
+              <li>{wasteDetails.organic.weight}</li>
+              <li>{wasteDetails.inorganic.weight}</li>
+              <div className="w-60 text-gray-700">
+                {Object.values(wasteDetails.inorganic.weightBreakdown).map(
+                  (value, i) => (
+                    <li className="pl-8" key={i}>
+                      - {value}
+                    </li>
+                  )
+                )}
+              </div>
+            </ul>
+          </div>
+
+          <div className="flex flex-col md:flex-row mt-10 ml-1 mr-5">
+            <div className="mr-5 mb-2 w-40">
+              <label>Points earned:</label>
+            </div>
+            <div className="w-60">
+              <div className="py-1 text-gray-700 leading-none">
+                {HistoryData[0].details.points}
+              </div>
+            </div>
+            <div className="flex justify-end pt-12">
               <BlueButton onClick={handleClose} btnText="Close" />
             </div>
           </div>

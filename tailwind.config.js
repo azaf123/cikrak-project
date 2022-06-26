@@ -13,6 +13,10 @@ module.exports = {
         "main-yellow": "#FFC225"
       }
     },
+    fontFamily: {
+      fontBody: ["Roboto", "sans-serif"],
+      fontTitle: ["Inter", "sans-serif"]
+    }
   },
   plugins: [],
 }

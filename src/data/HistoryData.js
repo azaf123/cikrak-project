@@ -5,21 +5,22 @@ const HistoryData = [
     mainDetails: "13 kg of waste was disposed",
     details: {
       points: 1300,
-      pickupDate: "Sunday, 07 June 2022",
+      pickupDate: "Sunday, 07 June 2022 / 8:00AM",
       pickupTime: "08:00AM",
-      wasteType: {
-        organic: {
-          weight: 1,
-        },
-        inorganic: {
-          weight: 12,
-          weightBreakdown: {
-            plastic: 6,
-            tin: 5,
-            styrofoam: 1,
+      wasteType: 
+        {
+          organic: {
+            weight: "1kg Organic",
+          },
+          inorganic: {
+            weight: "12kg Inorganic",
+            weightBreakdown: {
+              plastic: "6kg Plastic",
+              tin: "5kg Metal Tin",
+              styrofoam: "1kg Styrofoam",
+            },
           },
         },
-      },
     },
   },
   {
@@ -31,7 +32,7 @@ const HistoryData = [
       points: 300,
     },
   },
-  { 
+  {
     type: "Points Exchange",
     date: "07 June 2022",
     details: {

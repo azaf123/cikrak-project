@@ -10,6 +10,7 @@ export default function Routing() {
   return (
     <Router>
       <Routes>
+        {/* TODO: make / display Profile component too */}
         <Route path="/" element={<ProfileLayout />}>
           <Route path="profile" element={<Profile />} />
           <Route path="history" element={<History />} />
