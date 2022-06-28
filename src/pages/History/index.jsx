@@ -12,7 +12,7 @@ export default function History() {
         <ProfileSidebar />
 
         <div className="flex-1">
-          <div className="text-2xl font-bold mt-20 ml-16 mb-5 text-main-blue">
+          <div className="text-2xl font-bold mt-14 ml-16 mb-5 text-main-blue">
             History
           </div>
           {/* history area */}

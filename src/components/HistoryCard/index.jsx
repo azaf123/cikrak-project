@@ -28,7 +28,7 @@ function HistoryCard(props) {
             </div>
           </div>
 
-          <div className="md:flex justify-between">
+          <div className="md:flex justify-between md:h-12">
             <div className="font-medium text-sm leading-none w-9/12">
               {props.text}
               <div className="font-light pt-1 text-xs text-gray-700">

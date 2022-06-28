@@ -9,7 +9,7 @@ function ProfileSidebar() {
 
   return (
     <>
-      <div className="bg-light-green p-5 pt-5 w-20 md:w-72 relative duration-500">
+      <div className="bg-light-green p-5 pt-5 w-20 md:w-64 relative duration-500">
         {/* profile area */}
         <div className="mt-4 mb-8">
           <img

@@ -1,4 +1,4 @@
-import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const NavLinks = [
   {
@@ -19,9 +19,15 @@ const NavLinks = [
   { id: 4, name: "Get Started", link: "/" },
   {
     id: 5,
-    name: "Notif",
+    name: "Notifications",
     link: "/",
     icon: faBell,
+  },
+  {
+    id: 6,
+    name: "Your Profile",
+    link: "/",
+    icon: faUser,
   },
 ];
 
