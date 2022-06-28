@@ -7,6 +7,8 @@ import BlueOutlineButton from "../../components/BlueOutlineButton";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
+import Loader from "../../components/Loader";
+import useLoader from "../../utils/useLoader";
 
 export default function Profile() {
   const { userData } = useSelector((state) => state.user);
@@ -39,13 +41,18 @@ export default function Profile() {
         <ProfileSidebar />
         <div>
           <div className="text-2xl font-bold mt-20 ml-16 pb-4 text-main-blue">
-            Profile
+            {edit && "Edit"} Profile
           </div>
+          {edit && (
+            <p className="font-light text-main-blue ml-16 pb-1">
+              Select the fields you'd like to edit
+            </p>
+          )}
 
           {/* profile form area */}
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 mb-2 w-60">
+              <div className="mt-1 mr-5 mb-2 w-60 font-medium">
                 <label>Name</label>
               </div>
               <div className="w-64">
@@ -60,7 +67,7 @@ export default function Profile() {
                   />
                 ) : (
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="name"
                     type="text"
                     value={userData.name}
@@ -71,7 +78,7 @@ export default function Profile() {
             </div>
 
             <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 mb-2 w-60">
+              <div className="mt-1 mr-5 mb-2 w-60 font-medium">
                 <label>Username</label>
               </div>
               <div className="w-64">
@@ -86,7 +93,7 @@ export default function Profile() {
                   />
                 ) : (
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="username"
                     type="text"
                     value={userData.username}
@@ -97,10 +104,10 @@ export default function Profile() {
             </div>
 
             <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 mb-2 w-60">
+              <div className="mt-1 mr-5 mb-2 w-60 font-medium">
                 <label>Address</label>
               </div>
-              <div className="w-72">
+              <div className="w-70 md:w-96 md:mr-10 duration-500">
                 {edit ? (
                   <textarea
                     name="address"
@@ -113,7 +120,7 @@ export default function Profile() {
                   <textarea
                     name="address"
                     rows={5}
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     value={userData.address}
                     readOnly
                   />
@@ -122,7 +129,7 @@ export default function Profile() {
             </div>
 
             <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 mb-2 w-60">
+              <div className="mt-1 mr-5 mb-2 w-60 font-medium">
                 <label>Email</label>
               </div>
               <div className="w-64">
@@ -137,7 +144,7 @@ export default function Profile() {
                   />
                 ) : (
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="email"
                     type="text"
                     value={userData.email}
@@ -148,13 +155,13 @@ export default function Profile() {
             </div>
 
             <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 w-60">
+              <div className="mt-1 mr-5 w-60 font-medium">
                 <label>Phone</label>
               </div>
               <div className="w-64">
                 {edit ? (
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none "
                     name="phone"
                     type="text"
                     value={userData.phone}
@@ -163,7 +170,7 @@ export default function Profile() {
                   />
                 ) : (
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="phone"
                     type="text"
                     value={userData.phone}
@@ -198,6 +205,7 @@ export default function Profile() {
             </div>
           </form>
         </div>
+        {/* <Loader/> */}
       </div>
     </>
   );

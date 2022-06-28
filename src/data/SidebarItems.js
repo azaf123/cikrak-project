@@ -23,7 +23,7 @@ const SidebarItems = [
         id: 4,
         name: "Change Password",
         icon: faKey,
-        link: "/changepwd"
+        link: "/change-password"
     },
     {
         id: 5,

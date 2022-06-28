@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import SidebarItems from "../../data/SidebarItems";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function ProfileSidebar() {
   const { userData } = useSelector((state) => state.user);
 
   return (
     <>
-      <div className="bg-light-green p-5 pt-5 w-20 md:w-64 relative duration-500">
+      <div className="bg-light-green p-5 pt-5 w-20 md:w-64 h-screen relative duration-500">
         {/* profile area */}
         <div className="mt-4 mb-8">
           <img
@@ -32,22 +33,20 @@ function ProfileSidebar() {
         <ul>
           {SidebarItems.map((menuItem, index) => (
             <>
-              {/* TODO: add state for when li is hovered so that icon ikut ubah warna
-               ***       add active link! (maybe use state)
-               */}
-              <li
-                key={index}
-                className="text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green"
-              >
-                <span className="text-lg text-center w-4 hover:text-main-green">
-                  <FontAwesomeIcon icon={menuItem.icon} />
-                </span>
-                <span
-                  className={`text-base hidden md:flex hover:text-main-green`}
+              {/* TODO: add active link! (maybe use state) */}
+              <Link to={menuItem.link}>
+                <li
+                  key={index}
+                  className="text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green hover:text-main-green"
                 >
-                  {menuItem.name}
-                </span>
-              </li>
+                  <span className="text-lg text-center w-4">
+                    <FontAwesomeIcon icon={menuItem.icon} />
+                  </span>
+                  <span className={`text-base hidden md:flex`}>
+                    {menuItem.name}
+                  </span>
+                </li>
+              </Link>
             </>
           ))}
         </ul>
