@@ -1,6 +1,8 @@
 import React from "react";
 import BlueButton from "../BlueButton";
 import HistoryData from "../../data/HistoryData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 function HistoryDetails({ setShowModal }) {
   const handleClose = () => {
@@ -19,8 +21,8 @@ function HistoryDetails({ setShowModal }) {
             </h3>
           </div>
           <div className="flex flex-col md:flex-row mt-10 ml-1 mr-5">
-            <div className="mr-5 mb-2 w-40">
-              <label>Date/ time of pick-up:</label>
+            <div className="mr-5 mb-2 w-50">
+              <label className="font-medium">Date/ time of pick-up:</label>
             </div>
             <div className="w-60">
               <div className="py-1 text-gray-700 leading-none">
@@ -31,16 +33,19 @@ function HistoryDetails({ setShowModal }) {
 
           <div className="flex flex-col md:flex-row mt-10 ml-1 mr-5">
             <div className="mr-5 mb-2 w-40">
-              <label>Waste disposed:</label>
+              <label className="font-medium">Waste disposed:</label>
             </div>
             <ul>
               <li>{wasteDetails.organic.weight}</li>
               <li>{wasteDetails.inorganic.weight}</li>
-              <div className="w-60 text-gray-700">
+              <div className="w-60 text-gray-700 pt-2">
                 {Object.values(wasteDetails.inorganic.weightBreakdown).map(
                   (value, i) => (
                     <li className="pl-8" key={i}>
-                      - {value}
+                      <span className="text-main-blue text-[8px] pr-3">
+                        <FontAwesomeIcon icon={faCircle} />
+                      </span>
+                      {value}
                     </li>
                   )
                 )}
@@ -50,14 +55,14 @@ function HistoryDetails({ setShowModal }) {
 
           <div className="flex flex-col md:flex-row mt-10 ml-1 mr-5">
             <div className="mr-5 mb-2 w-40">
-              <label>Points earned:</label>
+              <label className="font-medium">Points earned:</label>
             </div>
             <div className="w-60">
               <div className="py-1 text-gray-700 leading-none">
                 {HistoryData[0].details.points}
               </div>
             </div>
-            <div className="flex justify-end pt-12">
+            <div className="flex justify-end pt-8">
               <BlueButton onClick={handleClose} btnText="Close" />
             </div>
           </div>

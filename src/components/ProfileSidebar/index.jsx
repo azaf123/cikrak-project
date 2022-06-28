@@ -1,5 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import SidebarItems from "../../data/SidebarItems";
 import { useSelector } from "react-redux";
 
@@ -8,7 +9,7 @@ function ProfileSidebar() {
 
   return (
     <>
-      <div className="bg-light-green h-screen p-5 pt-5 w-20 md:w-72 relative duration-300">
+      <div className="bg-light-green p-5 pt-5 w-20 md:w-72 relative duration-500">
         {/* profile area */}
         <div className="mt-4 mb-8">
           <img
@@ -20,7 +21,10 @@ function ProfileSidebar() {
             {userData.name}
           </div>
           <div className="text-sm font-bold hidden  text-main-yellow text-center md:block">
-           {userData.points}
+            <span className="pr-1">
+              <FontAwesomeIcon icon={faStar} />
+            </span>
+            {userData.points} points
           </div>
         </div>
 
@@ -30,7 +34,6 @@ function ProfileSidebar() {
             <>
               {/* TODO: add state for when li is hovered so that icon ikut ubah warna
                ***       add active link! (maybe use state)
-               ***       react router nav
                */}
               <li
                 key={index}

@@ -3,6 +3,13 @@ import BlueOutlineButton from "../BlueOutlineButton";
 import HistoryDetails from "../HistoryDetails";
 import HistoryData from "../../data/HistoryData";
 
+// interface IProps {
+//   title: string;
+//   date: string;
+//   text: string;
+//   points: string;
+// }
+
 function HistoryCard(props) {
   const [showModal, setShowModal] = useState(false);
 
@@ -10,7 +17,7 @@ function HistoryCard(props) {
 
   return (
     <>
-      <div className="max-w-screen-md ml-16 md:ml-20 mr-10 mb-5">
+      <div className="max-w-screen-md ml-16 mr-10 mb-5">
         <div className="border border-gray-200 bg-slate-50 rounded p-4 flex flex-col justify-between leading-normal">
           <div className="flex justify-between">
             <div className="text-main-blue font-bold text-base mb-2 ">
@@ -21,29 +28,26 @@ function HistoryCard(props) {
             </div>
           </div>
 
-          <div className="flex justify-between">
-            <div className="font-medium text-sm leading-none">{props.text}</div>
-            <div className="w-60 text-gray-700">
-                {/* {Object.values(historyDetails.inorganic.weightBreakdown).map(
-                  (value, i) => (
-                    <li className="pl-8" key={i}>
-                      - {value}
-                    </li>
-                  )
-                )} */}
+          <div className="md:flex justify-between">
+            <div className="font-medium text-sm leading-none w-9/12">
+              {props.text}
+              <div className="font-light pt-1 text-xs text-gray-700">
+                {props.text}
               </div>
-            <div className="flex justify-end">
-              <div className="ml-3 md:ml-0 mr-5">
+            </div>
+
+            <div className="flex pt-3">
+              <div className="md:ml-10 mr-3">
                 {/* only show for waste disposal */}
                 {props.title === "Waste Disposal" && (
                   <BlueOutlineButton
                     onClick={() => setShowModal(!showModal)}
-                    btnText="View Details"
+                    btnText="Details"
                   />
                 )}
               </div>
               {props.title !== "Payment" && (
-                <div className="border-l-2 border-slate-300 pl-3 w-28">
+                <div className="hidden md:inline-block  border-l-2 border-slate-300 pl-3 w-28">
                   {/* for everything but payment */}
                   <p className="text-xs">
                     points

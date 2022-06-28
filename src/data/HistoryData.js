@@ -35,6 +35,7 @@ const HistoryData = [
   {
     type: "Points Exchange",
     date: "07 June 2022",
+    mainDetails: "You exchanged 3000 points via GoPay",
     details: {
       points: 3000,
     },
@@ -42,10 +43,11 @@ const HistoryData = [
   {
     type: "Payment",
     date: "08 June 2022",
+    mainDetails: "Pending payment of Rp. 11,000",
     details: {
       status: "pending",
       total: "Rp. 11,000",
-      date: "June 20, 2022",
+      date: "June 20, 2022 / 18:10",
       time: "18:10",
     },
   },
