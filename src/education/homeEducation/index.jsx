@@ -4,19 +4,14 @@ import trash from "../../assets/trash.png";
 import reduce from "../../assets/reduce.png";
 import cup from "../../assets/cup.png";
 import green from "../../assets/33.jpg";
+import compost from "../../assets/tanah.jpg";
 import background from "../../assets/Polygon1.png";
 import App from "../../App";
+import Nav from "../../components/Navbar/Nav";
 const HomeEdu = () => {
     return (
         <div>
-
-
-            {/* <img src={background} alt="" /> */}
-
-
-            <div className={Style.title}>
-                <h1>Navbar</h1>
-            </div>
+            <Nav />
             <br />
             <div className={Style.container}>
                 <div className={Style.content}>
@@ -35,16 +30,14 @@ const HomeEdu = () => {
                                         <h1>Organic Waste</h1>
                                     </div>
                                     {/* button */}
-                                    <a href="/edu2">
-                                    <button className={Style.btn_learnmore}>Learn More</button>
+                                    <a href="/edu3">
+                                        <button className={Style.btn_learnmore}>Learn More</button>
                                     </a>
                                     <div className={Style.content_item_text}>
                                         <h1>Inorganic Waste</h1>
                                     </div>
                                 </div>
-                                <div className={Style.content_item_icon_1}>
-                                    <img src={trash} alt="" />
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -61,13 +54,14 @@ const HomeEdu = () => {
                                         <h2>Reuse Recycle Reduce</h2>
                                         <p>All help to cut down on the amount of waste we throw away. They conserve natural resources, landfill space and energy. Plus, the three R’s save land and money that communities must use to dispose of waste in landfills. </p>
                                     </div>
-                                </div>
-                                <div className={Style.content_item_btn}>
+                                    <div className={Style.content_item_btn}>
                                     {/* button */}
                                     <a href="/edu1">
-                                    <button className={Style.btn_learnmore}>Learn More</button>
+                                        <button className={Style.btn_learnmore}>Learn More</button>
                                     </a>
                                 </div>
+                                </div>
+                             
 
                             </div>
                             <div className={Style.content_item}>
@@ -93,16 +87,17 @@ const HomeEdu = () => {
                                 <div className={Style.content_item_textmaster}>
                                     <div className={Style.content_item_text_2}>
                                         <h1>8 Ways to </h1>
-                                        <h1>Keep the</h1>
-                                        <h1>Earth Clean</h1>
+                                        <h1>Take Care</h1>
+                                        <h1>Our Earth</h1>
                                     </div>
-                                </div>
-                                <div className={Style.content_item_btn}>
+                                    <div className={Style.content_item_btn}>
                                     {/* button */}
                                     <a href="/edu2">
-                                    <button className={Style.btn_learnmore}>Learn More</button>
+                                        <button className={Style.btn_learnmore}>Learn More</button>
                                     </a>
                                 </div>
+                                </div>
+                                
                             </div>
 
                         </div>
