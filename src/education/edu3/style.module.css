@@ -75,21 +75,29 @@
   font-size: large;
 }
 .subtitle {
-  margin: 10px;
-}
+   
+  }
 .subtitle p {
   font-size: 20px;
   font-family: roboto;
   font-weight: bold;
   color: #000;
   text-align: left;
+  margin: 15px;
 }
-ul li {
+.content{
+    display: grid;
+
+    margin: auto;
+
+}
+.ulWaste li {
   font-size: 20px;
   font-family: roboto;
-
+  margin: auto 15px;
   color: #000;
   text-align: left;
+    list-style: disc;
 }
 .content_master2 {
   margin: auto;

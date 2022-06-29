@@ -31,6 +31,7 @@ const SecondEdu = () => {
                             <div className={Style.content_item_textmaster}>
                                 <div className={Style.content_item_text_title}>
                                     <h1>8 Ways to take care our earth</h1>
+                                    <h1>bla</h1>
                                 </div>
 
                             </div>
