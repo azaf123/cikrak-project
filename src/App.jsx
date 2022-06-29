@@ -23,7 +23,7 @@ import { FormModal } from './components/FormModal';
 import { EcommerceModal } from './components/EcommerceModal';
 import { WaButton } from './components/WaButton';
 import { PaymentPage } from './pages/PaymentPage';
-// import { NotFound } from './pages/NotFound';
+import NotFound from './pages/NotFound/index.tsx';
 import HomeEdu from './education/homeEducation';
 import FirstEdu from './education/edu1';
 import SecondEdu from './education/edu2';
@@ -200,7 +200,7 @@ const App = () => {
         <Route path="/edu1" element={<FirstEdu />} />
         <Route path="/edu2" element={<SecondEdu />} />
         <Route path="/edu3" element={<ThirdEdu />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
