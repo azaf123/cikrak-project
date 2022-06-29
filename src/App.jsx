@@ -1,3 +1,9 @@
+import { Provider } from "react-redux";
+import "./App.css";
+import store from "./redux/store";
+import Profile from "./pages/Profile";
+import History from "./pages/History";
+import ChangePassword from "./pages/ChangePassword";
 import React, { useRef, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Navbar/Nav';
@@ -110,6 +116,7 @@ const App = () => {
     );
   };
   return (
+    <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route
@@ -201,8 +208,12 @@ const App = () => {
         <Route path="/edu2" element={<SecondEdu />} />
         <Route path="/edu3" element={<ThirdEdu />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/change-password" element={<ChangePassword />} />
       </Routes>
     </BrowserRouter>
+</Provider>
   );
 };
 
