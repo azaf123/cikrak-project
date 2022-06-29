@@ -54,7 +54,7 @@ const ThirdEdu = () => {
                                         </div>
                                         <div className="row">
                                             <p>
-                                                <ul>
+                                                <ul className={Style.ulWaste}>
                                                     <li>
                                                         Sandwiches
                                                     </li>
@@ -77,7 +77,7 @@ const ThirdEdu = () => {
                                         </div>
                                         <div className="row">
                                             <p>
-                                                <ul>
+                                                <ul className={Style.ulWaste}>
                                                     <li>
                                                         Sandwiches
                                                     </li>
@@ -100,7 +100,7 @@ const ThirdEdu = () => {
                                         </div>
                                         <div className="row">
                                             <p>
-                                                <ul>
+                                                <ul className={Style.ulWaste}>
                                                     <li>
                                                         Sandwiches
                                                     </li>
@@ -123,7 +123,7 @@ const ThirdEdu = () => {
                                         </div>
                                         <div className="row">
                                             <p>
-                                                <ul>
+                                                <ul className={Style.ulWaste}>
                                                     <li>
                                                         Sandwiches
                                                     </li>
@@ -173,7 +173,7 @@ const ThirdEdu = () => {
                                         </div>
                                         <div className="row">
                                             <p>
-                                                <ul>
+                                                <ul className={Style.ulWaste}>
                                                     <li>
                                                         Namely aluminum
                                                     </li>
@@ -200,7 +200,7 @@ const ThirdEdu = () => {
                                         <div className="row">
                                         
                                         <p>
-                                            <ul>
+                                            <ul className={Style.ulWaste}>
                                                 <li>
                                                     Washing soap
 
@@ -219,7 +219,7 @@ const ThirdEdu = () => {
                                     </div>
                                     <div className="row">
                                         <p>
-                                            <ul>
+                                            <ul className={Style.ulWaste}>
                                                 <li>
                                                     Gas or motor vehicle fumes that contain carbon monoxide or CO
                                                 </li>
