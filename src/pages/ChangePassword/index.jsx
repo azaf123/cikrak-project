@@ -8,27 +8,31 @@ import { useSelector, useDispatch } from "react-redux";
 import { updatePassword } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import NavBar from "../../components/Navbar";
+import Toast from "../../components/Toast";
 
 function ChangePassword(props) {
   const [success, setSuccess] = useState(false); // to check if old password entered is correct
   const [newPwd, setNewPwd] = useState(""); // to store new password to check for samePwd state
   const [samePwd, setSamePwd] = useState(true); // to check if new password fields are the same
+  const [empty, isEmpty] = useState(true);
   const [showPwd1, setShowPwd1] = useState(false);
   const [showPwd2, setShowPwd2] = useState(false);
   const [showPwd3, setShowPwd3] = useState(false);
+  const [error, setError] = useState("");
 
   const { userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    e.target.reset();
+    isEmpty(true);
     if (success && samePwd) {
-      alert("Password Succesfully Changed!");
+      setError("Password succesfully changed!");
+      e.target.reset();
     } else if (success && !samePwd) {
-      alert("Not same password");
+      setError("Password inputted isn't the same");
     } else {
-      alert("Wrong Old Password");
+      setError("Incorrect old password");
     }
     console.log("Check:", userData.password);
   };
@@ -44,7 +48,7 @@ function ChangePassword(props) {
           </div>
 
           {/* change password form area */}
-          <form onSubmit={handleSubmit} >
+          <form onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row mt-10 ml-16 mr-5">
               <div className="mt-1 mr-5 mb-2 w-60">
                 <label htmlFor="oldPwd">Old Password</label>
@@ -52,6 +56,7 @@ function ChangePassword(props) {
               <div className="w-60 relative">
                 <input
                   id="oldPwd"
+                  name="password"
                   className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none relative"
                   type={showPwd1 ? `text` : `password`}
                   onChange={(e) => {
@@ -120,6 +125,7 @@ function ChangePassword(props) {
                     } else {
                       setSamePwd(false);
                     }
+                    isEmpty(false);
                   }}
                 />
 
@@ -136,10 +142,14 @@ function ChangePassword(props) {
                   )}
                 </div>
               </div>
+              {error && <Toast />}
             </div>
-            {/* TODO: change breakpoint @lg ? */}
             <div className="flex mt-8 mr-auto float-right md:pr-20">
-              <BlueButton btnText="Change Password" />
+              {empty ? (
+                <BlueButton btnText="Change Password" disabled={true} />
+              ) : (
+                <BlueButton btnText="Change Password" disabled={false} />
+              )}
             </div>
           </form>
         </div>

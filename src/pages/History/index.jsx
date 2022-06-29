@@ -19,6 +19,7 @@ export default function History() {
           <div className="pb-3">
             {HistoryData.map((data, index) => (
               <HistoryCard
+              data-testid="history-card"
                 key={index}
                 title={data.type}
                 date={data.date}
