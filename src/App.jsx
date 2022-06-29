@@ -18,6 +18,7 @@ import { FormModal } from './components/FormModal';
 import { PaymentModal } from './components/PaymentModal';
 import { AgreementModal } from './components/AgreementModal';
 import { SuccessModal } from './components/SuccessModal';
+import { GopayModal } from './components/GopayModal';
 import { EcommerceModal } from './components/EcommerceModal';
 import { WaButton } from './components/WaButton';
 import { PaymentPage } from './pages/PaymentPage';
@@ -54,7 +55,7 @@ const App = () => {
   ];
   const contents = [
     {
-      title: 'Pick-up sampah',
+      title: 'Waste Pick-Up',
       des: 'The garbage pick-up service serves to make it easier for users to dispose of their household waste by exchanging points that can be exchanged for cash or vouchers.',
       img: img1,
     },
@@ -81,7 +82,7 @@ const App = () => {
       <section
         className={`flex ${
           alternative ? 'md:flex-row-reverse' : 'md:flex-row'
-        } flex-col gap-6 py-12 md:px-28 px-4 items-center`}
+        } flex-col gap-6 py-12 md:px-28 px-6 items-center`}
       >
         <div className="flex-1">
           <img
@@ -181,9 +182,9 @@ const App = () => {
               <WaButton />
               <ScrollToTop />
               <FormModal open={openModal} onClose={() => setOpenModal(false)} />
-              {/* <PaymentModal/> */}
-              {/* <AgreementModal/> */}
-              {/* <SuccessModal/> */}
+              {/* <AgreementModal /> */}
+              {/* <SuccessModal /> */}
+              {/* <GopayModal /> */}
               <EcommerceModal
                 open={openModalComingSoon}
                 onClose={() => setOpenModalComingSoon(false)}
@@ -193,9 +194,9 @@ const App = () => {
         />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/home-edu" element={<HomeEdu />} />
-          <Route path="/edu1" element={<FirstEdu />} />
-          <Route path="/edu2" element={<SecondEdu />} />
-          <Route path="/edu3" element={<ThirdEdu />} />
+        <Route path="/edu1" element={<FirstEdu />} />
+        <Route path="/edu2" element={<SecondEdu />} />
+        <Route path="/edu3" element={<ThirdEdu />} />
       </Routes>
     </BrowserRouter>
   );
