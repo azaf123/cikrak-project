@@ -59,9 +59,7 @@ export const PaymentModal = ({ open, onClose, paymentData }) => {
             </div>
             <div class="mt-3">
               <h1 class="text-mx">Full Address</h1>
-              <div class="w-1 max-w-fit break-words ...">
-                {paymentData.address}
-              </div>
+              <div class="break-normal md:break-all">{paymentData.address}</div>
             </div>
           </div>
           <div>
