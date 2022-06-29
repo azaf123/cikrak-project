@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Navbar/Nav';
+import NavAcc from './components/NavbarAccount/Nav';
 import HeroImg from './assets/Hero.png';
 import ButtonFill from './components/ButtonFill';
 import ButtonOutline from './components/ButtonOutline';
@@ -15,13 +16,14 @@ import Review from './components/Review';
 import Footer from './components/Footer/Footer';
 import { ScrollToTop } from './components/scroll';
 import { FormModal } from './components/FormModal';
-import { PaymentModal } from './components/PaymentModal';
-import { AgreementModal } from './components/AgreementModal';
-import { SuccessModal } from './components/SuccessModal';
-import { GopayModal } from './components/GopayModal';
+// import { PaymentModal } from './components/PaymentModal';
+// import { AgreementModal } from './components/AgreementModal';
+// import { SuccessModal } from './components/SuccessModal';
+// import { GopayModal } from './components/GopayModal';
 import { EcommerceModal } from './components/EcommerceModal';
 import { WaButton } from './components/WaButton';
 import { PaymentPage } from './pages/PaymentPage';
+// import { NotFound } from './pages/NotFound';
 import HomeEdu from './education/homeEducation';
 import FirstEdu from './education/edu1';
 import SecondEdu from './education/edu2';
@@ -116,7 +118,8 @@ const App = () => {
           element={
             <div className="font-Poppins">
               {/* <Headers /> */}
-              <Nav />
+              {/* <Nav /> */}
+              <NavAcc />
               <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
                 <div className="flex md:flex-row flex-col gap-5 pt-20">
                   <div className="flex-1">
@@ -197,6 +200,7 @@ const App = () => {
         <Route path="/edu1" element={<FirstEdu />} />
         <Route path="/edu2" element={<SecondEdu />} />
         <Route path="/edu3" element={<ThirdEdu />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
   );

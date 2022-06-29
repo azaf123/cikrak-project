@@ -24,10 +24,8 @@ export const PaymentModal = ({ open, onClose, paymentData }) => {
     return code;
   };
   console.log(paymentData.typeWaste);
-  
 
   return (
-    
     <div class=" mx-auto mt-[48px]  p-6 rounded-lg shadow-lg bg-white w-[60rem]">
       <div>
         <div class="form-group mb-6">
@@ -63,7 +61,7 @@ export const PaymentModal = ({ open, onClose, paymentData }) => {
             </div>
             <div class="mt-3">
               <h1 class="text-mx">Full Address</h1>
-              <div class="address">{paymentData.address}</div>
+              <div class="break-normal md:break-all">{paymentData.address}</div>
             </div>
           </div>
           <div>

@@ -1,5 +1,4 @@
 import React from 'react';
-import cross from '../../assets/cross.png';
 import success from '../../assets/success.png';
 
 export const SuccessModal = ({ open, onClose }) => {
