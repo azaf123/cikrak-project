@@ -15,7 +15,7 @@ export default class Modal extends Component{
                 </div>
                 <div className="modal-body">
                   <img src={this.props.image} className='card-img-top rounded-xl'/>
-                  <div className='mx-2'>
+                  <div className='modal-text mx-2'>
                   <p>{this.props.date}</p>
                   <h5>{this.props.voucher}</h5>
                   <h6 className='text-sky-500'>{this.props.points}</h6>

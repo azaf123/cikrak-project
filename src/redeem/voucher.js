@@ -8,7 +8,7 @@ import {faAngleLeft} from '@fortawesome/free-solid-svg-icons'
 const Voucher = ()=>{
     return (
         <div>
-          <a href="/"><FontAwesomeIcon icon={faAngleLeft} className="text-sky-500 fa-2x mx-10 float-left "/></a>
+          <a href="/"><FontAwesomeIcon icon={faAngleLeft} className="back text-sky-500 fa-2x mx-10 float-left "/></a>
           <Points/>
           <Card/>
         </div>

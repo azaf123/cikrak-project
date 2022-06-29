@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import voucher from "./data/data";
 import Modal from "./card/modal";
 import Points from "./card/points";
-import Exchange from "./card/exchange";
 
 const CardProfil = ()=>{
     const [modal,setModal]= useState(false);
@@ -24,7 +23,7 @@ const CardProfil = ()=>{
         <section className="container ">
             <div>
             <a href="./voucher" className=" float-right">Browse More</a>
-            <h4  className="text-sky-400">New Vouchers</h4>
+            <h5>New Vouchers</h5>
             </div>
             <div className="row  mx-2 my-3 bg-blue-200 rounded-lg h-100 shadow cursor-pointer	">
                 {voucher.FoodBeverage.map((item,index)=>{

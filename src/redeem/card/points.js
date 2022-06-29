@@ -1,14 +1,14 @@
 import React from "react";
 import user from "../data/user"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faAngleLeft, faStar} from '@fortawesome/free-solid-svg-icons'
+import {faAngleLeft, faAngleRight, faStar} from '@fortawesome/free-solid-svg-icons'
 import gopay from '../data/image/gopay.png'
 
 const Points=()=>{
     return(
         <>
             <section className=" container my-10 "> 
-            <h4 className="text-sky-500"> Reedem Points</h4>
+            <h4 className="reedem text-sky-500"> Reedem Points</h4>
                 {user.admin.map((item,index)=>{
                     return(
                         <div className=" point  bg-blue-100 rounded-xl inline-block mx-2 drop-shadow-lg " key={index}>                 
@@ -24,7 +24,8 @@ const Points=()=>{
                 <div className=" gopay bg-white border-inherit rounded-md inline-block mx-6 p-2 drop-shadow-lg cursor-pointer	 ">
                     <h6>
                         exchange to
-                        <img className="w-24" src={gopay}/></h6>
+                        <img className="w-24" src={gopay}/>
+                        </h6>
                 </div>
             </section>
         </>
