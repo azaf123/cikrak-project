@@ -34,6 +34,8 @@ import HomeEdu from './education/homeEducation';
 import FirstEdu from './education/edu1';
 import SecondEdu from './education/edu2';
 import ThirdEdu from './education/edu3';
+import CardProfil from "./pages/ReedemVoucher";
+import Voucher from "./pages/BrowseVoucher";
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -211,6 +213,8 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/history" element={<History />} />
         <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/redeem" element={<CardProfil />} />
+        <Route path="/voucher" element={<Voucher />} />
       </Routes>
     </BrowserRouter>
 </Provider>

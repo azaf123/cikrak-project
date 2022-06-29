@@ -84,3 +84,42 @@
     transform: translateY(-1px);
   }
 }
+.row img{
+    width: 90%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+    .card-body h6{
+        font-size: 14px;
+    }
+    .card-body p{
+        font-size: 12px;
+    }
+    .point{
+        width: 40%;
+    }
+    .row img{
+        width: 90%;
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .back{
+        float: left;
+        margin: 0px 10px 10px 10px;
+    }
+    .modal-dialog{
+        margin: auto;
+        width: 50%;
+    }
+
+    .modal-text p{
+        font-size: 14px;
+    }
+    .modal-text h5{
+        font-size: 16px;
+    }
+}
