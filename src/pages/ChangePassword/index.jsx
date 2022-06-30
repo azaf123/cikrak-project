@@ -142,7 +142,11 @@ function ChangePassword(props) {
                   )}
                 </div>
               </div>
-              {error && <Toast />}
+              {error && (
+                <div data-testid="toast">
+                  <Toast />
+                </div>
+              )}
             </div>
             <div className="flex mt-8 mr-auto float-right md:pr-20">
               {empty ? (

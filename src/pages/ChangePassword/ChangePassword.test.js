@@ -1,11 +1,11 @@
 import { Provider } from "react-redux";
 import store from "../../redux/store";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import ChangePassword from ".";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
-import Toast from "../../components/Toast";
-
+import "@testing-library/jest-dom/extend-expect"; // add to fix toBeEnabled() not a function issue
+import "@testing-library/jest-dom"; // add to fix toBeInDocument() not a function issue
 const MockPasswordForm = () => {
   return (
     <Provider store={store}>
@@ -28,45 +28,37 @@ test("inputs should be initially empty", () => {
 
 test("should be able to type in field", () => {
   render(<MockPasswordForm />);
-
   const passwordInputElement = screen.getByLabelText("Old Password");
   userEvent.type(passwordInputElement, "test");
   expect(passwordInputElement.value).toBe("test");
 });
-// const mockToast = require("../../components/Toast");
-// test("should prompt error toast", () => {
-//   const spyToast = jest.spyOn(mockToast, "show")
-//   render(<MockPasswordForm />);
 
-//   const submitBtnElement = screen.getByRole("button", {
-//     name: "Change Password",
-//   });
-//   userEvent.click(submitBtnElement);
-//   expect(spyToast).toHaveBeenCalledTimes(1);
-// });
-
-jest.mock("../../components/Toast");
-test("should prompt alert", () => {
+test("button should be enabled after filling all fields", async () => {
   render(<MockPasswordForm />);
 
-  const submitBtnElement = screen.getByRole("button", {
-    name: "Change Password",
-  });
+  const oldPwdInput = screen.getByLabelText("Old Password");
+  const newPwdInput = screen.getByLabelText("New Password");
+  const confirmNewPwdInput = screen.getByLabelText("Confirm New Password");
 
-  userEvent.click(submitBtnElement);
-  expect(<Toast/>).toBeInTheDocument();
+  userEvent.type(oldPwdInput, "oldpassword");
+  userEvent.type(newPwdInput, "newpassword");
+  userEvent.type(confirmNewPwdInput, "newpassword");
+
+  expect(screen.getByRole("button", { name: "Change Password" })).toBeEnabled();
 });
-// test("should prompt alert", () => {
 
-//   window.alert = jest.fn();
-//   const mockAlert = jest.spyOn(window, "alert");
-  
-//   render(<MockPasswordForm />);
+test("should prompt toast notification after submitting form",  () => {
+  render(<MockPasswordForm />);
 
-//   const submitBtnElement = screen.getByRole("button", {
-//     name: "Change Password",
-//   });
+  const oldPwdInput = screen.getByLabelText("Old Password");
+  const newPwdInput = screen.getByLabelText("New Password");
+  const confirmNewPwdInput = screen.getByLabelText("Confirm New Password");
 
-//   userEvent.click(submitBtnElement);
-//   expect(mockAlert).toHaveBeenCalledTimes(1);
-// });
+  userEvent.type(oldPwdInput, "oldpassword");
+  userEvent.type(newPwdInput, "newpassword");
+  userEvent.type(confirmNewPwdInput, "newpassword");
+
+  const submitButton = screen.getByRole("button", { name: "Change Password" });
+  userEvent.click(submitButton);
+  expect(screen.getByTestId("toast")).toBeInTheDocument();
+});
