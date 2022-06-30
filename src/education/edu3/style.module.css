@@ -114,3 +114,55 @@
   width: 80%;
   height: auto;
 }
+/* responsive mobile 423px */
+@media screen and (max-width: 423px) {
+  .image {
+    grid-template-columns: 1fr;
+  }
+  .imageEdu {
+    left: 0;
+  }
+  .text {
+    top: 0;
+    margin: auto;
+  }
+  .textjudul {
+    width: 100%;
+  }
+  .content_master2 {
+    width: 100%;
+  }
+  .content_item2 {
+    grid-template-columns: 1fr;
+  }
+  .content_organicImage img {
+    width: 100%;
+    height: auto;
+  }
+}
+/* responsive tablet */
+@media screen and (max-width: 768px) {
+  .image {
+    grid-template-columns: 1fr;
+  }
+  .imageEdu {
+    left: 0;
+  }
+  .text {
+    top: 0;
+    margin: auto;
+  }
+  .textjudul {
+    width: 100%;
+  }
+  .content_master2 {
+    width: 100%;
+  }
+  .content_item2 {
+    grid-template-columns: 1fr;
+  }
+  .content_organicImage img {
+    width: 100%;
+    height: auto;
+  }
+}

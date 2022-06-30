@@ -25,6 +25,7 @@ import HomeEdu from './education/homeEducation';
 import FirstEdu from './education/edu1';
 import SecondEdu from './education/edu2';
 import ThirdEdu from './education/edu3';
+import AboutUs from './aboutus';
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -196,6 +197,7 @@ const App = () => {
           <Route path="/edu1" element={<FirstEdu />} />
           <Route path="/edu2" element={<SecondEdu />} />
           <Route path="/edu3" element={<ThirdEdu />} />
+          <Route path="/aboutus" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   );

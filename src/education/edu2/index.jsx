@@ -1,11 +1,6 @@
 import Style from './style.module.css';
 import grid from '../../assets/grid.png';
-import reduce from "../../assets/reduce.png";
-import reuse from '../../assets/reuse.png';
-import plastic from '../../assets/plastic.png';
-import reduceg from '../../assets/reduceg.png';
-import reuseg from '../../assets/reuseg.png';
-import recycleg from '../../assets/recycleg.png';
+import EarthDay from '../../assets/earth-day.png';
 import bring from '../../assets/bring.png'
 import hand from '../../assets/hand.jpg'
 import paje from '../../assets/paje.jpg'
@@ -13,15 +8,13 @@ import stop from '../../assets/stop.jpg'
 import sampah from '../../assets/sampah.jpg'
 import nanem from '../../assets/nanem.jpg'
 import tanah from '../../assets/tanah.jpg'
+import Nav from '../../components/Navbar/Nav';
+import Footer from '../../components/Footer/Footer';
 const SecondEdu = () => {
     return (
         <div>
-            <div className={Style.background}>
-            </div>
-            {/* <img src={background} alt="" /> */}
-            <div className={Style.title}>
-                <h1>8 ways to care our earth</h1>
-            </div>
+            <Nav />
+           
             <div className={Style.container}>
                 <div className={Style.content}>
                     <div className={Style.content1}>
@@ -30,8 +23,7 @@ const SecondEdu = () => {
                         <div className={Style.content_item}>
                             <div className={Style.content_item_textmaster}>
                                 <div className={Style.content_item_text_title}>
-                                    <h1>8 Ways to take care our earth</h1>
-                                    <h1>bla</h1>
+                                    <h1>8 Ways to Take Care Our Earth</h1>
                                 </div>
 
                             </div>
@@ -40,7 +32,7 @@ const SecondEdu = () => {
                         {/* image */}
                         <div className={Style.content_item}>
                             <div className={Style.content_item_image}>
-                                <img src={grid} alt="" />
+                                <img src={EarthDay} alt="" />
                             </div>
                         </div>
                     </div>
@@ -141,7 +133,7 @@ Composting at home reduces the volume of garbage sent to landfills and reduces t
 
                 </div>
             </div>
-
+            <Footer />
         </div>
     );
 }

@@ -16,6 +16,13 @@
   color: #fff;
   text-align: center;
   margin-bottom: 20px;
+  transition: all 0.5s;
+}
+/* hover */
+.content_item_text_judul h2:hover{
+  color: #fff;
+  text-decoration: none;
+  transform: scale(1.1);
 }
 .content_item_image img {
   width: 100%;
@@ -60,7 +67,7 @@
 }
 .content1 {
   display: grid;
-  grid-template-columns: 0.6fr 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 5%;
     
 }
@@ -81,6 +88,17 @@
   margin-bottom: 20px;
 
 }
+.content_item_image_judul img{
+  width: 100%;
+  height: auto;
+  transition: all 0.5s;
+ 
+
+}
+.content_item_image_judul img:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
 .content_item_image{
 border: 1px solid #289CDE;
     padding: 10px;
@@ -96,13 +114,17 @@ border: 1px solid #289CDE;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+height: 100%;
   border-radius: 10px;
   padding: 10px;
-  margin: 10px;
-  width: 600px;
-  height: 400px;
-  font-family: roboto;
-  gap: 60px;
+
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 
 
 }
@@ -160,4 +182,28 @@ border: 1px solid #289CDE;
   color: #000;
   text-align: left;
 }
+/* responsive 423px */
+@media screen and (max-width: 423px) {
+  .content_item_text_1 {
+    font-size: 15px;
+  }
+  .content_item_text_2 {
+    font-size: 15px;
+  }
+}
+/* responsive 768px */
+@media screen and (max-width: 768px) {
+  .content_item_text_1 {
+    font-size: 15px;
+  }
+  .content_item_text_2 {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
 
