@@ -34,7 +34,7 @@ function HistoryCard(props) {
             <div className="font-medium text-sm leading-none w-9/12">
               {props.text}
               <div className="font-light pt-1 text-xs text-gray-700">
-                {props.text}
+                {props.subText}
               </div>
             </div>
 

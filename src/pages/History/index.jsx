@@ -4,7 +4,6 @@ import NavBar from "../../components/Navbar";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import HistoryData from "../../data/HistoryData";
 
-
 export default function History() {
   return (
     <>
@@ -25,6 +24,7 @@ export default function History() {
                 title={data.type}
                 date={data.date}
                 text={data.mainDetails}
+                subText={data.details.other}
                 points={data.details.points}
               />
             ))}
