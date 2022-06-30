@@ -4,6 +4,7 @@ import NavBar from "../../components/Navbar";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import HistoryData from "../../data/HistoryData";
 
+
 export default function History() {
   return (
     <>
@@ -19,8 +20,8 @@ export default function History() {
           <div className="pb-3">
             {HistoryData.map((data, index) => (
               <HistoryCard
-              data-testid="history-card"
                 key={index}
+                data-testid="history-card"
                 title={data.type}
                 date={data.date}
                 text={data.mainDetails}

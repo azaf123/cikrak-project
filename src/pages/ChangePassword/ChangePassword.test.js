@@ -1,11 +1,12 @@
 import { Provider } from "react-redux";
 import store from "../../redux/store";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ChangePassword from ".";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom/extend-expect"; // add to fix toBeEnabled() not a function issue
 import "@testing-library/jest-dom"; // add to fix toBeInDocument() not a function issue
+
 const MockPasswordForm = () => {
   return (
     <Provider store={store}>
