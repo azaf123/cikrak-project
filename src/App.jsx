@@ -1,6 +1,8 @@
 import { Provider } from "react-redux";
 import "./App.css";
 import store from "./redux/store";
+import Login from "./components/Login";
+import Register from "./components/Register";
 import Profile from "./pages/Profile";
 import History from "./pages/History";
 import ChangePassword from "./pages/ChangePassword";
@@ -220,6 +222,8 @@ const App = () => {
           <Route path="/edu3" element={<ThirdEdu />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />}/>
           <Route path="/history" element={<History />} />
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/redeem" element={<CardProfil />} />
