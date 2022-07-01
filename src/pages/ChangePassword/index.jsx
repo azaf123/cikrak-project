@@ -1,24 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 // components
-import BlueButton from "../../components/BlueButton";
+import BlueButton from '../../components/BlueButton';
 // third-party
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { useSelector, useDispatch } from "react-redux";
-import { updatePassword } from "../../redux/userSlice";
-import ProfileSidebar from "../../components/ProfileSidebar";
-import NavBar from "../../components/Navbar";
-import Toast from "../../components/Toast";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useSelector, useDispatch } from 'react-redux';
+import { updatePassword } from '../../redux/userSlice';
+import ProfileSidebar from '../../components/ProfileSidebar';
+import Toast from '../../components/Toast';
 
 function ChangePassword(props) {
   const [success, setSuccess] = useState(false); // to check if old password entered is correct
-  const [newPwd, setNewPwd] = useState(""); // to store new password to check for samePwd state
+  const [newPwd, setNewPwd] = useState(''); // to store new password to check for samePwd state
   const [samePwd, setSamePwd] = useState(true); // to check if new password fields are the same
   const [empty, isEmpty] = useState(true);
   const [showPwd1, setShowPwd1] = useState(false);
   const [showPwd2, setShowPwd2] = useState(false);
   const [showPwd3, setShowPwd3] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const [showToast, setShowToast] = useState(false);
 
@@ -29,15 +28,15 @@ function ChangePassword(props) {
     e.preventDefault();
     isEmpty(true);
     if (success && samePwd) {
-      setError("Password succesfully changed!");
+      setError('Password succesfully changed!');
     } else if (success && !samePwd) {
       setError("Password inputted isn't the same");
     } else {
-      setError("Incorrect old password");
+      setError('Incorrect old password');
     }
     e.target.reset();
 
-    console.log("Check:", userData.password);
+    console.log('Check:', userData.password);
   };
 
   return (

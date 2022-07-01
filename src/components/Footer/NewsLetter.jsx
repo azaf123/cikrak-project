@@ -1,6 +1,6 @@
-import React from "react";
-import mail from "../../assets/mail.png";
-import ButtonFill from "../ButtonFill";
+import React from 'react';
+import mail from '../../assets/mail.png';
+import ButtonFill from '../ButtonFill';
 const NewsLetter = () => {
   return (
     <div className="text-center pb-9">
@@ -8,8 +8,8 @@ const NewsLetter = () => {
         Subscribe to Our Newsletter For Weekly Article Update.
       </h1>
       <p className="md:w-1/2 md:mx-auto pt-5 text-sm text-white leading-loose">
-        We have hiking-related blog so we can share our thought and rutinity in
-        our blog that updated weekly. We will not spam you, we promise.
+        We have waste blog so we can share our thought and rutinity in our blog
+        that updated weekly. We will not spam you, we promise 🙏.
       </p>
       <div className="flex flex-wrap justify-center md:w-2/4 md:mx-auto my-6 gap-2 items-center">
         <div className="flex-1 flex rounded-full items-center gap-2 px-5 md:w-2/5 md:mx-auto justify-center border border-white my-4">

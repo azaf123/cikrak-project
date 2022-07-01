@@ -28,48 +28,39 @@ import { WaButton } from './components/WaButton';
 import { PaymentPage } from './pages/PaymentPage';
 import { GopayPage } from './pages/GopayPage';
 import NotFound from './pages/NotFound/index.tsx';
-import HomeEdu from "./pages/homeEducation";
-import FirstEdu from "./pages/edu1";
-import SecondEdu from "./pages/edu2";
-import ThirdEdu from "./pages/edu3";
+import HomeEdu from './pages/homeEducation';
+import FirstEdu from './pages/edu1';
+import SecondEdu from './pages/edu2';
+import ThirdEdu from './pages/edu3';
 import AboutUs from './aboutus';
 import CardProfil from './pages/ReedemVoucher';
 import Voucher from './pages/BrowseVoucher';
-import "./App.css";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import NavBarAuth from "./components/Navbar";
+import './App.css';
+import Login from './components/Login';
+import Register from './components/Register';
+import NavBarAuth from './components/Navbar';
 // import { PaymentModal } from './components/PaymentModal';
 // import { AgreementModal } from './components/AgreementModal';
 // import { SuccessModal } from './components/SuccessModal';
 // import { GopayModal } from './components/GopayModal';
-import { useSelector, useDispatch } from "react-redux";
-import { login, logout } from "./redux/userSlice";
-import useLogin from "./lib/useLogin";
-import useAuth from "./utils/useAuth";
+import { useSelector, useDispatch } from 'react-redux';
+import { login, logout } from './redux/userSlice';
+import useLogin from './lib/useLogin';
+import useAuth from './utils/useAuth';
 
 const App = () => {
   // let login = useLogin();
   // const auth = useAuth();
-
-
-
-    useEffect(() => {
-    const data = window.localStorage.getItem("loggedIn");
+  useEffect(() => {
+    const data = window.localStorage.getItem('loggedIn');
     console.log(data);
-
     if (data) {
       dispatch(login());
       console.log(data);
-    }else{
+    } else {
       dispatch(logout());
-
     }
   }, []);
-
-
-
-
   const { isLoggedIn } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -84,34 +75,34 @@ const App = () => {
   const Info = [
     {
       icon: Icon1,
-      title: "Pick-up by Location",
-      des: "Users can choose a location based on their respective addresses in the pick-up form.",
+      title: 'Pick-up by Location',
+      des: 'Users can choose a location based on their respective addresses in the pick-up form.',
     },
     {
       icon: Icon2,
-      title: "Exchange Trash For Money",
-      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
+      title: 'Exchange Trash For Money',
+      des: 'Users can exchange trash for points, and points can be exchanged for money with applicable regulations.',
     },
     {
       icon: Icon3,
-      title: "Exchange Trash With Vouchers",
-      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
+      title: 'Exchange Trash With Vouchers',
+      des: 'Users can exchange trash for points, and points can be exchanged for dining, shopping, etc. vouchers with the applicable conditions.',
     },
   ];
   const contents = [
     {
-      title: "Waste Pick-Up",
-      des: "The garbage pick-up service serves to make it easier for users to dispose of their household waste by exchanging points that can be exchanged for cash or vouchers.",
+      title: 'Waste Pick-Up',
+      des: 'The garbage pick-up service serves to make it easier for users to dispose of their household waste by exchanging points that can be exchanged for cash or vouchers.',
       img: img1,
     },
     {
-      title: "E-commerce",
-      des: "Exclusive buying and selling platform for recycled waste products and environmentally friendly products provided directly from UMKM and Cikrak.",
+      title: 'E-commerce',
+      des: 'Exclusive buying and selling platform for recycled waste products and environmentally friendly products provided directly from UMKM and Cikrak.',
       img: img2,
     },
     {
-      title: "Education",
-      des: "Volunteer trail stewardship projects in America’s parks and forests designed specifically for college student groups and young professionals.",
+      title: 'Education',
+      des: 'This education is intended to help shape the mindset and habits of the community to protect nature and love nature, because if we do not take care of nature, it will be us.',
       img: img3,
     },
   ];
@@ -126,7 +117,7 @@ const App = () => {
     return (
       <section
         className={`flex ${
-          alternative ? "md:flex-row-reverse" : "md:flex-row"
+          alternative ? 'md:flex-row-reverse' : 'md:flex-row'
         } flex-col gap-6 py-12 md:px-28 px-6 items-center`}
       >
         <div className="flex-1">
@@ -154,23 +145,23 @@ const App = () => {
   };
   return (
     <Provider store={store}>
-    <BrowserRouter>
-      {/* LEONA: moved nav here */}
-      {isLoggedIn ? <NavBarAuth /> : <Nav />}
-      <Routes>
-        <Route
-          path="/"
-          exact
-          element={
-            <div className="font-Poppins">
-              {/* <Headers /> */}
-              {/* <Nav /> */}
-              {/* <NavAcc /> */}
-              <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
-                <div className="flex md:flex-row flex-col gap-5 pt-20">
-                  <div className="flex-1">
-                    <h1
-                      className="md:text-5xl text-4xl font-semibold tracking-wide md:leading-tight
+      <BrowserRouter>
+        {/* LEONA: moved nav here */}
+        {isLoggedIn ? <NavBarAuth /> : <Nav />}
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <div className="font-Poppins">
+                {/* <Headers /> */}
+                {/* <Nav /> */}
+                {/* <NavAcc /> */}
+                <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
+                  <div className="flex md:flex-row flex-col gap-5 pt-20">
+                    <div className="flex-1">
+                      <h1
+                        className="md:text-5xl text-4xl font-semibold tracking-wide md:leading-tight
           leading-snug"
                       >
                         Changemakers, Let's Move and Innovate to Make Change!
@@ -205,7 +196,7 @@ const App = () => {
                         <p className="text-gray-600 text-sm leading-relaxed">
                           {info.des}
                         </p>
-                        <button className="text-rose-600 font-medium text-sm my-1">
+                        <button className="text-lightprimary font-medium text-sm my-1">
                           Read More
                         </button>
                       </div>
@@ -213,8 +204,8 @@ const App = () => {
                   </div>
                   <p className="py-10 md:text-sm text-xs block text-gray-600 text-center">
                     Don’t hesitate to contact us to get better Information.
-                    <span className="text-rose-600 font-semibold italic px-1">
-                      EXPLORE ALL TREKKING.
+                    <span className="text-lightprimary font-semibold italic px-1">
+                      KEEP NATURE.
                     </span>
                   </p>
                 </section>

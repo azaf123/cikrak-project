@@ -9,12 +9,12 @@ const NavLinks = [
   {
     id: 2,
     name: "Education",
-    link: "/",
+    link: "/home-edu",
   },
   {
     id: 3,
     name: "About Us",
-    link: "/",
+    link: "/aboutus",
   },
   {
     id: 4,
