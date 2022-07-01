@@ -40,7 +40,6 @@ function ProfileSidebar() {
         <ul>
           {SidebarItems.map((menuItem, index) => (
             <>
-              {/* TODO: add active link! (maybe use state) */}
               <Link to={menuItem.link}>
                 <li
                   key={index}

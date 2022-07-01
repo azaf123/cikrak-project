@@ -1,31 +1,30 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import loginImg from "../assets/login.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { authorize } from "../redux/loginSlice";
+import { login } from "../redux/userSlice";
 
 export default function Login() {
-  const { loginData, isLoggedIn } = useSelector((state) => state.login);
+  let { isLoggedIn, userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [userInputs, setInputs] = useState({ username: "", password: "" });
+  let [allow, setAllow] = useState(false); // local version of isLoggedIn
+
+  // useEffect(() => {
+  //   console.log(isLoggedIn);
+  //   dispatch(login());
+  // }, [allow]);
 
   const handleSubmit = (e) => {
-    console.log(userInputs.username + userInputs.password);
-    if (
-      userInputs.username === loginData.username &&
-      userInputs.password === loginData.password
-    ) {
-      console.log("dispatched");
-      //TODO: dispatch not working
-      dispatch(authorize());
-    } else {
-      console.log("ga masuk if");
-    }
     e.preventDefault();
-
+    if (
+      userInputs.username === userData.username &&
+      userInputs.password === userData.password
+    ) {
+      setAllow(true);
+      dispatch(login());
+    }
     console.log(userInputs.username + userInputs.password);
-    console.log(loginData.username + loginData.password);
-    console.log(isLoggedIn);
+    console.log(allow);
     e.target.reset();
   };
 

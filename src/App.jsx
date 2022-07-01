@@ -6,7 +6,7 @@ import Register from "./components/Register";
 import Profile from "./pages/Profile";
 import History from "./pages/History";
 import ChangePassword from "./pages/ChangePassword";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Navbar/Nav";
 import NavAcc from "./components/NavbarAccount/Nav";
@@ -40,9 +40,12 @@ import CardProfil from "./pages/ReedemVoucher";
 import Voucher from "./pages/BrowseVoucher";
 import { useSelector, useDispatch } from "react-redux";
 import { login, logout } from "./redux/loginSlice";
+import useLogin from "./lib/useLogin";
 
 const App = () => {
-  const { loginData, isLoggedIn } = useSelector((state) => state.login);
+  let login = useLogin();
+
+  const { isLoggedIn } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const [openModal, setOpenModal] = useState(false);
@@ -125,112 +128,108 @@ const App = () => {
     );
   };
   return (
-      <BrowserRouter>
-        {/* LEONA: moved nav here */}
-        {isLoggedIn ? <NavAcc /> : <Nav/>}
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={
-              <div className="font-Poppins">
-                {/* <Headers /> */}
-                {/* <Nav /> */}
-                {/* <NavAcc /> */}
-                <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
-                  <div className="flex md:flex-row flex-col gap-5 pt-20">
-                    <div className="flex-1">
-                      <h1
-                        className="md:text-5xl text-4xl font-semibold tracking-wide md:leading-tight
+    <BrowserRouter>
+      {/* LEONA: moved nav here */}
+      {isLoggedIn ? <NavAcc /> : <Nav />}
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <div className="font-Poppins">
+              {/* <Headers /> */}
+              {/* <Nav /> */}
+              {/* <NavAcc /> */}
+              <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
+                <div className="flex md:flex-row flex-col gap-5 pt-20">
+                  <div className="flex-1">
+                    <h1
+                      className="md:text-5xl text-4xl font-semibold tracking-wide md:leading-tight
           leading-snug"
-                      >
-                        Changemakers, Let's Move and Innovate to Make Change!
-                      </h1>
-                      <p
-                        className="text-gray-600 md:w-2/3 md:py-4 py-2 leading-relaxed"
-                        onClick={() => setOpenModal(true)}
-                      >
-                        Let's start with small things, for example, throwing
-                        trash in its place.
-                      </p>
-                      <br />
-                      <div className="flex md:gap-4 gap-2 flex-wrap"> 
-                        <div onClick={() => setOpenModal(true)}>
-                          <ButtonFill>Let’s Go</ButtonFill>
-                        </div>
-                        <ButtonOutline />
+                    >
+                      Changemakers, Let's Move and Innovate to Make Change!
+                    </h1>
+                    <p
+                      className="text-gray-600 md:w-2/3 md:py-4 py-2 leading-relaxed"
+                      onClick={() => setOpenModal(true)}
+                    >
+                      Let's start with small things, for example, throwing trash
+                      in its place.
+                    </p>
+                    <br />
+                    <div className="flex md:gap-4 gap-2 flex-wrap">
+                      <div onClick={() => setOpenModal(true)}>
+                        <ButtonFill>Let’s Go</ButtonFill>
                       </div>
-                    </div>
-                    <div className="flex-1  flex justify-center">
-                      <img src={HeroImg} alt="hero" className="h-2/3" />
+                      <ButtonOutline />
                     </div>
                   </div>
+                  <div className="flex-1  flex justify-center">
+                    <img src={HeroImg} alt="hero" className="h-2/3" />
+                  </div>
+                </div>
 
-                  <div className="bg-white shadow-2xl flex md:flex-row flex-col md:-mt-48 gap-10 md:p-14 p-10 mt-5 rounded-md">
-                    {Info.map((info, i) => (
-                      <div key={i}>
-                        <img src={info.icon} alt="icon" className="h-16" />
-                        <h1 className="font-semibold text-lg my-3">
-                          {info.title}
-                        </h1>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {info.des}
-                        </p>
-                        <button className="text-rose-600 font-medium text-sm my-1">
-                          Read More
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="py-10 md:text-sm text-xs block text-gray-600 text-center">
-                    Don’t hesitate to contact us to get better Information.
-                    <span className="text-rose-600 font-semibold italic px-1">
-                      EXPLORE ALL TREKKING.
-                    </span>
-                  </p>
-                </section>
-                <Companies />
-                <Blog content={contents[0]} ref={commentSection} form={true} />
-                <Blog
-                  content={contents[1]}
-                  alternative={true}
-                  comimgSoon={true}
-                />
-                <Blog content={contents[2]} />
-                <Review />
-                <Footer />
-                <WaButton />
-                <ScrollToTop />
-                <FormModal
-                  open={openModal}
-                  onClose={() => setOpenModal(false)}
-                />
-                {/* <AgreementModal /> */}
-                {/* <SuccessModal /> */}
-                {/* <GopayModal /> */}
-                <EcommerceModal
-                  open={openModalComingSoon}
-                  onClose={() => setOpenModalComingSoon(false)}
-                />
-              </div>
-            }
-          />
-          <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/home-edu" element={<HomeEdu />} />
-          <Route path="/edu1" element={<FirstEdu />} />
-          <Route path="/edu2" element={<SecondEdu />} />
-          <Route path="/edu3" element={<ThirdEdu />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />}/>
-          <Route path="/history" element={<History />} />
-          <Route path="/change-password" element={<ChangePassword />} />
-          <Route path="/redeem" element={<CardProfil />} />
-          <Route path="/voucher" element={<Voucher />} />
-        </Routes>
-      </BrowserRouter>
-   
+                <div className="bg-white shadow-2xl flex md:flex-row flex-col md:-mt-48 gap-10 md:p-14 p-10 mt-5 rounded-md">
+                  {Info.map((info, i) => (
+                    <div key={i}>
+                      <img src={info.icon} alt="icon" className="h-16" />
+                      <h1 className="font-semibold text-lg my-3">
+                        {info.title}
+                      </h1>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {info.des}
+                      </p>
+                      <button className="text-rose-600 font-medium text-sm my-1">
+                        Read More
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <p className="py-10 md:text-sm text-xs block text-gray-600 text-center">
+                  Don’t hesitate to contact us to get better Information.
+                  <span className="text-rose-600 font-semibold italic px-1">
+                    EXPLORE ALL TREKKING.
+                  </span>
+                </p>
+              </section>
+              <Companies />
+              <Blog content={contents[0]} ref={commentSection} form={true} />
+              <Blog
+                content={contents[1]}
+                alternative={true}
+                comimgSoon={true}
+              />
+              <Blog content={contents[2]} />
+              <Review />
+              <Footer />
+              <WaButton />
+              <ScrollToTop />
+              <FormModal open={openModal} onClose={() => setOpenModal(false)} />
+              {/* <AgreementModal /> */}
+              {/* <SuccessModal /> */}
+              {/* <GopayModal /> */}
+              <EcommerceModal
+                open={openModalComingSoon}
+                onClose={() => setOpenModalComingSoon(false)}
+              />
+            </div>
+          }
+        />
+        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/home-edu" element={<HomeEdu />} />
+        <Route path="/edu1" element={<FirstEdu />} />
+        <Route path="/edu2" element={<SecondEdu />} />
+        <Route path="/edu3" element={<ThirdEdu />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/redeem" element={<CardProfil />} />
+        <Route path="/voucher" element={<Voucher />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

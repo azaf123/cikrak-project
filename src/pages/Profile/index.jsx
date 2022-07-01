@@ -5,10 +5,11 @@ import NavBar from "../../components/Navbar";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
 // third-party
 import { useSelector, useDispatch } from "react-redux";
-import { updateUser } from "../../redux/userSlice";
+import { updateUser, setUser } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import Loader from "../../components/Loader";
 import useLoader from "../../utils/useLoader";
+import { getProfile } from "../../lib/fetchApi";
 
 export default function Profile() {
   const { userData } = useSelector((state) => state.user);
@@ -16,6 +17,10 @@ export default function Profile() {
 
   const [edit, isEdit] = useState(false); // to check if form is in edit mode
   const [update, updateData] = useState(false); // to check if update data is confirmed (clicking save changes returns true, cancel returns false)
+  
+  // let profile = getProfile();
+  // dispatch(setUser(profile));
+  
   let currentUserData = useRef(userData);
 
   useEffect(() => {
