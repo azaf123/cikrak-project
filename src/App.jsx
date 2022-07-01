@@ -7,7 +7,6 @@ import ChangePassword from './pages/ChangePassword';
 import React, { useRef, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Navbar/Nav';
-import NavAcc from './components/NavbarAccount/Nav';
 import HeroImg from './assets/Hero.png';
 import ButtonFill from './components/ButtonFill';
 import ButtonOutline from './components/ButtonOutline';
@@ -58,12 +57,12 @@ const App = () => {
     const data = window.localStorage.getItem("loggedIn");
     console.log(data);
 
-    if (data) {
+    if (data === true) {
       dispatch(login());
       console.log(data);
     }else{
       dispatch(logout());
-
+      window.localStorage.clear();
     }
   }, []);
 

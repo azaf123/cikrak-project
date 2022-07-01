@@ -17,10 +17,8 @@ function ProfileSidebar() {
   }, []);
 
   const logoutFunction  =() => {
-
     dispatch(logout());
     window.localStorage.setItem("loggedIn", false);
-
   }
 
   
