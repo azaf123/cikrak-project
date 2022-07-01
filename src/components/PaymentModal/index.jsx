@@ -5,9 +5,8 @@ import gopay from '../../assets/gopay.png';
 import bca from '../../assets/bca.png';
 import cash from '../../assets/cash.png';
 import { Link } from 'react-router-dom';
-import './style.css';
 
-export const PaymentModal = ({ open, onClose, paymentData }) => {
+export const PaymentModal = ({ open, onClose, paymentData, props }) => {
   const wasteCode = {
     organic: 'OR',
     paper: 'PP',
@@ -24,7 +23,9 @@ export const PaymentModal = ({ open, onClose, paymentData }) => {
     return code;
   };
   console.log(paymentData.typeWaste);
-
+  const ordercode = `${makeWasteCode(paymentData.typeWaste)}-${Math.floor(
+    100000 + Math.random() * 900000
+  )}`;
   return (
     <div class=" mx-auto mt-[48px]  p-6 rounded-lg shadow-lg bg-white w-[60rem]">
       <div>
@@ -44,10 +45,7 @@ export const PaymentModal = ({ open, onClose, paymentData }) => {
             </div>
             <div class="flex justify-between items-center form-group-inline mb-6">
               <p>Order ID</p>
-              <span class="text-lightprimary ml-52">
-                {makeWasteCode(paymentData.typeWaste)}-
-                {Math.floor(100000 + Math.random() * 900000)}
-              </span>
+              <span class="text-lightprimary ml-52">{ordercode}</span>
             </div>
             <div class="flex">
               <div class="mr-11">
@@ -65,10 +63,17 @@ export const PaymentModal = ({ open, onClose, paymentData }) => {
             </div>
           </div>
           <div>
-            <div class="flex justify-between items-center w-96 h-20 p-3 bg-slate-200 mb-3 rounded-md">
-              <img src={gopay} alt="gopay" className="h-5 ml-1" />
-              <h1 class="text-xl mr-5">Gopay</h1>
-            </div>
+            <Link
+              to="/gopaypage"
+              state={{
+                ordercode: ordercode,
+              }}
+            >
+              <div class="flex justify-between items-center w-96 h-20 p-3 bg-slate-200 mb-3 rounded-md">
+                <img src={gopay} alt="gopay" className="h-5 ml-1" />
+                <h1 class="text-xl mr-5">Gopay</h1>
+              </div>
+            </Link>
             <div class="flex justify-between w-96 h-20 p-4 bg-slate-200 mb-3 rounded-md">
               <img src={bca} alt="bca" className="h-9 mt-2 ml-1" />
               <h1 class="text-xl mt-3 mr-5">m-BCA</h1>

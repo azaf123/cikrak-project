@@ -30,6 +30,11 @@ module.exports = {
         lightprimary: "#2CB8E4",
         greenprimary: "#28DEB2",
         greenav: "#72CDDF",
+        "main-blue": "#2CB8E4",
+        "main-green": "#15C89E",
+        "mid-green": "#DFF6F1",
+        "light-green": "#F2FFFC",
+        "main-yellow": "#FFC225"
       },
       backgroundcolors: {
         primary: "#3E82FC",
