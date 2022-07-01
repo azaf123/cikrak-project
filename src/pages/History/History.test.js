@@ -3,6 +3,8 @@ import store from "../../redux/store";
 import { BrowserRouter } from "react-router-dom";
 import History from ".";
 import HistoryCard from "../../components/HistoryCard";
+import "@testing-library/jest-dom/extend-expect"; // add to fix toBeEnabled() not a function issue
+import "@testing-library/jest-dom"; // add to fix toBeInDocument() not a function issue
 import { render, screen } from "@testing-library/react";
 
 const MockHistory = () => {
@@ -15,21 +17,9 @@ const MockHistory = () => {
   );
 };
 
-const MockHistoryCard = () => {
-  return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <HistoryCard title="title" date="date" text="text" points="points" />
-      </BrowserRouter>
-    </Provider>
-  );
-};
-
-jest.mock("../../components/HistoryCard", () => () => {
-  return <mock-card data-testid="history-card" />;
-});
-
-test("should render cards", () => {
+test("should render history cards", () => {
+  jest.mock("HistoryCard");
+  const mockHistoryCard = require("../../components/HistoryCard");
   render(<MockHistory />);
-  expect(screen.queryAllByTestId("history-card")).toBeCalled();
+  expect(mockHistoryCard).toBeInTheDocument();
 });

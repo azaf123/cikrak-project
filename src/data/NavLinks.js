@@ -16,17 +16,16 @@ const NavLinks = [
     name: "About Us",
     link: "/",
   },
-  { id: 4, name: "Get Started", link: "/" },
   {
-    id: 5,
+    id: 4,
     name: "Notifications",
     link: "/",
     icon: faBell,
   },
   {
-    id: 6,
+    id: 5,
     name: "Your Profile",
-    link: "/",
+    link: "/profile",
     icon: faUser,
   },
 ];

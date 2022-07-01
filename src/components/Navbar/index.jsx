@@ -4,20 +4,22 @@ import Logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import NotificationArea from "../NotificationArea";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function NavBarAuth() {
+  const navigate = useNavigate(); 
+
   const [open, setOpen] = useState(false);
   const [showNotif, setShowNotif] = useState(false);
 
   const mapLinks = () => {
     return NavLinks.map((link, i) => (
       <li key={i} className={`$font-semibold text-white hover:text-mid-green`}>
-        {i >= 4 ? (
+        {i >= 3 ? (
           <button
             className="active:bg-blue-300 focus:bg-blue-300"
             onClick={() => {
-              i === 4 && setShowNotif(!showNotif);
+              i === 3 && setShowNotif(!showNotif); i===4 && navigate("/profile")
             }}
           >
             <span className="flex flex-row">

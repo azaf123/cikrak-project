@@ -5,7 +5,7 @@ const SidebarItems = [
         id: 1,
         name: "Profile",
         icon: faUser,
-        link: "/"
+        link: "/profile"
     },
     {
         id: 2,
