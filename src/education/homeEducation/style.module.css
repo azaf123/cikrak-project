@@ -18,6 +18,12 @@
 .content_item_image img {
   width: 100%;
   height: auto;
+  transition: all 0.5s;
+}
+/* hover */
+.content_item_image img:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
 }
 .content_item_image_1 img {
   width: 100%;
@@ -71,6 +77,14 @@
   height: 400px;
   font-family: roboto;
   gap: 60px;
+ /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
 }
 .content_item_text {
   font-size: 40px;
@@ -133,4 +147,147 @@
   color: #fff;
   text-decoration: none;
   font-weight: lighter;
+  transition: 0.5s;
+  transform: scale(1.1);
 }
+
+/* responsive mobile 423px*/
+@media screen and (max-width: 423px) {
+  .content_item_image {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_image_1 {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_image_2 {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_icon_1 {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_icon_2 {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_textmaster {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_text {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content_item_text_1 h1{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content_item_text_1 h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content_item_text_1 p {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  .content_item_text_2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content_item_btn {
+    justify-content: center;
+  }
+  .btn_learnmore {
+    background-image: linear-gradient(
+      to right,
+      #2bc0e4 0%,
+      #eaecc6 51%,
+      #2bc0e4 100%
+    );
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #101615;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border: none;
+    font-weight: lighter;
+  }
+}
+/* responsive tablet*/
+@media screen and (max-width: 768px) {
+  .content_item_image {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_image_1 {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_image_2 {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_icon_1 {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_icon_2 {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_textmaster {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_text {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content_item_text_1 h1{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content_item_text_1 h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content_item_text_1 p {
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  .content_item_text_2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .content_item_btn {
+    justify-content: center;
+  }
+  .btn_learnmore {
+    background-image: linear-gradient(
+      to right,
+      #2bc0e4 0%,
+      #eaecc6 51%,
+      #2bc0e4 100%
+    );
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #101615;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border: none;
+    font-weight: lighter;
+  }
+}
+
+
