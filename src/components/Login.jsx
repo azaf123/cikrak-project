@@ -22,6 +22,11 @@ export default function Login() {
     ) {
       setAllow(true);
       dispatch(login());
+      window.localStorage.setItem("loggedIn", isLoggedIn );
+      console.log(localStorage);
+      const data  = localStorage.getItem("loggedIn");
+      console.log(data);
+
     }
     console.log(userInputs.username + userInputs.password);
     console.log(allow);
