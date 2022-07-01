@@ -9,7 +9,6 @@ export const GopayPage = (props) => {
   return (
     <>
       <div className="bg-Blur bg-cover bg-center h-screen">
-        <Nav />
         <GopayModal GopayData={state} />
       </div>
       {/* <div className="w-72 h-72 bg-greenav rounded-full blur-2xl opacity-75 ml-[-90px]"></div>

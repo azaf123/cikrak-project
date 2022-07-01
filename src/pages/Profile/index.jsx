@@ -66,7 +66,7 @@ export default function Profile() {
     <>
       <div className="flex">
         <ProfileSidebar /> 
-        <div>
+        <div className="bg-indigo-500">
           {!loading && <Loader/>}
           {/* {!loading && (
             <div className="flex items-center w-full max-w-xs p-4 space-x-4  space-x">

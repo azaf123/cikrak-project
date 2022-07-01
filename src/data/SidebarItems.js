@@ -29,7 +29,7 @@ const SidebarItems = [
         id: 5,
         name: "Logout",
         icon: faRightFromBracket,
-        link: ""
+        link: "/"
     }
 ];
 

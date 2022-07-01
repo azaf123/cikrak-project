@@ -4,14 +4,24 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import SidebarItems from "../../data/SidebarItems";
 import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/userSlice";
 
 function ProfileSidebar() {
-  const { userData } = useSelector((state) => state.user);
+  const { userData, isLoggedIn } = useSelector((state) => state.user);
   let location = useLocation();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     console.log(location.pathname);
   }, []);
+
+  const logoutFunction  =() => {
+
+    dispatch(logout());
+    window.localStorage.setItem("loggedIn", false);
+
+  }
 
   
   return (
@@ -39,7 +49,7 @@ function ProfileSidebar() {
         <ul>
           {SidebarItems.map((menuItem, index) => (
             <>
-              <Link to={menuItem.link}>
+              <Link to={menuItem.link} onClick={() => {index === 4 && logoutFunction()}}>
                 <li
                   key={index}
                   className={`text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green hover:text-main-green ${location.pathname === menuItem.link ? "bg-mid-green text-main-green" : ""}`}

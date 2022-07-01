@@ -28,10 +28,10 @@ import { WaButton } from './components/WaButton';
 import { PaymentPage } from './pages/PaymentPage';
 import { GopayPage } from './pages/GopayPage';
 import NotFound from './pages/NotFound/index.tsx';
-import HomeEdu from './education/homeEducation';
-import FirstEdu from './education/edu1';
-import SecondEdu from './education/edu2';
-import ThirdEdu from './education/edu3';
+import HomeEdu from "./pages/homeEducation";
+import FirstEdu from "./pages/edu1";
+import SecondEdu from "./pages/edu2";
+import ThirdEdu from "./pages/edu3";
 import AboutUs from './aboutus';
 import CardProfil from './pages/ReedemVoucher';
 import Voucher from './pages/BrowseVoucher';
@@ -52,13 +52,22 @@ const App = () => {
   // let login = useLogin();
   // const auth = useAuth();
 
+
+
     useEffect(() => {
     const data = window.localStorage.getItem("loggedIn");
+    console.log(data);
+
     if (data) {
       dispatch(login());
       console.log(data);
+    }else{
+      dispatch(logout());
+
     }
   }, []);
+
+
 
 
   const { isLoggedIn } = useSelector((state) => state.user);
