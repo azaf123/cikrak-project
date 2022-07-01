@@ -10,7 +10,7 @@ export const GopayModal = ({ ordercode }) => {
   const location = useLocation();
   console.log(location.state.ordercode);
   return (
-    <div class=" mx-auto mt-[48px]  p-6 rounded-lg shadow-lg bg-white w-[60rem]">
+    <div class=" mx-auto  p-6 rounded-lg shadow-lg bg-white w-[60rem]">
       <div>
         <div class="form-group mb-6">
           <div class="flex justify-between items-center">
