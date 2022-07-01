@@ -4,6 +4,7 @@ import EduTiga from '../../assets/edu3.png'
 import food from '../../assets/food.png'
 import plastic from '../../assets/plastic.png'
 import Nav from '../../components/Navbar/Nav';
+import Footer from '../../components/Footer/Footer';
 const ThirdEdu = () => {
 
     return (
@@ -30,6 +31,7 @@ const ThirdEdu = () => {
                     </div>
                 </div>
             </div>
+            <div className={Style.master12}>
             <div className={Style.content2}>
                 <div className={Style.container_2}>
                     <div className={Style.textjudul}>
@@ -47,7 +49,7 @@ const ThirdEdu = () => {
                                         wood waste, green waste, and landscape and pruning waste
                                     </p>
                                 </div>
-                                <div className="flex flex-row">
+                                <div className="lg:flex lg:flex-row">
                                     <div className="col">
                                         <div className={Style.subtitle}>
                                             <p>Food Waste</p>
@@ -166,7 +168,7 @@ const ThirdEdu = () => {
                                         Inorganic waste is a kind of garbage or the rest of the material that is not easily decomposed which usually does not originate from animals and plants. Inorganic waste can be in the form of plastic, glass or glass bottles, cans, paper, and other food wrappers.
                                     </p>
                                 </div>
-                                <div className="title flex flex-row">
+                                <div className="title lg:flex lg:flex-row">
                                     <div className="title-item col">
                                         <div className={Style.subtitle}>
                                             <p>Solid Inorganic Waste</p>
@@ -198,46 +200,49 @@ const ThirdEdu = () => {
                                             <p>Liquid Inorganic Waste</p>
                                         </div>
                                         <div className="row">
-                                        
-                                        <p>
-                                            <ul className={Style.ulWaste}>
-                                                <li>
-                                                    Washing soap
 
-                                                </li>
-                                                <li>
-                                                    Detergent
-                                                </li>
+                                            <p>
+                                                <ul className={Style.ulWaste}>
+                                                    <li>
+                                                        Washing soap
 
-                                            </ul>
-                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        Detergent
+                                                    </li>
+
+                                                </ul>
+                                            </p>
+                                        </div>
                                     </div>
+                                    <div className="title-item col">
+                                        <div className={Style.subtitle}>
+                                            <p>Inorganic Waste Gas</p>
+                                        </div>
+                                        <div className="row">
+                                            <p>
+                                                <ul className={Style.ulWaste}>
+                                                    <li>
+                                                        Gas or motor vehicle fumes that contain carbon monoxide or CO
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </div>
+
                                 </div>
-                                <div className="title-item col">
-                                    <div className={Style.subtitle}>
-                                        <p>Inorganic Waste Gas</p>
-                                    </div>
-                                    <div className="row">
-                                        <p>
-                                            <ul className={Style.ulWaste}>
-                                                <li>
-                                                    Gas or motor vehicle fumes that contain carbon monoxide or CO
-                                                </li>
-                                            </ul>
-                                        </p>
-                                    </div>
-                                </div>
-
+                            </div>
+                            <div className={Style.content_organicImage}>
+                                <img src={plastic} alt="" />
                             </div>
                         </div>
-                        <div className={Style.content_organicImage}>
-                            <img src={plastic} alt="" />
-                        </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
+        <Footer />
+
         </div >
 
 

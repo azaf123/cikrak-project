@@ -8,6 +8,7 @@ import compost from "../../assets/tanah.jpg";
 import background from "../../assets/Polygon1.png";
 import App from "../../App";
 import Nav from "../../components/Navbar/Nav";
+import Footer from "../../components/Footer/Footer";
 const HomeEdu = () => {
     return (
         <div>
@@ -105,6 +106,7 @@ const HomeEdu = () => {
 
                 </div>
             </div>
+            <Footer />
 
         </div>
     );
