@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // components
 import BlueButton from "../../components/BlueButton";
 // third-party
@@ -20,6 +20,8 @@ function ChangePassword(props) {
   const [showPwd3, setShowPwd3] = useState(false);
   const [error, setError] = useState("");
 
+  const [showToast, setShowToast] = useState(false);
+
   const { userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -28,18 +30,18 @@ function ChangePassword(props) {
     isEmpty(true);
     if (success && samePwd) {
       setError("Password succesfully changed!");
-      e.target.reset();
     } else if (success && !samePwd) {
       setError("Password inputted isn't the same");
     } else {
       setError("Incorrect old password");
     }
+    e.target.reset();
+
     console.log("Check:", userData.password);
   };
 
   return (
     <>
-      <NavBar />
       <div className="flex">
         <ProfileSidebar />
         <div className="w-9/12">
@@ -142,7 +144,7 @@ function ChangePassword(props) {
                   )}
                 </div>
               </div>
-              {error && <Toast />}
+              {error && <Toast text={error} />}
             </div>
             <div className="flex mt-8 mr-auto float-right md:pr-20">
               {empty ? (

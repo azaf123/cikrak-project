@@ -28,7 +28,7 @@ const HistoryData = [
     date: "07 June 2022",
     mainDetails: "50% Discount Coupon at Chatime",
     details: {
-      quantity: 1,
+      other: "1 voucher exchanged",
       points: 300,
     },
   },
@@ -45,10 +45,7 @@ const HistoryData = [
     date: "08 June 2022",
     mainDetails: "Pending payment of Rp. 11,000",
     details: {
-      status: "pending",
-      total: "Rp. 11,000",
-      date: "June 20, 2022 / 18:10",
-      time: "18:10",
+      other: "Pending payment of Rp. 11,000 due June 20, 2022 / 18:10"
     },
   },
 ];

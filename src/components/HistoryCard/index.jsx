@@ -3,21 +3,14 @@ import BlueOutlineButton from "../BlueOutlineButton";
 import HistoryDetails from "../HistoryDetails";
 import HistoryData from "../../data/HistoryData";
 
-// interface IProps {
-//   title: string;
-//   date: string;
-//   text: string;
-//   points: string;
-// }
-
 function HistoryCard(props) {
   const [showModal, setShowModal] = useState(false);
 
-  // const historyDetails = HistoryData.details;
-
   return (
-    <>
-      <div className="max-w-screen-md ml-16 mr-10 mb-5">
+    <>        
+      <div
+        className="max-w-screen-md ml-16 mr-10 mb-5"
+      >
         <div className="border border-gray-200 bg-slate-50 rounded p-4 flex flex-col justify-between leading-normal">
           <div className="flex justify-between">
             <div className="text-main-blue font-bold text-base mb-2 ">
@@ -32,7 +25,7 @@ function HistoryCard(props) {
             <div className="font-medium text-sm leading-none w-9/12">
               {props.text}
               <div className="font-light pt-1 text-xs text-gray-700">
-                {props.text}
+                {props.subText}
               </div>
             </div>
 
@@ -41,6 +34,7 @@ function HistoryCard(props) {
                 {/* only show for waste disposal */}
                 {props.title === "Waste Disposal" && (
                   <BlueOutlineButton
+                  data-testid="button-details"
                     onClick={() => setShowModal(!showModal)}
                     btnText="Details"
                   />
@@ -61,7 +55,7 @@ function HistoryCard(props) {
         </div>
       </div>
       {showModal && (
-        <div>
+        <div data-testid="history-details">
           <HistoryDetails setShowModal={setShowModal} />
         </div>
       )}

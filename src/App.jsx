@@ -35,8 +35,24 @@ import ThirdEdu from './education/edu3';
 import AboutUs from './aboutus';
 import CardProfil from './pages/ReedemVoucher';
 import Voucher from './pages/BrowseVoucher';
+import "./App.css";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import NavBarAuth from "./components/Navbar";
+// import { PaymentModal } from './components/PaymentModal';
+// import { AgreementModal } from './components/AgreementModal';
+// import { SuccessModal } from './components/SuccessModal';
+// import { GopayModal } from './components/GopayModal';
+import { useSelector, useDispatch } from "react-redux";
+import { login, logout } from "./redux/loginSlice";
+import useLogin from "./lib/useLogin";
 
 const App = () => {
+  let login = useLogin();
+
+  const { isLoggedIn } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
   const [openModal, setOpenModal] = useState(false);
   const [openModalComingSoon, setOpenModalComingSoon] = useState(false);
   const commentSection = useRef(null);
@@ -48,34 +64,34 @@ const App = () => {
   const Info = [
     {
       icon: Icon1,
-      title: 'Pick-up by Location',
-      des: 'Users can choose a location based on their respective addresses in the pick-up form.',
+      title: "Pick-up by Location",
+      des: "Users can choose a location based on their respective addresses in the pick-up form.",
     },
     {
       icon: Icon2,
-      title: 'Exchange Trash For Money',
-      des: 'Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.',
+      title: "Exchange Trash For Money",
+      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
     },
     {
       icon: Icon3,
-      title: 'Exchange Trash With Vouchers',
-      des: 'Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.',
+      title: "Exchange Trash With Vouchers",
+      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
     },
   ];
   const contents = [
     {
-      title: 'Waste Pick-Up',
-      des: 'The garbage pick-up service serves to make it easier for users to dispose of their household waste by exchanging points that can be exchanged for cash or vouchers.',
+      title: "Waste Pick-Up",
+      des: "The garbage pick-up service serves to make it easier for users to dispose of their household waste by exchanging points that can be exchanged for cash or vouchers.",
       img: img1,
     },
     {
-      title: 'E-commerce',
-      des: 'Exclusive buying and selling platform for recycled waste products and environmentally friendly products provided directly from UMKM and Cikrak.',
+      title: "E-commerce",
+      des: "Exclusive buying and selling platform for recycled waste products and environmentally friendly products provided directly from UMKM and Cikrak.",
       img: img2,
     },
     {
-      title: 'Education',
-      des: 'Volunteer trail stewardship projects in America’s parks and forests designed specifically for college student groups and young professionals.',
+      title: "Education",
+      des: "Volunteer trail stewardship projects in America’s parks and forests designed specifically for college student groups and young professionals.",
       img: img3,
     },
   ];
@@ -90,7 +106,7 @@ const App = () => {
     return (
       <section
         className={`flex ${
-          alternative ? 'md:flex-row-reverse' : 'md:flex-row'
+          alternative ? "md:flex-row-reverse" : "md:flex-row"
         } flex-col gap-6 py-12 md:px-28 px-6 items-center`}
       >
         <div className="flex-1">
@@ -118,21 +134,23 @@ const App = () => {
   };
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={
-              <div className="font-Poppins">
-                {/* <Headers /> */}
-                {/* <Nav /> */}
-                <NavAcc />
-                <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
-                  <div className="flex md:flex-row flex-col gap-5 pt-20">
-                    <div className="flex-1">
-                      <h1
-                        className="md:text-5xl text-4xl font-semibold tracking-wide md:leading-tight
+    <BrowserRouter>
+      {/* LEONA: moved nav here */}
+      {isLoggedIn ? <NavBarAuth /> : <Nav />}
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <div className="font-Poppins">
+              {/* <Headers /> */}
+              {/* <Nav /> */}
+              {/* <NavAcc /> */}
+              <section className="bg-Hero bg-cover bg-center  py-4 md:px-24 px-4">
+                <div className="flex md:flex-row flex-col gap-5 pt-20">
+                  <div className="flex-1">
+                    <h1
+                      className="md:text-5xl text-4xl font-semibold tracking-wide md:leading-tight
           leading-snug"
                       >
                         Changemakers, Let's Move and Innovate to Make Change!
@@ -217,6 +235,8 @@ const App = () => {
           <Route path="/voucher" element={<Voucher />} />
           <Route path="/gopaypage" element={<GopayPage />} />
           <Route path="/success" element={<PaymentSuccess />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </Provider>
