@@ -4,7 +4,7 @@ import store from './redux/store';
 import Profile from './pages/Profile';
 import History from './pages/History';
 import ChangePassword from './pages/ChangePassword';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './components/Navbar/Nav';
 import NavAcc from './components/NavbarAccount/Nav';
@@ -44,11 +44,22 @@ import NavBarAuth from "./components/Navbar";
 // import { SuccessModal } from './components/SuccessModal';
 // import { GopayModal } from './components/GopayModal';
 import { useSelector, useDispatch } from "react-redux";
-import { login, logout } from "./redux/loginSlice";
+import { login, logout } from "./redux/userSlice";
 import useLogin from "./lib/useLogin";
+import useAuth from "./utils/useAuth";
 
 const App = () => {
-  let login = useLogin();
+  // let login = useLogin();
+  // const auth = useAuth();
+
+    useEffect(() => {
+    const data = window.localStorage.getItem("loggedIn");
+    if (data) {
+      dispatch(login());
+      console.log(data);
+    }
+  }, []);
+
 
   const { isLoggedIn } = useSelector((state) => state.user);
   const dispatch = useDispatch();
