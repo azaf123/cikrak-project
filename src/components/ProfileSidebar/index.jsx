@@ -11,7 +11,6 @@ function ProfileSidebar() {
 
   useEffect(() => {
     console.log(location.pathname);
-
   }, []);
 
   

@@ -3,17 +3,8 @@ import BlueOutlineButton from "../BlueOutlineButton";
 import HistoryDetails from "../HistoryDetails";
 import HistoryData from "../../data/HistoryData";
 
-// interface IProps {
-//   title: string;
-//   date: string;
-//   text: string;
-//   points: string;
-// }
-
 function HistoryCard(props) {
   const [showModal, setShowModal] = useState(false);
-
-  // const historyDetails = HistoryData.details;
 
   return (
     <>        

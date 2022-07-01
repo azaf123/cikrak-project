@@ -10,6 +10,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./components/Navbar/Nav";
 import NavAcc from "./components/NavbarAccount/Nav";
+import NavBarAuth from "./components/Navbar";
 import HeroImg from "./assets/Hero.png";
 import ButtonFill from "./components/ButtonFill";
 import ButtonOutline from "./components/ButtonOutline";
@@ -130,7 +131,7 @@ const App = () => {
   return (
     <BrowserRouter>
       {/* LEONA: moved nav here */}
-      {isLoggedIn ? <NavAcc /> : <Nav />}
+      {isLoggedIn ? <NavBarAuth /> : <Nav />}
       <Routes>
         <Route
           path="/"

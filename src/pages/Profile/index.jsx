@@ -4,24 +4,47 @@ import BlueButton from "../../components/BlueButton";
 import NavBar from "../../components/Navbar";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
 // third-party
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser, setUser } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import Loader from "../../components/Loader";
 import useLoader from "../../utils/useLoader";
 import { getProfile } from "../../lib/fetchApi";
+import Lottie from "react-lottie";
+import useLogin from "../../lib/useLogin";
+import loadingSpinner from "../../assets/loading-spinner.json";
 
 export default function Profile() {
-  const { userData } = useSelector((state) => state.user);
+  const { userData, profile } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
+  let login = useLogin();
   const [edit, isEdit] = useState(false); // to check if form is in edit mode
   const [update, updateData] = useState(false); // to check if update data is confirmed (clicking save changes returns true, cancel returns false)
-  
-  // let profile = getProfile();
-  // dispatch(setUser(profile));
-  
+
   let currentUserData = useRef(userData);
+
+  const showLoader = {
+    loop: true,
+    autoplay: true,
+    animationData: loadingSpinner.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const [loading, setloading] = useState(undefined);
+  // const [completed, setcompleted] = useState(undefined);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setUser(userData);
+      setloading(true);
+      // setTimeout(() => {
+      //   setcompleted(true);
+      // }, 1000);
+    }, 2000);
+  }, []);
 
   useEffect(() => {
     if (update) {
@@ -41,10 +64,15 @@ export default function Profile() {
 
   return (
     <>
-      <NavBar />
       <div className="flex">
-        <ProfileSidebar />
+        <ProfileSidebar /> 
         <div>
+          {!loading && <Loader/>}
+          {/* {!loading && (
+            <div className="flex items-center w-full max-w-xs p-4 space-x-4  space-x">
+              <Lottie options={showLoader} height={100} width={100} />
+            </div>
+          )} */}
           <div className="text-2xl font-bold mt-20 ml-16 pb-4 text-main-blue">
             {edit && "Edit"} Profile
           </div>

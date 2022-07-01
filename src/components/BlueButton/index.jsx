@@ -2,7 +2,6 @@ import React from "react";
 
 function BlueButton(props) {
   return (
-    //  TODO: change hover color
     <>
       <button
         type="submit"
