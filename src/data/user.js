@@ -7,7 +7,7 @@ const user=
         "id":"ijskd",
         "name":"Jane Doe",
         "image": "",
-        "point":9800
+        "point":1300
 
     }   
 ]}
