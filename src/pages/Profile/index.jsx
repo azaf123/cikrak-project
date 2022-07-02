@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 // components
 import BlueButton from "../../components/BlueButton";
-import NavBar from "../../components/Navbar";
+import NavBar from "../../components/Navbar/NavBarAuth";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
 // third-party
 import axios from "axios";

@@ -7,7 +7,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { updatePassword } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
-import NavBar from "../../components/Navbar";
+import NavBar from "../../components/Navbar/NavBarAuth";
 import Toast from "../../components/Toast";
 
 function ChangePassword(props) {

@@ -1,10 +1,9 @@
 
-import reduce from '../assets/reduce.png';
-import leona from '../assets/leona.jpeg';
+import leona from "../../assets/leona.jpeg";
 import './style.css'
-import Nav from '../components/Navbar/Nav'
-import faza from '../assets/fazaa.JPG';
-import Footer from '../components/Footer/Footer'
+import Nav from "../../components/Navbar/Nav"
+import faza from "../../assets//fazaa.JPG";
+import Footer from "../../components/Footer/Footer";
 
 const About = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import registerImg from '../assets/register.jpg'
+import registerImg from '../../assets/register.jpg'
 
 export default function Register() {
   return (

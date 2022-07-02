@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import BlueOutlineButton from "../BlueOutlineButton";
-import HistoryDetails from "../HistoryDetails";
-import HistoryData from "../../data/HistoryData";
+import HistoryDetails from "./HistoryDetails";
 
 function HistoryCard(props) {
   const [showModal, setShowModal] = useState(false);
