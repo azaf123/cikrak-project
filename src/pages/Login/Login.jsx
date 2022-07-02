@@ -6,12 +6,13 @@ import { login } from "../../redux/userSlice";
 export default function Login() {
   let { isLoggedIn, userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const [userInputs, setInputs] = useState({ username: "", password: "" });
+  const [userInputs, setInputs] = useState({ email: "", password: "" });
 
+  // email / password 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      userInputs.username === userData.username &&
+      (userInputs.email === userData.email || userInputs.email === userData.username) &&
       userInputs.password === userData.password
     ) {
       dispatch(login());
@@ -20,7 +21,7 @@ export default function Login() {
       const data  = localStorage.getItem("loggedIn");
       console.log(data);
     }
-    console.log(userInputs.username + userInputs.password);
+    console.log(userInputs.email + userInputs.password);
     e.target.reset();
   };
 
@@ -42,10 +43,10 @@ export default function Login() {
         >
           <h2 className="text-4xl font-bold text-center py-6">CIKRAK</h2>
           <div className="flex flex-col py-2">
-            <label>Email</label>
+            <label>Email or Username</label>
             <input
               className="border p-2"
-              name="username"
+              name="email"
               type="text"
               onChange={handleChange}
             />
