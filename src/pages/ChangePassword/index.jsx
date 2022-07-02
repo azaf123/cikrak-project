@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 // components
 import BlueButton from '../../components/BlueButton';
 // third-party
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { useSelector, useDispatch } from 'react-redux';
-import { updatePassword } from '../../redux/userSlice';
-import ProfileSidebar from '../../components/ProfileSidebar';
-import Toast from '../../components/Toast';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { useSelector, useDispatch } from "react-redux";
+import { updatePassword } from "../../redux/userSlice";
+import ProfileSidebar from "../../components/ProfileSidebar";
+import Toast from "../../components/Toast";
 
 function ChangePassword(props) {
   const [success, setSuccess] = useState(false); // to check if old password entered is correct

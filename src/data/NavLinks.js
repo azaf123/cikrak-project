@@ -18,12 +18,17 @@ const NavLinks = [
   },
   {
     id: 4,
+    name: "Get Started",
+    link: "/login"
+  },
+  {
+    id: 5,
     name: "Notifications",
     link: "/",
     icon: faBell,
   },
   {
-    id: 5,
+    id: 6,
     name: "Your Profile",
     link: "/profile",
     icon: faUser,

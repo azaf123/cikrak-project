@@ -1,16 +1,18 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper';
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper";
 const Review = () => {
   return (
-    <section className="text-center">
+    <div>
       {/* <p className="text-primary text-sm">Happy Clients</p> */}
-      <h1 className="md:text-4xl text-2xl mt-1 font-semibold">User Reviews</h1>
-      <div className="my-6">
+      <h1 className="md:text-4xl text-2xl mt-1 font-semibold text-center">
+        User Reviews
+      </h1>
+      <div className="my-14">
         <Swiper
           loop={true}
           grabCursor={true}
@@ -86,7 +88,7 @@ const Review = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-    </section>
+    </div>
   );
 };
 

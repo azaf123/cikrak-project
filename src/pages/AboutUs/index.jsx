@@ -1,9 +1,10 @@
-import reduce from '../assets/reduce.png';
-import leona from '../assets/leona.jpeg';
 import './style.css';
-import faza from '../assets/fazaa.JPG';
-import Avatar from '../assets/avatar.png';
-import Footer from '../components/Footer/Footer';
+import Avatar from '../../assets/avatar.png';
+import leona from "../../assets/leona.jpeg";
+import './style.css'
+import Nav from "../../components/Navbar/Nav"
+import faza from "../../assets//fazaa.JPG";
+import Footer from "../../components/Footer/Footer";
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
               Cikrak is a waste application that helps people to easily throw
               trash and gives education about how to safe earth from waste. With
               Cikrak, you can organize your own trash bin and choose where it
-              goes.{' '}
+              goes.
             </p>
           </div>
           <div className=" text-right grid lg:grid-cols-1 lg:col-span-1 md:grid-cols-2 md:col-span-1 sc:grid-cols-2 sc:col-span-2 sc:p-10">

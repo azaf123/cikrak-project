@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import voucher from "../../data/data";
 import Modal from "../../components/card/modal";
 import Points from "../../components/card/points";
-import NavBarAuth from "../../components/Navbar";
+import NavBarAuth from "../../components/Navbar/NavBarAuth";
 import ProfileSidebar from "../../components/ProfileSidebar";
 
 

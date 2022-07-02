@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from "react";
-import loginImg from "../assets/login.jpg";
+import React, { useState } from "react";
+import loginImg from "../../assets/login.jpg";
 import { useSelector, useDispatch } from "react-redux";
-import { login } from "../redux/userSlice";
+import { login } from "../../redux/userSlice";
 
 export default function Login() {
   let { isLoggedIn, userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [userInputs, setInputs] = useState({ username: "", password: "" });
-  let [allow, setAllow] = useState(false); // local version of isLoggedIn
-
-  // useEffect(() => {
-  //   console.log(isLoggedIn);
-  //   dispatch(login());
-  // }, [allow]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,16 +14,12 @@ export default function Login() {
       userInputs.username === userData.username &&
       userInputs.password === userData.password
     ) {
-      setAllow(true);
       dispatch(login());
       window.localStorage.setItem("loggedIn", isLoggedIn );
-      console.log(localStorage);
       const data  = localStorage.getItem("loggedIn");
       console.log(data);
-
     }
     console.log(userInputs.username + userInputs.password);
-    console.log(allow);
     e.target.reset();
   };
 
