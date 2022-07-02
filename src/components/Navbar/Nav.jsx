@@ -9,7 +9,7 @@ const Nav = () => {
   const mapLinks = () => {
     return NavLinks.map((link, i) => (
      
-      <li key={i} className="font-semibold text-white hover:text-lightprimary">
+      <li key={i} className="font-semibold  text-white hover:text-lightprimary">
         {i < 4 &&  (<a href={link.link}>{link.name}</a>)}
       </li>
     ));

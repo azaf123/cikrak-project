@@ -12,10 +12,6 @@ const ProfileSidebar = () => {
   let location = useLocation();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(location.pathname);
-  }, []);
-
   const logoutFunction = () => {
     dispatch(logout());
     window.localStorage.setItem("loggedIn", false);

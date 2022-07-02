@@ -14,7 +14,7 @@ const NavBarAuth = () => {
 
   const mapLinks = () => {
     return NavLinks.map((link, i) => (
-      <li key={i} className={`$font-semibold text-white hover:text-mid-green`}>
+      <li key={i} className={`$font-semibold text-base text-white hover:text-mid-green`}>
         {i >3 ? (
           <button
             className="active:bg-blue-300 focus:bg-blue-300"
