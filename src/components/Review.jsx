@@ -47,7 +47,7 @@ const Review = () => {
               />
               <h3 className="font-semibold">Agnes</h3>
               <p className="text-lightprimary text-xs">Housewife</p>
-              <p className="text-gray-600 text-xs leading-normal my-2">
+              <p className="text-gray-600 text-xs leading-normal my-2 h-14">
                 “I think this cikrak really helped me, especially the waste
                 pick-up feature which really helped me in managing my home
                 waste.”
@@ -63,7 +63,7 @@ const Review = () => {
               />
               <h3 className="font-semibold">Jessica</h3>
               <p className="text-lightprimary text-xs">Developer</p>
-              <p className="text-gray-600 text-xs leading-normal my-2">
+              <p className="text-gray-600 text-xs leading-normal my-2 h-14">
                 “I think cikrak is a good website, especially not focusing on
                 the waste pick-up feature, but also on education to make the
                 wider community aware of the impact of poor waste management.”
@@ -79,7 +79,7 @@ const Review = () => {
               />
               <h3 className="font-semibold">Dytha</h3>
               <p className="text-lightprimary text-xs">UI Designer</p>
-              <p className="text-gray-600 text-xs leading-normal my-2">
+              <p className="text-gray-600 text-xs leading-normal my-2 h-14">
                 “From the appearance of the Cikrak website interface, I think it
                 is very good, and easy to use. Hopefully, it can have an impact
                 on nature.”
