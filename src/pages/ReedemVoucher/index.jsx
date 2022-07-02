@@ -17,43 +17,38 @@ const CardProfil = ()=>{
     }
 
     return(
-
         <>
-<NavBarAuth />
-<div className="flex">
-  <ProfileSidebar />
-  <div>
-    <div className="text-2xl font-bold mt-20 ml-16 pb-4 text-main-blue">
-    Title
-    </div>
-
-    <div>
-            <Points/>
-            
-        </div>
-        
-        <section className="container ">
+            <NavBarAuth />
+            <div className="flex">
+                <ProfileSidebar />
             <div>
-            <a href="./voucher" className=" float-right">Browse More</a>
-            <h5>New Vouchers</h5>
+            <div className=" font-bold mt-20 ml-16 pb-4 text-main-blue">
+            <Points/>
             </div>
-            <div className="row  mx-2 my-3 bg-blue-200 rounded-lg h-100 shadow cursor-pointer	">
-                {voucher.FoodBeverage.map((item,index)=>{
-                    return(
-                        <div className=" col-4 mx-auto my-4 " key={index}> 
-                            <div className=" bg-white rounded-xl inline-block p-0 overflow-hidden h-100 shadow " 
-                            onClick={() => getVoucher(item.image, item.voucher, item.date, item.points)}>
-                                <img src={item.image} /> 
-                                <div className="card-body">
-                                    <h6 className="card-title">{item.voucher}</h6> 
-                                    <p className="card-text float-right ">{item.points}</p>
+            
+        
+            <section className="container mx-16 w-5/6 ">
+                <div className="text-xl">
+                <a href="./voucher" className=" float-right" >Browse More</a>   
+                <h2 className="text-">New Vouchers</h2>
+                </div>
+                <div className="new-voucher row cursor-pointer mx-2 my-3 ">
+                    {voucher.FoodBeverage.map((item,index)=>{
+                        return(
+                            <div className="col-6 my-4 float-left" key={index}> 
+                                <div className=" rounded-xl inline-block p-0 overflow-hidden h-300 shadow " 
+                                onClick={() => getVoucher(item.image, item.voucher, item.date, item.points)}>
+                                    <img src={item.image} /> 
+                                    <div className="card-body mx-2">
+                                        <h3 className="card-title text-lg">{item.voucher}</h3> 
+                                        <p className="card-text float-right ">{item.points}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>                    
-                    )
-                })}
-            </div>
-        </section>
+                            </div>                    
+                        )
+                    })}
+                </div>
+            </section>
         {
             modal === true?<Modal image={tempVoucher[1]} voucher={tempVoucher[2]} date={tempVoucher[3]} points={tempVoucher[4]} hide={()=>setModal(false)}/>:''
         }

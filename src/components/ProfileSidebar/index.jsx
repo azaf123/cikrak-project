@@ -23,7 +23,7 @@ function ProfileSidebar() {
           </div>
           <div className="text-sm font-bold hidden  text-main-yellow text-center md:block">
             <span className="pr-1">
-              <FontAwesomeIcon icon={faStar} />
+            <a href="/redeem"><FontAwesomeIcon icon={faStar} /></a>
             </span>
             {userData.points} points
           </div>

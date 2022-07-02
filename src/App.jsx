@@ -1,5 +1,7 @@
 import { Provider } from "react-redux";
 import "./App.css";
+import'../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 import store from "./redux/store";
 import Profile from "./pages/Profile";
 import History from "./pages/History";
