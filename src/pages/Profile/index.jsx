@@ -4,15 +4,13 @@ import BlueButton from "../../components/BlueButton";
 import NavBar from "../../components/Navbar/NavBarAuth";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
 // third-party
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser, setUser } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
-import Loader from "../../components/Loader";
 import useLoader from "../../lib/useLoader";
 
 export default function Profile() {
-  const { userData, profile } = useSelector((state) => state.user);
+  const { userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [edit, isEdit] = useState(false); // to check if form is in edit mode
   const [update, updateData] = useState(false); // to check if update data is confirmed (clicking save changes returns true, cancel returns false)
