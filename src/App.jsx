@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { Provider } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+// components
+import Nav from "./components/Navbar/Nav";
+import NavBarAuth from "./components/Navbar/NavBarAuth";
 // redux, roots, hooks
 import { login, logout } from "./redux/userSlice";
 import store from "./redux/store";
@@ -10,6 +13,7 @@ import Routing from "./routes/routes";
 
 const App = () => {
   // const auth = useAuth();
+  const { isLoggedIn } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   // hook to persist login & logout states

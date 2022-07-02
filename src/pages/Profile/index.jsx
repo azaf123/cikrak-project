@@ -10,7 +10,7 @@ import ProfileSidebar from "../../components/ProfileSidebar";
 import useLoader from "../../lib/useLoader";
 
 export default function Profile() {
-  const { userData } = useSelector((state) => state.user);
+  const { userData, profile } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [edit, isEdit] = useState(false); // to check if form is in edit mode
   const [update, updateData] = useState(false); // to check if update data is confirmed (clicking save changes returns true, cancel returns false)
@@ -62,7 +62,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="name"
                     type="text"
-                    value={userData.name}
+                    defaultValue={userData.name}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -88,9 +88,9 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="username"
                     type="text"
-                    value={userData.username}
+                    defaultValue={userData.username}
                     onChange={handleChange}
-                    readOnly={!edit}
+                    readOnly={false}
                   />
                 ) : (
                   <input
@@ -114,7 +114,7 @@ export default function Profile() {
                     name="address"
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    value={userData.address}
+                    defaultValue={userData.address}
                     onChange={handleChange}
                   />
                 ) : (
@@ -139,9 +139,9 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="email"
                     type="text"
-                    value={userData.email}
+                    defaultValue={userData.email}
                     onChange={handleChange}
-                    readOnly={!edit}
+                    readOnly={false}
                   />
                 ) : (
                   <input
@@ -165,7 +165,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none "
                     name="phone"
                     type="text"
-                    value={userData.phone}
+                    defaultValue={userData.phone}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -174,7 +174,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="phone"
                     type="text"
-                    value={userData.phone}
+                    defaultValue={userData.phone}
                     readOnly={edit}
                   />
                 )}

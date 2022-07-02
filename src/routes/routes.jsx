@@ -28,7 +28,6 @@ const Routing = () => {
 
   return (
     <BrowserRouter>
-    {/* TODO: move to App.jsx */}
       {isLoggedIn ? <NavBarAuth /> : <Nav />}
       <Routes>
         <Route path="/" exact element={<LandingPage />} />

@@ -15,6 +15,7 @@ const ProfileSidebar = () => {
   const logoutFunction = () => {
     dispatch(logout());
     window.localStorage.setItem("loggedIn", false);
+    window.localStorage.clear();
   };
 
   return (

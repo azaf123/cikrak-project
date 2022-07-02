@@ -24,6 +24,7 @@ module.exports = {
     extend: {
       fontFamily: {
         Poppins: "Poppins",
+        Roboto: "Roboto"
       },
       colors: {
         primary: "#3E82FC",

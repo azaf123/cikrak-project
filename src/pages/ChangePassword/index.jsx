@@ -26,11 +26,11 @@ function ChangePassword(props) {
     e.preventDefault();
     isEmpty(true);
     if (success && samePwd) {
-      toast.success("Password successfully changed!");
+      toast.success("Password successfully changed!", {duration: 2000, position: "top-right"});
     } else if (success && !samePwd) {
-      toast.error("Inconsistent password");
+      toast.error("Inconsistent password", {duration: 2000, position: "top-right"});
     } else {
-      toast.error("Incorrect old password");
+      toast.error("Incorrect old password", {duration: 2000, position: "top-right"});
     }
     e.target.reset();
 
