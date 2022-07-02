@@ -15,7 +15,8 @@ export default function Login() {
       userInputs.password === userData.password
     ) {
       dispatch(login());
-      window.localStorage.setItem("loggedIn", isLoggedIn );
+      // immediately set to true bc dispatch is synchronous
+      window.localStorage.setItem("loggedIn", true);
       const data  = localStorage.getItem("loggedIn");
       console.log(data);
     }

@@ -4,47 +4,19 @@ import BlueButton from "../../components/BlueButton";
 import NavBar from "../../components/Navbar/NavBarAuth";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
 // third-party
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser, setUser } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
-import Loader from "../../components/Loader";
-import useLoader from "../../utils/useLoader";
-import { getProfile } from "../../lib/fetchApi";
-import Lottie from "react-lottie";
-import useLogin from "../../lib/useLogin";
-import loadingSpinner from "../../assets/loading-spinner.json";
+import useLoader from "../../lib/useLoader";
 
 export default function Profile() {
   const { userData, profile } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  let login = useLogin();
   const [edit, isEdit] = useState(false); // to check if form is in edit mode
   const [update, updateData] = useState(false); // to check if update data is confirmed (clicking save changes returns true, cancel returns false)
 
+  const showLoader = useLoader();
   let currentUserData = useRef(userData);
-
-  const showLoader = {
-    loop: true,
-    autoplay: true,
-    animationData: loadingSpinner.default,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const [loading, setloading] = useState(undefined);
-  // const [completed, setcompleted] = useState(undefined);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setUser(userData);
-      setloading(true);
-      // setTimeout(() => {
-      //   setcompleted(true);
-      // }, 1000);
-    }, 2000);
-  }, []);
 
   useEffect(() => {
     if (update) {
@@ -64,15 +36,11 @@ export default function Profile() {
 
   return (
     <>
+    {showLoader}
       <div className="flex">
         <ProfileSidebar /> 
-        <div className="bg-indigo-500">
-          {!loading && <Loader/>}
-          {/* {!loading && (
-            <div className="flex items-center w-full max-w-xs p-4 space-x-4  space-x">
-              <Lottie options={showLoader} height={100} width={100} />
-            </div>
-          )} */}
+        <div>
+
           <div className="text-2xl font-bold mt-20 ml-16 pb-4 text-main-blue">
             {edit && "Edit"} Profile
           </div>
@@ -94,7 +62,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="name"
                     type="text"
-                    value={userData.name}
+                    defaultValue={userData.name}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -120,9 +88,9 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="username"
                     type="text"
-                    value={userData.username}
+                    defaultValue={userData.username}
                     onChange={handleChange}
-                    readOnly={!edit}
+                    readOnly={false}
                   />
                 ) : (
                   <input
@@ -146,7 +114,7 @@ export default function Profile() {
                     name="address"
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    value={userData.address}
+                    defaultValue={userData.address}
                     onChange={handleChange}
                   />
                 ) : (
@@ -171,9 +139,9 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="email"
                     type="text"
-                    value={userData.email}
+                    defaultValue={userData.email}
                     onChange={handleChange}
-                    readOnly={!edit}
+                    readOnly={false}
                   />
                 ) : (
                   <input
@@ -197,7 +165,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none "
                     name="phone"
                     type="text"
-                    value={userData.phone}
+                    defaultValue={userData.phone}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -206,7 +174,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="phone"
                     type="text"
-                    value={userData.phone}
+                    defaultValue={userData.phone}
                     readOnly={edit}
                   />
                 )}
@@ -238,7 +206,6 @@ export default function Profile() {
             </div>
           </form>
         </div>
-        {/* <Loader/> */}
       </div>
     </>
   );

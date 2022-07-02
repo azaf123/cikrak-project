@@ -11,7 +11,6 @@ import Footer from '../../components/Footer/Footer';
 const HomeEdu = () => {
   return (
     <div>
-      <br />
       <div className={Style.container}>
         <div className={Style.content}>
           <div className={Style.background}>
