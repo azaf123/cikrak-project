@@ -7,13 +7,19 @@ import green from "../../assets/33.jpg";
 import compost from "../../assets/tanah.jpg";
 import background from "../../assets/Polygon1.png";
 import App from "../../App";
-import Nav from "../../components/Navbar/Nav";
+import Shake from 'react-reveal/Shake';
+import Slide from 'react-reveal/Slide';
 import Footer from "../../components/Footer/Footer";
+
+import React, { useRef, useEffect } from 'react'
+import { useSpring, animated, to } from '@react-spring/web'
+
+
 const HomeEdu = () => {
     return (
         <div>
-            <Nav />
-            <br />
+         
+       
             <div className={Style.container}>
                 <div className={Style.content}>
                     <div className={Style.background}>
@@ -25,6 +31,7 @@ const HomeEdu = () => {
                                 </div>
                             </div>
                             {/* text */}
+                            <Slide bottom>
                             <div className={Style.content_item}>
                                 <div className={Style.content_item_textmaster}>
                                     <div className={Style.content_item_text}>
@@ -40,6 +47,8 @@ const HomeEdu = () => {
                                 </div>
                                
                             </div>
+                            </Slide>
+                           
                         </div>
                     </div>
                     {/* icon */}
@@ -48,6 +57,7 @@ const HomeEdu = () => {
                     </div>
                     <div className={Style.background}>
                         <div className={Style.content2}>
+                        <Slide bottom>
                             <div className={Style.content_item}>
                                 <div className={Style.content_item_textmaster}>
                                     <div className={Style.content_item_text_1}>
@@ -65,6 +75,7 @@ const HomeEdu = () => {
                              
 
                             </div>
+                            </Slide>
                             <div className={Style.content_item}>
                                 <div className={Style.content_item_image_1}>
                                     <img src={cup} alt="" />
@@ -83,6 +94,7 @@ const HomeEdu = () => {
                                     <img src={green} alt="" />
                                 </div>
                             </div>
+                            <Slide bottom>
                             <div className={Style.content_item_2}>
 
                                 <div className={Style.content_item_textmaster}>
@@ -100,6 +112,7 @@ const HomeEdu = () => {
                                 </div>
                                 
                             </div>
+                            </Slide>
 
                         </div>
                     </div>

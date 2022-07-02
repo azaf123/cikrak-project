@@ -8,12 +8,12 @@ import stop from '../../assets/stop.jpg'
 import sampah from '../../assets/sampah.jpg'
 import nanem from '../../assets/nanem.jpg'
 import tanah from '../../assets/tanah.jpg'
-import Nav from '../../components/Navbar/Nav';
+
 import Footer from '../../components/Footer/Footer';
 const SecondEdu = () => {
     return (
         <div>
-            <Nav />
+      
            
             <div className={Style.container}>
                 <div className={Style.content}>

@@ -12,7 +12,7 @@ const NavLinks = () => {
     },
     {
       name: 'About Us',
-      link: '/',
+      link: '/aboutus',
     },
     {
       name: 'Get Started',

@@ -3,13 +3,13 @@ import Style from './style.module.css';
 import EduTiga from '../../assets/edu3.png'
 import food from '../../assets/food.png'
 import plastic from '../../assets/plastic.png'
-import Nav from '../../components/Navbar/Nav';
+
 import Footer from '../../components/Footer/Footer';
 const ThirdEdu = () => {
 
     return (
         <div>
-            <Nav />
+      
             <div className={Style.content1}>
                 <div className={Style.container}>
                     <div className={Style.image}>

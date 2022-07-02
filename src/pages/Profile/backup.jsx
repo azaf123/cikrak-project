@@ -16,13 +16,13 @@ import useLogin from "../../lib/useLogin";
 import loadingSpinner from "../../assets/loading-spinner.json";
 
 export default function Profile() {
-  const { registerData, profile } = useSelector((state) => state.register);
+  const { userData, profile } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   let login = useLogin();
   const [edit, isEdit] = useState(false); // to check if form is in edit mode
   const [update, updateData] = useState(false); // to check if update data is confirmed (clicking save changes returns true, cancel returns false)
 
-  let currentUserData = useRef(registerData);
+  let currentUserData = useRef(userData);
 
   const showLoader = {
     loop: true,
@@ -38,7 +38,7 @@ export default function Profile() {
 
   useEffect(() => {
     setTimeout(() => {
-      setUser(registerData);
+      setUser(userData);
       setloading(true);
       // setTimeout(() => {
       //   setcompleted(true);
@@ -48,7 +48,7 @@ export default function Profile() {
 
   useEffect(() => {
     if (update) {
-      currentUserData.current = registerData;
+      currentUserData.current = userData;
     }
   }, [update]);
 
@@ -59,7 +59,7 @@ export default function Profile() {
 
   const handleChange = (e) => {
     let { name, value } = e.target;
-    dispatch(updateUser({ ...registerData, [name]: value }));
+    dispatch(updateUser({ ...userData, [name]: value }));
   };
 
   return (
@@ -94,7 +94,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="name"
                     type="text"
-                    value={registerData.name}
+                    value={userData.name}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -103,7 +103,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="name"
                     type="text"
-                    value={registerData.name}
+                    value={userData.name}
                     readOnly={edit}
                   />
                 )}
@@ -120,7 +120,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="username"
                     type="text"
-                    value={registerData.username}
+                    value={userData.username}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -129,7 +129,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="username"
                     type="text"
-                    value={registerData.username}
+                    value={userData.username}
                     readOnly={edit}
                   />
                 )}
@@ -146,7 +146,7 @@ export default function Profile() {
                     name="address"
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    value={registerData.address}
+                    value={userData.address}
                     onChange={handleChange}
                   />
                 ) : (
@@ -154,7 +154,7 @@ export default function Profile() {
                     name="address"
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
-                    value={registerData.address}
+                    value={userData.address}
                     readOnly
                   />
                 )}
@@ -171,7 +171,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="email"
                     type="text"
-                    value={registerData.email}
+                    value={userData.email}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -180,7 +180,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="email"
                     type="text"
-                    value={registerData.email}
+                    value={userData.email}
                     readOnly={edit}
                   />
                 )}
@@ -197,7 +197,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none "
                     name="phone"
                     type="text"
-                    value={registerData.phone}
+                    value={userData.phone}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -206,7 +206,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="phone"
                     type="text"
-                    value={registerData.phone}
+                    value={userData.phone}
                     readOnly={edit}
                   />
                 )}

@@ -6,11 +6,11 @@ import plastic from '../../assets/plastic.png';
 import reduceg from '../../assets/reduceg.png';
 import reuseg from '../../assets/reuseg.png';
 import recycleg from '../../assets/recycleg.png';
-import Nav from '../../components/Navbar/Nav';
+
 const FirstEdu = () => {
     return (
         <div>
-            <Nav />
+        
             <div className={Style.container}>
                 <div className={Style.content}>
                 <div className={Style.background}>
