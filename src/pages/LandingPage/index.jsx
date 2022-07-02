@@ -1,4 +1,5 @@
- import React, { useState, useRef } from "react";
+ import React, { useState, useRef, } from "react";
+ import { useSelector } from "react-redux";
 // components
 import ButtonOutline from "../../components/ButtonOutline";
 import ButtonFill from "../../components/ButtonFill";
@@ -9,6 +10,7 @@ import { ScrollToTop } from "../../components/scroll";
 import { FormModal } from "../../components/FormModal";
 import { EcommerceModal } from "../../components/EcommerceModal";
 import { WaButton } from "../../components/WaButton";
+
 import Blog from "../../components/Blog";
 // data
 import Info from "../../data/Info";
@@ -20,7 +22,7 @@ const LandingPage = () => {
   const [openModal, setOpenModal] = useState(false);
   const [openModalComingSoon, setOpenModalComingSoon] = useState(false);
   const commentSection = useRef(null);
-
+  const { isLoggedIn } = useSelector((state) => state.register);
   return (
     // TODO: modal not showing
     <div className="font-Poppins">
@@ -91,7 +93,7 @@ const LandingPage = () => {
       <Footer />
       <WaButton />
       <ScrollToTop />
-      <FormModal open={openModal} onClose={() => setOpenModal(false)} />
+      <FormModal open={isLoggedIn&&openModal} onClose={() => setOpenModal(false)} />
       <EcommerceModal
         open={openModalComingSoon}
         onClose={() => setOpenModalComingSoon(false)}
