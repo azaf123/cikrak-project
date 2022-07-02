@@ -12,9 +12,7 @@ import tanah from '../../assets/tanah.jpg'
 import Footer from '../../components/Footer/Footer';
 const SecondEdu = () => {
     return (
-        <div>
-      
-           
+        <div>      
             <div className={Style.container}>
                 <div className={Style.content}>
                     <div className={Style.content1}>
@@ -131,29 +129,19 @@ Composting at home reduces the volume of garbage sent to landfills and reduces t
                     </div>
 
 
+                <div className={Style.content_item_text}>
+                  <h2> Compost</h2>
+                  <p>
+                    Composting at home reduces the volume of garbage sent to
+                    landfills and reduces the chance of some products becoming
+                    marine debris.{' '}
+                  </p>
                 </div>
+              </div>
             </div>
             <Footer />
         </div>
-    );
-}
+      
+  );
+};
 export default SecondEdu;
-// Bring Shopping Bag
-// Remember to bring reusable bags to the grocery store or for any other shopping activities to reduce consumption of disposable bags.
-
-// Invest in a reusable water bottle.
-// Remember to bring reusable bags to the grocery store or for any other shopping activities to reduce consumption of disposable bags.
-
-// Bring your own reusable cup
-// Think about how many disposable cups are used every day in just your local coffee shop. Bringing a mug for your morning coffee can reduce the amount of waste you produce annually. Imagine how much waste we could reduce if we all made this simple daily change!
-
-// Refuse single-use items.
-// Take note on how often you rely on single-use items and choose to replace them with more sustainable versions. Refusing plastic straws and disposable cutlery when you go out and bringing your own containers for leftovers are a few ways you can start today.
-
-// Avoid products with microbeads.
-//  Avoid products with microbeads.
-// Make sure your waste goes to the right place.
-// Do your best to ensure that the waste you dispose of ends up where it should. Recycle the materials that are recyclable in your area and make sure to reduce the likelihood of your garbage ending up in the environment by keeping a lid on your trash can when it’s outside.
-
-// Compost.
-// Composting at home reduces the volume of garbage sent to landfills and reduces the chance of some products becoming marine debris.

@@ -2,23 +2,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 // register 
 const initialState = {
-    isLoggedIn: false,
+   
     //local storage
-
     registerData:
     localStorage.getItem("registerData")
         ? JSON.parse(localStorage.getItem("registerData"))
         : {
-            username: "",
+        name: "",
+        username: "",
         email: "",
         phone : "",
         password: "",
-        confirmPassword: "",
+        
+       
         }
     ,
+    isLoggedIn: localStorage.getItem("isLoggedIn")
+        ? JSON.parse(localStorage.getItem("isLoggedIn"))
+        : false,
+
     //local storage
     
-}
+};
 const registerSlice = createSlice({
     name: "register",
     initialState,
@@ -27,12 +32,25 @@ const registerSlice = createSlice({
             state.registerData = action.payload;
             localStorage.setItem("registerData", JSON.stringify(state.registerData));
         },
-        login: (state) => {
+        login : (state) => {
             state.isLoggedIn = true;
+            localStorage.setItem("isLoggedIn", JSON.stringify(state.isLoggedIn));
+        
           },
+          updateUser: (state, action) => {
+            state.registerData = action.payload;
+          },
+          updatePassword: (state, action) => {
+            state.registerData.password = action.payload;
+          },
+          logout: (state) => {
+            state.isLoggedIn = false;
+            localStorage.setItem("isLoggedIn", JSON.stringify(state.isLoggedIn));   
+          },
+         
 
     }
 });
-export const { setRegister, login } = registerSlice.actions;
+export const { setRegister, login, updateUser, updatePassword,logout } = registerSlice.actions;
 export default registerSlice.reducer;
 

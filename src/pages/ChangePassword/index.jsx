@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 // components
-import BlueButton from "../../components/BlueButton";
+import BlueButton from '../../components/BlueButton';
 // third-party
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { updatePassword } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
-import NavBar from "../../components/Navbar";
-import Toast from "../../components/Toast";
+// import Toast from "../../components/Toast";
+import toast, {Toaster} from 'react-hot-toast';
 
 function ChangePassword(props) {
   const [success, setSuccess] = useState(false); // to check if old password entered is correct
-  const [newPwd, setNewPwd] = useState(""); // to store new password to check for samePwd state
+  const [newPwd, setNewPwd] = useState(''); // to store new password to check for samePwd state
   const [samePwd, setSamePwd] = useState(true); // to check if new password fields are the same
   const [empty, isEmpty] = useState(true);
   const [showPwd1, setShowPwd1] = useState(false);
   const [showPwd2, setShowPwd2] = useState(false);
   const [showPwd3, setShowPwd3] = useState(false);
-  const [error, setError] = useState("");
-
-  const [showToast, setShowToast] = useState(false);
 
   const { userData } = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -29,15 +26,15 @@ function ChangePassword(props) {
     e.preventDefault();
     isEmpty(true);
     if (success && samePwd) {
-      setError("Password succesfully changed!");
+      toast.success("Password successfully changed!", {duration: 2000, position: "top-right"});
     } else if (success && !samePwd) {
-      setError("Password inputted isn't the same");
+      toast.error("Inconsistent password", {duration: 2000, position: "top-right"});
     } else {
-      setError("Incorrect old password");
+      toast.error("Incorrect old password", {duration: 2000, position: "top-right"});
     }
     e.target.reset();
 
-    console.log("Check:", userData.password);
+    console.log('Check:', userData.password);
   };
 
   return (
@@ -144,7 +141,7 @@ function ChangePassword(props) {
                   )}
                 </div>
               </div>
-              {error && <Toast text={error} />}
+              <Toaster/>
             </div>
             <div className="flex mt-8 mr-auto float-right md:pr-20">
               {empty ? (

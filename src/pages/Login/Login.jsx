@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from "react";
-import loginImg from "../assets/login.jpg";
+import React, { useState } from "react";
+import loginImg from "../../assets/login.jpg";
 import { useSelector, useDispatch } from "react-redux";
-
-import { login } from "../redux/registerSlice";
+import { login } from "../../redux/registerSlice";
 
 export default function Login() {
   let { isLoggedIn, registerData } = useSelector((state) => state.register);
   const dispatch = useDispatch();
-  const [userInputs, setInputs] = useState({ username: "", password: "" });
-  let [allow, setAllow] = useState(false); // local version of isLoggedIn
+  const [userInputs, setInputs] = useState({ email: "", password: "" });
 
-  // useEffect(() => {
-  //   console.log(isLoggedIn);
-  //   dispatch(login());
-  // }, [allow]);
-  console.log(userInputs);
-
+  // email / password 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -23,7 +16,10 @@ export default function Login() {
       userInputs.password === registerData.password
     ) {
       dispatch(login());
-
+      // immediately set to true bc dispatch is synchronous
+      window.localStorage.setItem("loggedIn", true);
+      const data  = localStorage.getItem("loggedIn");
+      console.log(data);
     }
     console.log(userInputs.email + userInputs.password);
     e.target.reset();
@@ -49,10 +45,10 @@ export default function Login() {
         >
           <h2 className="text-4xl font-bold text-center py-6">CIKRAK</h2>
           <div className="flex flex-col py-2">
-            <label>Username</label>
+            <label>Email or Username</label>
             <input
               className="border p-2"
-              name="username"
+              name="email"
               type="text"
               onChange={handleChange}
             />

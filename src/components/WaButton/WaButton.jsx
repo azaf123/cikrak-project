@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { classNames } from '../../utils';
 
 export const WaButton = () => {
-  const [setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
     setIsVisible(true);
