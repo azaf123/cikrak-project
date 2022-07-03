@@ -25,7 +25,19 @@ const voucher=
                 "date":"valid until 30 July 2022",
                 "image":dunkin,
                 "points":"200 Points"
-            },
+            },{
+                "id":"adsadsfg",
+                "voucher":"90% off Coupon at Dunkin",
+                "date":"valid until 30 July 2022",
+                "image":dunkin,
+                "points":"2000 Points"
+            },{
+                "id":"adssag",
+                "voucher":"10% off Coupon at Dunkin",
+                "date":"valid until 30 July 2022",
+                "image":dunkin,
+                "points":"100 Points"
+            }
             
         ],
         Entertaiment:[
@@ -41,6 +53,18 @@ const voucher=
                 "date":"valid until 30 July 2022",
                 "image":teater,
                 "points":"500 Points"
+            }, {
+                "id":"avvsaf",
+                "voucher":"30% off Coupon at CGV",
+                "date":"valid until 30 July 2022",
+                "image":teater,
+                "points":"100 Points"
+            },{
+                "id":"avvsaf",
+                "voucher":"20% off Coupon at CGV",
+                "date":"valid until 30 July 2022",
+                "image":teater,
+                "points":"200 Points"
             }
         ],
         HealthyBeauty:[

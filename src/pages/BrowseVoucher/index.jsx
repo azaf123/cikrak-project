@@ -9,9 +9,10 @@ const Voucher = ()=>{
     return (
       <><NavBarAuth />
         <div>
-          
-          <a href="/redeem"><FontAwesomeIcon icon={faAngleLeft} className="back text-sky-500 fa-2x mx-10 float-left "/></a>
-          <Points/>
+          <div  className=" font-bold pb-4 ">
+          <a href="/redeem"><FontAwesomeIcon icon={faAngleLeft} className="back text-sky-500 fa-2x mx-2 float-left "/></a>
+          <Points  /></div>
+
           <Card/>
         </div>
         </>
