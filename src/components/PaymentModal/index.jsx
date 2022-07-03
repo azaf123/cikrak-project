@@ -27,8 +27,9 @@ export const PaymentModal = ({ open, onClose, paymentData, props }) => {
     100000 + Math.random() * 900000
   )}`;
   return (
-    <div class=" mx-auto mt-[48px]  p-6 rounded-lg shadow-lg bg-white w-[60rem]">
-      <div>
+    <div className="cardifen py-10">
+ <div class=" mx-auto   p-6 rounded-lg shadow-lg bg-white w-[60rem]">
+      <div className=''>
         <div class="form-group mb-6">
           <div class="flex justify-between items-center">
             <img src={Logo} alt="logo" className="h-12" />
@@ -86,5 +87,7 @@ export const PaymentModal = ({ open, onClose, paymentData, props }) => {
         </div>
       </div>
     </div>
+    </div>
+   
   );
 };
