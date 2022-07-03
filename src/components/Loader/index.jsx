@@ -1,7 +1,7 @@
 import React from "react";
 import GreenLoader from "../../assets/green-loader.gif";
 
-function Loader() {
+const Loader = () => {
   return (
     <>
       <div className="top-0 left-0 w-full h-full bg-slate-200 fixed opacity-80 z-10">

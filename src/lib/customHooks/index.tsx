@@ -12,5 +12,4 @@ const useDocumentTitle: TUseDocumentTitle = (title) => {
   return [documentTitle, setDocumentTitle];
 };
 
-
 export { useDocumentTitle };

@@ -8,7 +8,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser, setUser } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
-import Loader from "../../components/Loader";
+import Loader from "../../components/Loader/indextjsx";
 import useLoader from "../../utils/useLoader";
 import { getProfile } from "../../lib/fetchApi";
 import Lottie from "react-lottie";

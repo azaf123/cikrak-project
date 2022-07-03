@@ -8,12 +8,9 @@ import NavBarAuth from "./components/Navbar/NavBarAuth";
 // redux, roots, hooks
 import { login, logout } from "./redux/userSlice";
 import store from "./redux/store";
-import useAuth from "./lib/useAuth";
 import Routing from "./routes/routes";
 
 const App = () => {
-  // const auth = useAuth();
-  const { isLoggedIn } = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   // hook to persist login & logout states
