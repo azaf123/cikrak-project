@@ -8,7 +8,7 @@ export default function Login() {
   let { isLoggedIn, registerData } = useSelector((state) => state.register);
   const dispatch = useDispatch();
   const [userInputs, setInputs] = useState({ username: "", password: "" });
-  let [allow, setAllow] = useState(false); // local version of isLoggedIn
+  let [allow, setAllow] = useState(false); // local version of isLoggedInzz
 
   // useEffect(() => {
   //   console.log(isLoggedIn);
