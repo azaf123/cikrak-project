@@ -39,13 +39,19 @@ const registerSlice = createSlice({
           },
           updateUser: (state, action) => {
             state.registerData = action.payload;
+            localStorage.setItem("registerData", JSON.stringify(state.registerData));
+        
           },
           updatePassword: (state, action) => {
             state.registerData.password = action.payload;
+            localStorage.setItem("registerData", JSON.stringify(state.registerData));
+        
           },
           logout: (state) => {
             state.isLoggedIn = false;
-            localStorage.setItem("isLoggedIn", JSON.stringify(state.isLoggedIn));   
+            // remove
+            localStorage.removeItem("registerData");
+            localStorage.removeItem("isLoggedIn");
           },
          
 
