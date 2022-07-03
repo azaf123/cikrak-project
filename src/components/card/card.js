@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import voucher from "../../data/data";
 import Modal from "./modal";
-import './card.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faStar} from '@fortawesome/free-solid-svg-icons'
 
@@ -19,7 +18,7 @@ const Card = ()=>{
 return(
     <>
     
-    <section className="container "> 
+    <section className=" mx-10 "> 
         <h4  className=" text-2xl font-bold mb-3 ">List Voucher</h4>
         <h6 className="font-bold text-xl sticky mx-2 top-0 ">Food & Beverage</h6>
         <div className=" rounded-xl  ml-4  overflow-x-auto p-2 bg-blue-100 shadow-inner   ">

@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import SidebarItems from "../../data/SidebarItems";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/registerSlice";
 
-function ProfileSidebar() {
+const ProfileSidebar = () => {
   const { userData } = useSelector((state) => state.user);
+  const {registerData} = useSelector((state) => state.register);
+  let location = useLocation();
+  const dispatch = useDispatch();
+
+  const logoutFunction = () => {
+    dispatch(logout());
+    
+  };
 
   return (
     <>
@@ -19,7 +29,7 @@ function ProfileSidebar() {
             alt="Profile Avatar"
           />
           <div className="text-xl font-bold font-fontTitle hidden  text-main-green mt-5 text-center md:block">
-            {userData.name}
+            {registerData.name}
           </div>
           <div className="text-sm font-bold hidden  text-main-yellow text-center md:block">
             <span className="pr-1">
@@ -33,11 +43,19 @@ function ProfileSidebar() {
         <ul>
           {SidebarItems.map((menuItem, index) => (
             <>
-              {/* TODO: add active link! (maybe use state) */}
-              <Link to={menuItem.link}>
+              <Link
+                to={menuItem.link}
+                onClick={() => {
+                  index === 4 && logoutFunction();
+                }}
+              >
                 <li
                   key={index}
-                  className="text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green hover:text-main-green"
+                  className={`text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green hover:text-main-green ${
+                    location.pathname === menuItem.link
+                      ? "bg-mid-green text-main-green"
+                      : ""
+                  }`}
                 >
                   <span className="text-lg text-center w-4">
                     <FontAwesomeIcon icon={menuItem.icon} />
@@ -53,6 +71,6 @@ function ProfileSidebar() {
       </div>
     </>
   );
-}
+};
 
 export default ProfileSidebar;

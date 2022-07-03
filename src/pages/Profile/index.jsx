@@ -1,26 +1,26 @@
 import React, { useState, useRef, useEffect } from "react";
 // components
 import BlueButton from "../../components/BlueButton";
-import NavBar from "../../components/Navbar";
+import NavBar from "../../components/Navbar/NavBarAuth";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
 // third-party
 import { useSelector, useDispatch } from "react-redux";
-import { updateUser } from "../../redux/userSlice";
+import { updateUser, setUser } from "../../redux/registerSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
-import Loader from "../../components/Loader";
-import useLoader from "../../utils/useLoader";
+import useLoader from "../../lib/useLoader";
 
 export default function Profile() {
-  const { userData } = useSelector((state) => state.user);
+  const { registerData, profile } = useSelector((state) => state.register);
   const dispatch = useDispatch();
-
   const [edit, isEdit] = useState(false); // to check if form is in edit mode
   const [update, updateData] = useState(false); // to check if update data is confirmed (clicking save changes returns true, cancel returns false)
-  let currentUserData = useRef(userData);
+
+  const showLoader = useLoader();
+  let currentUserData = useRef(registerData);
 
   useEffect(() => {
     if (update) {
-      currentUserData.current = userData;
+      currentUserData.current = registerData;
     }
   }, [update]);
 
@@ -31,15 +31,16 @@ export default function Profile() {
 
   const handleChange = (e) => {
     let { name, value } = e.target;
-    dispatch(updateUser({ ...userData, [name]: value }));
+    dispatch(updateUser({ ...registerData, [name]: value }));
   };
 
   return (
     <>
-      <NavBar />
+    {showLoader}
       <div className="flex">
-        <ProfileSidebar />
+        <ProfileSidebar /> 
         <div>
+
           <div className="text-2xl font-bold mt-20 ml-16 pb-4 text-main-blue">
             {edit && "Edit"} Profile
           </div>
@@ -61,7 +62,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="name"
                     type="text"
-                    value={userData.name}
+                    defaultValue={registerData.name}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -70,7 +71,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="name"
                     type="text"
-                    value={userData.name}
+                    value={registerData.name}
                     readOnly={edit}
                   />
                 )}
@@ -87,16 +88,16 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="username"
                     type="text"
-                    value={userData.username}
+                    defaultValue={registerData.username}
                     onChange={handleChange}
-                    readOnly={!edit}
+                    readOnly={false}
                   />
                 ) : (
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="username"
                     type="text"
-                    value={userData.username}
+                    value={registerData.username}
                     readOnly={edit}
                   />
                 )}
@@ -113,7 +114,7 @@ export default function Profile() {
                     name="address"
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    value={userData.address}
+                    defaultValue={registerData.address}
                     onChange={handleChange}
                   />
                 ) : (
@@ -121,7 +122,7 @@ export default function Profile() {
                     name="address"
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
-                    value={userData.address}
+                    value={registerData.address}
                     readOnly
                   />
                 )}
@@ -138,16 +139,16 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     name="email"
                     type="text"
-                    value={userData.email}
+                    defaultValue={registerData.email}
                     onChange={handleChange}
-                    readOnly={!edit}
+                    readOnly={false}
                   />
                 ) : (
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="email"
                     type="text"
-                    value={userData.email}
+                    value={registerData.email}
                     readOnly={edit}
                   />
                 )}
@@ -164,7 +165,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none "
                     name="phone"
                     type="text"
-                    value={userData.phone}
+                    defaultValue={registerData.phone}
                     onChange={handleChange}
                     readOnly={!edit}
                   />
@@ -173,7 +174,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="phone"
                     type="text"
-                    value={userData.phone}
+                    defaultValue={registerData.phone}
                     readOnly={edit}
                   />
                 )}
@@ -205,7 +206,6 @@ export default function Profile() {
             </div>
           </form>
         </div>
-        {/* <Loader/> */}
       </div>
     </>
   );

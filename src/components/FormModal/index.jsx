@@ -25,7 +25,7 @@ export const FormModal = ({ open, onClose, props }) => {
     <div class="flex justify-center items-center fixed inset-0 z-10 backdrop-opacity-90 backdrop-blur-3xl mt-5">
       <div
         aria-hidden="true"
-        class="backdrop-opacity-10 backdrop-invert overflow-y-auto overflow-x-hidden mx-auto mt-[48px] fixed top-0 right-0 left-0 z-50 block p-6 rounded-lg shadow-lg bg-white w-[60rem]"
+        class="w-9/12 overflow-y-auto overflow-x-hidden mx-auto mt-[48px] fixed top-0 right-0 left-0 z-50 block p-6 rounded-lg shadow-lg bg-white"
       >
         <form>
           <div class="form-group mb-6">

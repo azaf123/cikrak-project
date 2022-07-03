@@ -1,6 +1,6 @@
-import { useCol } from "react-bootstrap/esm/Col"
+// import { useCol } from "react-bootstrap/esm/Col"
 
-const user=
+const user =
 {
     admin:[
     {

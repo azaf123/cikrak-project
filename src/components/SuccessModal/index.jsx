@@ -1,5 +1,6 @@
 import React from 'react';
 import success from '../../assets/success.png';
+import { Link } from 'react-router-dom';
 
 export const SuccessModal = ({ open, onClose }) => {
   return (
@@ -17,12 +18,16 @@ export const SuccessModal = ({ open, onClose }) => {
           </h1>
           <div class="flex-auto">
             <div class="flex justify-center mt-4">
-              <button class="h-10 w-44 rounded-lg bg-red-600 text-white mr-3">
-                Go to Home
-              </button>
-              <button class="h-10 w-44 rounded-lg bg-lightprimary text-white">
-                Go to History
-              </button>
+              <Link to="/">
+                <button class="h-10 w-44 rounded-lg bg-red-600 text-white mr-3">
+                  Go to Home
+                </button>
+              </Link>
+              <Link to="/history">
+                <button class="h-10 w-44 rounded-lg bg-lightprimary text-white">
+                  Go to History
+                </button>
+              </Link>
             </div>
           </div>
         </div>

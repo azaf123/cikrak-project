@@ -9,14 +9,18 @@ const NavLinks = [
   {
     id: 2,
     name: "Education",
-    link: "/",
+    link: "/home-edu",
   },
   {
     id: 3,
     name: "About Us",
-    link: "/",
+    link: "/aboutus",
   },
-  { id: 4, name: "Get Started", link: "/" },
+  {
+    id: 4,
+    name: "Get Started",
+    link: "/login"
+  },
   {
     id: 5,
     name: "Notifications",
@@ -26,7 +30,7 @@ const NavLinks = [
   {
     id: 6,
     name: "Your Profile",
-    link: "/",
+    link: "/profile",
     icon: faUser,
   },
 ];

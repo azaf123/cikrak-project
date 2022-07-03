@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import voucher from "../../data/data";
 import Modal from "../../components/card/modal";
 import Points from "../../components/card/points";
-import NavBarAuth from "../../components/Navbar";
+import NavBarAuth from "../../components/Navbar/NavBarAuth";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faStar} from '@fortawesome/free-solid-svg-icons'
@@ -20,14 +20,14 @@ const CardProfil = ()=>{
 
     return(
         <>
-            <NavBarAuth />
+
             <div className="flex">
                 <ProfileSidebar />
             <div>
             <div className=" font-bold mt-20 ml-16 pb-4 ">
             <Points/>
             </div>
-            <section className="container mx-16 w-5/6 ">
+            <section className=" mx-16 w-5/6 bg-white ">
                 <div className="text-2xl">
                 <a href="./voucher" className=" float-right text-sm text-blue-700" >Browse More</a>   
                 <h2 className=" font-bold">New Vouchers</h2>

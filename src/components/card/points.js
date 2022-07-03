@@ -16,8 +16,8 @@ function Points() {
     }
     return(
         <>
-            <section className=" container my-2 "> 
-            <h4 className="reedem text-2xl  "> Reedem Points</h4>
+            <section className="konten mx-10 my-2 bg-white "> 
+            <h4 className="reedem text-2xl   "> Reedem Points</h4>
                 <div className=" point  bg-blue-100 rounded-xl inline-block mx-2 drop-shadow-lg my-3">                 
                     <div className="card-body w-60 text-2xl ">
                         <h4 className=" text-black "><FontAwesomeIcon icon={faStar} className="text-yellow-400"/>  {userData.points} <pa className=" text-black text-sm">Points</pa></h4>

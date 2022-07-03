@@ -12,14 +12,15 @@ const NavLinks = () => {
     },
     {
       name: 'About Us',
-      link: '/',
+      link: '/aboutus',
     },
     {
       name: 'Get Started',
-      link: '/',
+      link: '/login',
     },
   ];
   return (
+    // TODO: change link login to register; only for temporary testing
     <>
       {Links.map((link, i) => (
         <li
