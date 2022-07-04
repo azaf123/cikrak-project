@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setRegister } from '../../redux/registerSlice';
 import Logo from '../../assets/logo2.png';
 import { Link } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Register() {
   // use redux
@@ -100,7 +101,9 @@ export default function Register() {
         >
           <img src={Logo} alt="logo" className="h-16 ml-32" />
           <div className="flex flex-col py-2">
-            <label>Name</label>
+            <label>
+              Name<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter Name"
               onChange={handleChange}
@@ -110,7 +113,9 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col py-2">
-            <label>Username</label>
+            <label>
+              Username<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter Username"
               onChange={handleChange}
@@ -120,7 +125,9 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col py-2">
-            <label>Email</label>
+            <label>
+              Email<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter Email"
               onChange={handleChange}
@@ -130,7 +137,9 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col py-2">
-            <label>Phone Number</label>
+            <label>
+              Phone Number<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter Phone Number"
               onChange={handleChange}
@@ -140,7 +149,9 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col py-2">
-            <label>Password</label>
+            <label>
+              Password<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter password"
               onChange={handleChange}
@@ -149,7 +160,6 @@ export default function Register() {
               name="password"
             />
           </div>
-
           <button
             type="submit"
             className="border w-full my-4 py-2 bg-lightprimary hover:bg-greenprimary text-white"

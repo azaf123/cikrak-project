@@ -24,14 +24,14 @@ function Points() {
                     </div> 
                     <div class="w-3/4  mx-auto mb-3 ">
                         <h1 className="text-sm text-black ">There are vouchers waiting for you - 
-                        <a onClick={GopayReedem} className="text-blue-700 cursor-pointer">Reedem now !</a></h1>   
+                        <div onClick={GopayReedem} className="text-blue-700 cursor-pointer">Reedem now !</div></h1>   
                     </div>
                 </div>
 
                 <div className=" gopay overflow-hidden h-300 shadow border-inherit rounded-md inline-block mx-2 p-2 drop-shadow-xl cursor-pointer	 ">
                     <h6 onClick={GopayReedem} className="text-xl text-black">
                         exchange to
-                        <img className="w-24" src={gopay}/>
+                        <img className="w-24" src={gopay} alt="gopay-logo"/>
                         </h6>
                 </div>
             </section>

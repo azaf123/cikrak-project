@@ -1,22 +1,22 @@
- import React, { useState, useRef, } from "react";
- import { useSelector } from "react-redux";
+import React, { useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
 // components
-import ButtonOutline from "../../components/ButtonOutline";
-import ButtonFill from "../../components/ButtonFill";
-import Companies from "../../components/Companies";
-import Review from "../../components/Review";
-import Footer from "../../components/Footer/Footer";
-import { ScrollToTop } from "../../components/scroll";
-import { FormModal } from "../../components/FormModal";
-import { EcommerceModal } from "../../components/EcommerceModal";
-import { WaButton } from "../../components/WaButton";
+import ButtonOutline from '../../components/ButtonOutline';
+import ButtonFill from '../../components/ButtonFill';
+import Companies from '../../components/Companies';
+import Review from '../../components/Review';
+import Footer from '../../components/Footer/Footer';
+import { ScrollToTop } from '../../components/scroll';
+import { FormModal } from '../../components/FormModal';
+import { EcommerceModal } from '../../components/EcommerceModal';
+import { WaButton } from '../../components/WaButton';
 
-import Blog from "../../components/Blog";
+import Blog from '../../components/Blog';
 // data
-import Info from "../../data/Info";
-import Contents from "../../data/Content";
+import Info from '../../data/Info';
+import Contents from '../../data/Content';
 // assets
-import HeroImg from "../../assets/Hero.png";
+import HeroImg from '../../assets/Hero.png';
 
 const LandingPage = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -87,13 +87,16 @@ const LandingPage = () => {
         comimgSoon={true}
         setOpenModalComingSoon={setOpenModalComingSoon}
       />
-      <Blog content={Contents[2]} />
+      <Blog content={Contents[2]} education={true} />
       {/* TODO: fix styling on review */}
       <Review />
       <Footer />
       <WaButton />
       <ScrollToTop />
-      <FormModal open={isLoggedIn&&openModal} onClose={() => setOpenModal(false)} />
+      <FormModal
+        open={isLoggedIn && openModal}
+        onClose={() => setOpenModal(false)}
+      />
       <EcommerceModal
         open={openModalComingSoon}
         onClose={() => setOpenModalComingSoon(false)}
