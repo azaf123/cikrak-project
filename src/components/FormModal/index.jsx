@@ -48,20 +48,20 @@ export const FormModal = ({ open, onClose, props }) => {
 
   if (!open) return null;
   return (
-    <div className="flex justify-center items-center fixed inset-0 z-10 backdrop-opacity-90 backdrop-blur-3xl mt-5">
+    <div className="mt-4 flex justify-center items-center fixed inset-0 z-10 backdrop-opacity-90 backdrop-blur-3xl ">
       <div
         aria-hidden="true"
         className="w-9/12 overflow-y-auto overflow-x-hidden mx-auto mt-[48px] fixed top-0 right-0 left-0 z-50 block p-6 rounded-lg shadow-lg bg-white"
       >
         <form>
-          <div className="form-group mb-6">
+          <div className="form-group">
             <div className="flex justify-between items-center">
               <h1 className="font-bold text-2xl">Pick-up form</h1>
               <button>
                 <img className="w-4 h-4" src={cross} alt="" onClick={onClose} />
               </button>
             </div>
-            <p className="pt-5">
+            <p className="pt-4">
               Name<span className="text-red-600"> *</span>
             </p>
             <input
@@ -74,7 +74,7 @@ export const FormModal = ({ open, onClose, props }) => {
               }}
             />
           </div>
-          <div className="form-group mb-6">
+          <div className="form-group mt-3">
             <p>
               Email<span className="text-red-600"> *</span>
             </p>
@@ -88,7 +88,7 @@ export const FormModal = ({ open, onClose, props }) => {
               }}
             />
           </div>
-          <div className="form-group mb-6">
+          <div className="form-group mt-3">
             <p>
               Phone Number<span className="text-red-600 max-w-[50%]"> *</span>
             </p>
@@ -106,7 +106,7 @@ export const FormModal = ({ open, onClose, props }) => {
               }}
             />
           </div>
-          <div className="form-check form-check-inline">
+          <div className="form-check form-check-inline mt-3">
             <p>
               Type Waste<span className="text-red-600"> *</span>
             </p>
@@ -189,8 +189,8 @@ export const FormModal = ({ open, onClose, props }) => {
               Metal Cans
             </label>
           </div>
-          <div className="form-group mb-6">
-            <p className="pt-5">
+          <div className="form-group mt-2">
+            <p className="pt-3">
               Full Address<span className="text-red-600"> *</span>
             </p>
             <textarea
@@ -237,7 +237,7 @@ export const FormModal = ({ open, onClose, props }) => {
             >
               <button
                 type="submit"
-                className=" w-90 px-6 py-2.5 bg-lightprimary text-white font-medium text-xs leading-tight uppercase rounded
+                className="w-90 px-6 py-2.5 bg-lightprimary text-white font-medium text-xs leading-tight uppercase rounded
               shadow-md hover:bg-greenprimary hover:shadow-lg focus:bg-greenprimary focus:shadow-lg focus:outline-none focus:ring-0 active:bg-greenprimary active:shadow-lg transition duration-150 ease-in-out"
                 disabled={!isFilled()}
               >
