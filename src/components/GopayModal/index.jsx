@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import cross from '../../assets/cross.png';
 import gopay from '../../assets/gopay.png';
 import qrcode from '../../assets/gopayqrcode.png';
@@ -8,13 +8,14 @@ import { Link, useLocation } from 'react-router-dom';
 export const GopayModal = ({ ordercode }) => {
   console.log(ordercode);
   const location = useLocation();
-  const [counter, setCounter] = React.useState(1000);
+  const [counter, setCounter] = useState(1000);
   // Third Attempts
-  React.useEffect(() => {
+  useEffect(() => {
     const timer =
       counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
     return () => clearInterval(timer);
   }, [counter]);
+  
   return (
     <div className=" mx-auto  p-6 rounded-lg shadow-lg bg-white w-[60rem]">
       <div>
