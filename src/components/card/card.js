@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import voucher from "../../data/data";
 import Modal from "./modal";
-import './card.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faStar} from '@fortawesome/free-solid-svg-icons'
+
 
 
 const Card = ()=>{
@@ -16,58 +18,67 @@ const Card = ()=>{
 return(
     <>
     
-    <section className="container "> 
-        <h4  className="text-sky-400">List Voucher</h4>
-        <div className="row  mx-2 my-3 bg-blue-200 rounded-lg h-100 shadow">
-            <h6>Food & Beverage</h6>
+    <section className=" mx-10 "> 
+        <h4  className=" text-2xl font-bold mb-3 ">List Voucher</h4>
+        <h6 className="font-bold text-xl sticky mx-2 top-0 ">Food & Beverage</h6>
+        <div className=" rounded-xl  ml-4  overflow-x-auto p-2 bg-blue-100 shadow-inner   ">
+            <div className="flex m-2">
             {voucher.FoodBeverage.map((item,index)=>{
                 return(
-                    <div className=" col-4 mx-auto my-4 " key={index}> 
-                        <div className=" cursor-pointer	bg-white rounded-xl inline-block p-0 overflow-hidden h-100 shadow " 
-                        onClick={() => getVoucher(item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} /> 
-                            <div className="card-body">
-                                <h6 className="card-title">{item.voucher}</h6> 
-                                <p className="card-text float-right ">{item.points}</p>
-                            </div>
-                        </div>
-                    </div>                    
-                )
-            })}
-            </div>
-            <div className="row  mx-2">
-            <h6>Entertaiment</h6>
-            {voucher.Entertaiment.map((item,index)=>{
-                return(
-                    <div className=" col-4 mx-auto my-4 cursor-pointer	" key={index}> 
-                        <div className="rounded-xl inline-block  p-0 overflow-hidden shadow " onClick={() => getVoucher
+                    <div className="col-4 my-2 cursor-pointer z-0 " key={index}> 
+                        <div className="card rounded-xl w-9/12  p-0  shadow bg-white" onClick={() => getVoucher
                         (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className="card-img-top " /> 
+                            <img src={item.image} className="card-img-top rounded-t-xl h-40" /> 
                             <div className="card-body">
-                            <h6 className="card-title">{item.voucher}</h6> 
-                            <p className="card-text float-right">{item.points}</p>
-                            </div>
-                        </div>
-                    </div>
-                )
-            })}
-            </div>
-            <div className="row rounded-xl mx-2 bg-blue-200">
-            <h6>Healthy&Beauty</h6>
-            {voucher.HealthyBeauty.map((item,index)=>{
-                return(
-                    <div className="col-4 my-4" key={index}> 
-                        <div className="rounded-xl inline-block  p-0 overflow-hidden shadow bg-white" onClick={() => getVoucher
-                        (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className="card-img-top " /> 
-                            <div className="card-body">
-                                <h6 className="card-title">{item.voucher}</h6> 
-                                <p className="card-text float-right">{item.points}</p>
+                                <h3 className="card-title text-xl   ">{item.voucher}</h3> 
+                                <p className="card-text float-right text-lg"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</p>
                             </div>
                         </div>
                     </div>                            
                 )
             })}
+            </div>
+            </div>
+            
+            <h6 className="font-bold text-xl sticky mt-6 mx-2 top-0 ">Entertaiment</h6>
+            <div className="rounded-xl text-xl ml-4 bg-slate-50 p-2 overflow-x-scroll shadow-inner">
+            
+            <div className="flex m-2">
+            {voucher.Entertaiment.map((item,index)=>{
+                return(
+                    <div className="col-4 my-2  z-0 " key={index}> 
+                    <div className="card rounded-xl cursor-pointer inline-block w-9/12  p-0 overflow-hidden shadow bg-white" onClick={() => getVoucher
+                    (item.image, item.voucher, item.date, item.points)}>
+                        <img src={item.image} className="card-img-top h-40" /> 
+                        <div className="card-body">
+                            <h3 className="card-title text-xl">{item.voucher}</h3> 
+                            <p className="card-text float-right text-lg"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</p>
+                        </div>
+                    </div>
+                </div>
+                )
+            })}
+            </div>
+            </div>
+            <h6 className="font-bold text-xl sticky mt-6 mx-2 top-0">Healthy&Beauty</h6>
+            <div className="rounded-xl text-xl  ml-4 p-2 overflow-x-auto bg-blue-100 shadow-inner">
+            
+            <div className="flex m-2">
+            {voucher.HealthyBeauty.map((item,index)=>{
+                return(
+                    <div className=" col-4 my-2 cursor-pointer z-0" key={index}> 
+                        <div className="card rounded-xl inline-block w-9/12  p-0 overflow-hidden shadow bg-white" onClick={() => getVoucher
+                        (item.image, item.voucher, item.date, item.points)}>
+                            <img src={item.image} className="card-img-top h-40 " /> 
+                            <div className="card-body">
+                                <h3 className="card-title text-xl">{item.voucher}</h3> 
+                                <p className="card-text float-right text-lg"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</p>
+                            </div>
+                        </div>
+                    </div>                         
+                )
+            })}
+            </div>
         </div>
         </section>
         {

@@ -4,6 +4,8 @@ import Modal from "../../components/card/modal";
 import Points from "../../components/card/points";
 import NavBarAuth from "../../components/Navbar/NavBarAuth";
 import ProfileSidebar from "../../components/ProfileSidebar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faStar} from '@fortawesome/free-solid-svg-icons'
 
 
 const CardProfil = ()=>{
@@ -17,43 +19,38 @@ const CardProfil = ()=>{
     }
 
     return(
-
         <>
-<NavBarAuth />
-<div className="flex">
-  <ProfileSidebar />
-  <div>
-    <div className="text-2xl font-bold mt-20 ml-16 pb-4 text-main-blue">
-    Title
-    </div>
 
-    <div>
-            <Points/>
-            
-        </div>
-        
-        <section className="container ">
+            <div className="flex">
+                <ProfileSidebar />
             <div>
-            <a href="./voucher" className=" float-right">Browse More</a>
-            <h5>New Vouchers</h5>
+            <div className=" font-bold mt-20 ml-16 pb-4 ">
+            <Points/>
             </div>
-            <div className="row  mx-2 my-3 bg-blue-200 rounded-lg h-100 shadow cursor-pointer	">
-                {voucher.FoodBeverage.map((item,index)=>{
-                    return(
-                        <div className=" col-4 mx-auto my-4 " key={index}> 
-                            <div className=" bg-white rounded-xl inline-block p-0 overflow-hidden h-100 shadow " 
-                            onClick={() => getVoucher(item.image, item.voucher, item.date, item.points)}>
-                                <img src={item.image} /> 
-                                <div className="card-body">
-                                    <h6 className="card-title">{item.voucher}</h6> 
-                                    <p className="card-text float-right ">{item.points}</p>
+            <section className=" mx-16 w-5/6 bg-white ">
+                <div className="text-2xl">
+                <a href="./voucher" className=" float-right text-sm text-blue-700" >Browse More</a>   
+                <h2 className=" font-bold">New Vouchers</h2>
+                </div>
+                <div className="new-voucher row cursor-pointer mx-2 ">
+                    {voucher.FoodBeverage.map((item,index)=>{
+                        return(
+                            <div className="col-6 my-2 float-left " key={index}> 
+                                <div className=" rounded-xl bg-blue-200 p-2 inline-block  overflow-hidden h-300 shadow " 
+                                onClick={() => getVoucher(item.image, item.voucher, item.date, item.points)}>
+                                    <img src={item.image} /> 
+                                    <div className="card-body mb-3">
+                                        <h3 className="card-title text-lg">{item.voucher}</h3> 
+                                        <div className="poin  float-right ">
+                                        <p className="card-text  "><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>                    
-                    )
-                })}
-            </div>
-        </section>
+                            </div>                    
+                        )
+                    })}
+                </div>
+            </section>
         {
             modal === true?<Modal image={tempVoucher[1]} voucher={tempVoucher[2]} date={tempVoucher[3]} points={tempVoucher[4]} hide={()=>setModal(false)}/>:''
         }

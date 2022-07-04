@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
+import'../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 // components
 import Nav from "./components/Navbar/Nav";
 import NavBarAuth from "./components/Navbar/NavBarAuth";
