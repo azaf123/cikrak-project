@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 // components
-import ButtonOutline from '../../components/ButtonOutline';
 import ButtonFill from '../../components/ButtonFill';
 import Companies from '../../components/Companies';
 import Review from '../../components/Review';
@@ -43,7 +42,6 @@ const LandingPage = () => {
               <div onClick={() => setOpenModal(true)}>
                 <ButtonFill>Let’s Go</ButtonFill>
               </div>
-              <ButtonOutline />
             </div>
           </div>
           <div className="flex-1  flex justify-center">
@@ -51,7 +49,8 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="bg-white shadow-2xl flex md:flex-row flex-col md:-mt-48 gap-10 md:p-14 p-10 mt-5 rounded-md">
+        {/* Information card */}
+        <div className="bg-white shadow-2xl flex md:flex-row flex-col gap-10 md:p-14 p-10 mt-5 rounded-md">
           {Info.map((info, i) => (
             <div key={i}>
               <img src={info.icon} alt="icon" className="h-16" />
@@ -59,16 +58,13 @@ const LandingPage = () => {
               <p className="text-gray-600 text-sm leading-relaxed">
                 {info.des}
               </p>
-              <button className="text-rose-600 font-medium text-sm my-1">
-                Read More
-              </button>
             </div>
           ))}
         </div>
         <p className="py-10 md:text-sm text-xs block text-gray-600 text-center">
-          Don’t hesitate to contact us to get better Information.
-          <span className="text-rose-600 font-semibold italic px-1">
-            EXPLORE ALL TREKKING.
+          Don't hesitate to contact us for better waste management Information.
+          <span className="text-lightprimary font-semibold italic px-1">
+            KEEP NATURE WITH CIKRAK.
           </span>
         </p>
       </section>

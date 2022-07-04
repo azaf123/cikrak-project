@@ -11,12 +11,12 @@ const Info = [
     {
       icon: Icon2,
       title: "Exchange Trash For Money",
-      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
+      des: "Users can convert the waste into points, and points can be exchanged for money under applicable conditions.",
     },
     {
       icon: Icon3,
       title: "Exchange Trash With Vouchers",
-      des: "Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor.",
+      des: "Users can turn trash into points, and points can be exchanged for shopping vouchers, food, etc. with the applicable provisions.",
     },
   ];
 export default Info;

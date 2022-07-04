@@ -6,6 +6,7 @@
 
 ## Features
 
+- Register
 - Login
 - See user profile
 - Edit user profile
@@ -13,14 +14,14 @@
 - See history transaction
 - Change Password
 - Waste Pick-up
-- Gopay Payment
-- Education
+- Choose Payment Method
+- Wsate Education
 
 ## Powered by
 
 - [Create React App](https://create-react-app.dev/) to initialize the project.
 - [React Redux](https://react-redux.js.org/) to manage the app state.
-- [Tailwindcss](https://tailwindcss.com/docs/installation) + [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) + [React Icons](https://react-icons.github.io/react-icons/) + [Swiper](https://swiperjs.com/) + [react-hot-toast](https://react-hot-toast.com/) to build the user interface.
+- [Tailwindcss](https://tailwindcss.com/docs/installation) + [React Icons](https://react-icons.github.io/react-icons/) + [Swiper](https://swiperjs.com/) + [react-hot-toast](https://react-hot-toast.com/) to build the user interface.
 - [Jest](https://jestjs.io/) & [react testing-library](https://testing-library.com/) to test the UI Components and implementation.
 - [Vercel](https://vercel.com/) to hosted website.
 
@@ -53,8 +54,8 @@
 - Open <http://localhost:3000> with your browser to see the result.
 
 ## How to use
+
 Use the following dummy data to login:
 
 - Username: janedoe18@gmail.com
 - Password: test
-
