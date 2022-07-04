@@ -1,20 +1,18 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-import { useDocumentTitle } from '../../lib/customHooks/index';
 import { Link } from 'react-router-dom';
+import { useDocumentTitle } from '../../lib/customHooks';
 
 const NotFound: React.FC = () => {
-  useDocumentTitle('Not Found');
-
+  useDocumentTitle('Not Found - Cikrak');
+ 
   return (
-    <div className='flex h-screen bg-slate-300'>
-      <div className='m-auto text-center'>
-      <h1 className='text-3xl font-bold text-blue-900 mb-3' >Page Not Found</h1>
-      <img src="https://www.scdn.co/i/404/record.svg"alt="" className='w-6/12 m-auto' />  
-      <h2 className='text-xl mt-3'>Sorry, the page you are looking for is not yet available.</h2>
-      <p>please go back to <a  href="/" className='p-2 text-gray-100 border-2 rounded-lg bg-blue-800 hover:bg-sky-200'>Homepage</a></p>
-      </div>
-      </div>
+    <div className="mt-6 ml-72">
+      <img className="ml-[280px] h-96" src="https://img.freepik.com/free-vector/page-found-with-people-connecting-plug-concept-illustration_114360-1888.jpg?t=st=1656914056~exp=1656914656~hmac=ff60e6d7b15ed8c33b87e3ff465816903b7a4dd2c5e60f33214f47655782550b&w=740" alt="" />
+      <p className="mt-2 ml-[175px] notfound font-bold">We couldn’t find the page you were looking for. Maybe our FAQ or Community can help?</p>
+      <Link to="/">
+      <button className="ml-72 border w-96 rounded-xl my-4 py-3 bg-lightprimary hover:bg-greenprimary text-white">Go To Home</button>
+      </Link>
+    </div>
   )
 }
 

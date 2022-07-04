@@ -4,7 +4,10 @@ import leona from "../../assets/leona.jpeg";
 import './style.css'
 import Nav from "../../components/Navbar/Nav"
 import faza from "../../assets//fazaa.JPG";
+import adel from "../../assets/adel.jpeg";
+import kukuh from "../../assets/kukuh.jpeg";
 import Footer from "../../components/Footer/Footer";
+
 
 const About = () => {
   return (
@@ -78,18 +81,18 @@ const About = () => {
                 </p>
               </div>
               <div className="card-image p-5">
-                <img src={leona} alt="reduce" />
+                <img src={adel} alt="reduce" />
               </div>
             </div>
           </div>
           <div className="col-span-1">
             <div className="card grid lg:grid-cols-2 md:grid-cols-2 sc:grid-cols-1">
               <div className="card-image p-5">
-                <img src={leona} alt="reduce" />
+                <img src={kukuh} alt="reduce" />
               </div>
               <div className="card-content content-center grid justify-items-center">
                 <h1 className="lg:text-3xl md:text-2xl sc:text-xl">
-                  Adelia Sannomiya
+                 Rezky Kukuh W
                 </h1>
                 <p className="lg:text-lg md:text-base sc:text-base">
                   Front End Developer

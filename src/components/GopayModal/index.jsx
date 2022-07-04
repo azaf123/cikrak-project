@@ -8,54 +8,66 @@ import { Link, useLocation } from 'react-router-dom';
 export const GopayModal = ({ ordercode }) => {
   console.log(ordercode);
   const location = useLocation();
-  console.log(location.state.ordercode);
+  const [counter, setCounter] = React.useState(1000);
+  // Third Attempts
+  React.useEffect(() => {
+    const timer =
+      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+    return () => clearInterval(timer);
+  }, [counter]);
   return (
-    <div class=" mx-auto  p-6 rounded-lg shadow-lg bg-white w-[60rem]">
+    <div className=" mx-auto  p-6 rounded-lg shadow-lg bg-white w-[60rem]">
       <div>
-        <div class="form-group mb-6">
-          <div class="flex justify-between items-center">
+        <div className="form-group mb-6">
+          <div className="flex justify-between items-center">
             <img src={gopay} alt="logo" className="h-8" />
-            <h1 class="ml-24 text-xl font-bold">Payment Method</h1>
-            <Link to="/">
-              <img class="w-4 h-4" src={cross} alt="" />
-            </Link>
+            <h1 className="ml-24 text-xl font-bold">Payment Method</h1>
+            <button>
+              <Link to="/">
+                <img className="w-4 h-4" src={cross} alt="" />
+              </Link>
+            </button>
           </div>
         </div>
-        <div class="flex justify-between">
+        <div className="flex justify-between">
           <div>
-            <div class="flex justify-between items-center form-group mb-6">
+            <div className="flex justify-between items-center form-group mb-6">
               <p>Total payment</p>
-              <span class="text-lightprimary ml-52 "> IDR 10.000</span>
+              <span className="text-lightprimary ml-52 "> IDR 10.000</span>
             </div>
-            <div class="flex justify-between items-center form-group-inline mb-6">
+            <div className="flex justify-between items-center form-group-inline mb-6">
               <p>Order ID</p>
-              <span class="text-lightprimary ml-52">
+              <span className="text-lightprimary ml-52">
                 {location.state.ordercode}
               </span>
             </div>
             <div>
               <p>Please scan the QR code below with the Gojek application.</p>
-              <img src={qrcode} alt="logo" className="h-60 ml-10" />
-              <p class="ml-14">Complete the payment before</p>
-              <h1 class="font-bold ml-16">25 November 15:30 WITA</h1>
-              <span class="text-lightprimary font-bold ml-32">15m 0s</span>
+              <img src={qrcode} alt="logo" className="h-60 ml-20 mt-2" />
+              <p className="ml-[90px] mt-2">Complete the payment before</p>
+              <h1 className="font-bold ml-[100px]">25 November 15:30 WITA</h1>
+              <span className="text-lightprimary font-bold ml-[150px]">
+                {counter} Second
+              </span>
             </div>
           </div>
           <div>
-            <div class="text-sm">01. Open your Gojek.</div>
-            <div class="text-sm">
+            <div className="text-sm">01. Open your Gojek.</div>
+            <div className="text-sm mt-4">
               02. Scan the QR code displayed on your monitor.
             </div>
             <img src={instructor} alt="logo" className="h-52" />
-            <div class="text-sm">
+            <div className="text-sm mt-4">
               03. Check your payment details in the app, then tap Pay.
             </div>
-            <div class="text-sm">04. Enter your PIN.</div>
-            <div class="text-sm">05. Your transaction is complete.</div>
+            <div className="text-sm mt-4">04. Enter your PIN.</div>
+            <div className="text-sm mt-4">
+              05. Your transaction is complete.
+            </div>
             <Link to="/success">
               <button
                 type="submit"
-                class=" ml-72 w-90 px-6 py-2.5 bg-lightprimary text-white font-medium text-xs leading-tight uppercase rounded
+                className=" ml-72 w-90 px-6 py-2.5 bg-lightprimary text-white font-medium text-xs leading-tight uppercase rounded
               shadow-md hover:bg-greenprimary hover:shadow-lg focus:bg-greenprimary focus:shadow-lg focus:outline-none focus:ring-0 active:bg-greenprimary active:shadow-lg transition duration-150 ease-in-out"
                 // disabled={!isFilled()}
               >

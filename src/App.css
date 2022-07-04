@@ -101,39 +101,4 @@
   }
 }
 
-@media (max-width: 640px) {
 
-    .card-body h3{
-        font-size: 12px;
-    }
-    .card-body p{
-        font-size: 10px;
-    }
-    .point{
-        width: 40%;
-    }
-    .row img{
-        height: 5rem  ;
-    }
-    .back{
-        float: left;
-        margin: 0px 10px 10px 10px;
-    }
-    .modal-dialog{
-        margin: auto;
-        width: 50%;
-    }
-
-    .modal-text p{
-        font-size: 14px;
-    }
-    .modal-text h5{
-        font-size: 16px;
-    }
-    .point h4{
-      font-size: 14px;
-    }
-    .gopay h6{
-      font-size: 14px;
-    }
-}

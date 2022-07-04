@@ -1,0 +1,58 @@
+@media (max-width: 640px) {
+    .redeem-page{
+        margin-left: -20px;
+          
+    }
+    .rounded-xl.m-4.p-2{
+
+     margin: 2px;
+    }
+    .h-72.w-56{
+        width: 7rem;
+        height: 12rem;
+        padding: 0px;
+        margin: 4px;
+    }
+    .card h3{
+          font-size: 12px;
+          margin: 0px;
+          padding: 0%;
+          
+      }
+      .card h1{
+          font-size: 10px;
+          position: absolute;
+          bottom: 4px;
+      }
+      .point{
+          width: 40%;
+      }
+      .card img{
+          height: 5rem  ;
+      }
+      .back{
+          float: left;
+          margin: 0px 10px 10px 10px;
+      }
+      .modal-dialog{
+          margin: auto;
+          width: 50%;
+      }
+  
+      .modal-text p{
+          font-size: 14px;
+      }
+      .modal-text h5{
+          font-size: 16px;
+      }
+      .point h4{
+        font-size: 14px;
+      }
+      .point p{
+        font-size: 12px;
+      }
+      .gopay h6{
+        font-size: 14px;
+      }
+
+  }

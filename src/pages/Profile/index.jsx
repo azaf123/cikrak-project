@@ -36,11 +36,10 @@ export default function Profile() {
 
   return (
     <>
-    {showLoader}
+      {showLoader}
       <div className="flex">
-        <ProfileSidebar /> 
+        <ProfileSidebar />
         <div>
-
           <div className="text-2xl font-bold mt-20 ml-16 pb-4 text-main-blue">
             {edit && "Edit"} Profile
           </div>
@@ -73,6 +72,7 @@ export default function Profile() {
                     type="text"
                     value={registerData.name}
                     readOnly={edit}
+                    disabled
                   />
                 )}
               </div>
@@ -80,12 +80,13 @@ export default function Profile() {
 
             <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
               <div className="mt-1 mr-5 mb-2 w-60 font-medium">
-                <label>Username</label>
+                <label htmlFor="usernameId">Username</label>
               </div>
               <div className="w-64">
                 {edit ? (
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    id="usernameId"
                     name="username"
                     type="text"
                     defaultValue={registerData.username}
@@ -95,10 +96,12 @@ export default function Profile() {
                 ) : (
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
+                    id="usernameId"
                     name="username"
                     type="text"
                     value={registerData.username}
-                    readOnly={edit}
+                    readOnly={true}
+                    disabled
                   />
                 )}
               </div>
@@ -124,6 +127,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     value={registerData.address}
                     readOnly
+                    disabled
                   />
                 )}
               </div>
@@ -150,6 +154,7 @@ export default function Profile() {
                     type="text"
                     value={registerData.email}
                     readOnly={edit}
+                    disabled
                   />
                 )}
               </div>
@@ -176,6 +181,7 @@ export default function Profile() {
                     type="text"
                     defaultValue={registerData.phone}
                     readOnly={edit}
+                    disabled
                   />
                 )}
               </div>
