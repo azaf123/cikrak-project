@@ -8,7 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const NavBarAuth = () => {
   const navigate = useNavigate(); 
-
   const [open, setOpen] = useState(false);
   const [showNotif, setShowNotif] = useState(false);
 

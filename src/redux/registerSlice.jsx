@@ -1,8 +1,7 @@
-
 import { createSlice } from "@reduxjs/toolkit";
-// register 
+// slice for registered user 
+
 const initialState = {
-   
     //local storage
     registerData:
     localStorage.getItem("registerData")
@@ -13,8 +12,6 @@ const initialState = {
         email: "",
         phone : "",
         password: "",
-        
-       
         }
     ,
     isLoggedIn: localStorage.getItem("isLoggedIn")
@@ -59,4 +56,3 @@ const registerSlice = createSlice({
 });
 export const { setRegister, login, updateUser, updatePassword,logout } = registerSlice.actions;
 export default registerSlice.reducer;
-

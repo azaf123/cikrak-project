@@ -19,12 +19,22 @@ const MockProfile = () => {
 
 test("field should be readonly before edit mode", () => {
   render(<MockProfile />);
+  expect(screen.getByLabelText("Name")).toBeDisabled();
   expect(screen.getByLabelText("Username")).toBeDisabled();
+  expect(screen.getByLabelText("Address")).toBeDisabled();
+  expect(screen.getByLabelText("Email")).toBeDisabled();
+  expect(screen.getByLabelText("Phone")).toBeDisabled();
+});
+
+test("should say 'Edit Profile' when in edit mode", () => {
+  render(<MockProfile />);
+  const editButton = screen.getByRole("button", { name: "Edit Profile" });
+  userEvent.click(editButton);
+  expect(screen.getByText("Edit Profile")).toBeInTheDocument();
 });
 
 test("should be 'save changes' and 'cancel' button when in edit mode", () => {
   render(<MockProfile />);
-
   const editButton = screen.getByRole("button", { name: "Edit Profile" });
   userEvent.click(editButton);
   const saveChangesButton = screen.getByRole("button", {

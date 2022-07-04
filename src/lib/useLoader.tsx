@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Loader from "../components/Loader/index.jsx";
+import Loader from "../components/Loader";
 
 function useLoader() {
-  const [loading, setloading] = useState(undefined);
+  const [loading, setloading] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {

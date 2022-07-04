@@ -1,4 +1,3 @@
-import React from "react";
 import GreenLoader from "../../assets/green-loader.gif";
 
 const Loader = () => {
