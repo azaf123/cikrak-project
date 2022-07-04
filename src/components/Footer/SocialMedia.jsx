@@ -1,7 +1,7 @@
-import React from "react";
-import fb from "../../assets/f.png";
-import lk from "../../assets/t.png";
-import ig from "../../assets/i.png";
+import React from 'react';
+import fb from '../../assets/f.png';
+import lk from '../../assets/t.png';
+import ig from '../../assets/i.png';
 const SocialMedia = () => {
   return (
     <div className="flex flex-wrap gap-2 mt-5">

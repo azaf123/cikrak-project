@@ -1,9 +1,12 @@
-import React from 'react';
-import Logo from '../../assets/logo2.png';
-import registerImg from '../../assets/register.jpg';
+import React, { useEffect } from 'react';
+
+import registerImg from '../../assets/register.png';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setRegister } from '../../redux/registerSlice';
+import Logo from '../../assets/logo2.png';
 import { Link } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Register() {
   // use redux
@@ -14,15 +17,81 @@ export default function Register() {
     e.preventDefault();
     e.target.reset();
   };
+  const [
+    hasError = {
+      name: false,
+      username: false,
+      email: false,
+      phone: false,
+      password: false,
+      confirmPassword: false,
+    },
+    setHasError,
+  ] = useState({
+    name: false,
+    username: false,
+    email: false,
+    phone: false,
+    password: false,
+    confirmPassword: false,
+  });
+
+  const [errorMessage, setErrorMessage] = useState('');
   const handleChange = (e) => {
     let { name, value } = e.target;
     dispatch(setRegister({ ...registerData, [name]: value }));
+    //
+    if (name === 'name') {
+      if (value.length < 3) {
+        setHasError({ ...hasError, name: true });
+        setErrorMessage('Name must be at least 3 characters');
+      } else {
+        setHasError({ ...hasError, name: false });
+        setErrorMessage('');
+      }
+    }
+    if (name === 'username') {
+      if (value.length < 3) {
+        setHasError({ ...hasError, username: true });
+        setErrorMessage('Username must be at least 3 characters');
+      } else {
+        setHasError({ ...hasError, username: false });
+        setErrorMessage('');
+      }
+    }
+    if (name === 'email') {
+      if (value.length < 3) {
+        setHasError({ ...hasError, email: true });
+        setErrorMessage('Email must be at least 3 characters');
+      } else {
+        setHasError({ ...hasError, email: false });
+        setErrorMessage('');
+      }
+    }
+    if (name === 'phone') {
+      if (value.length < 3) {
+        setHasError({ ...hasError, phone: true });
+        setErrorMessage('Phone must be at least 3 characters');
+      } else {
+        setHasError({ ...hasError, phone: false });
+        setErrorMessage('');
+      }
+    }
+    if (name === 'password') {
+      if (value.length < 3) {
+        setHasError({ ...hasError, password: true });
+        setErrorMessage('Password must be at least 3 characters');
+      } else {
+        setHasError({ ...hasError, password: false });
+        setErrorMessage('');
+      }
+    }
   };
 
   return (
     <div className="bg-gray-100 grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
       <div className="hidden sm:block">
-        <img className="h-max w-max" src={registerImg} alt="" />
+        <img className="h-4/5 w-4/5 mt-12 ml-24" src={registerImg} alt="" />
       </div>
 
       <div className="bg-gray-100 flex flex-col justify-center">
@@ -32,7 +101,9 @@ export default function Register() {
         >
           <img src={Logo} alt="logo" className="h-16 ml-32" />
           <div className="flex flex-col py-2">
-            <label>Name</label>
+            <label>
+              Name<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter Name"
               onChange={handleChange}
@@ -42,7 +113,9 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col py-2">
-            <label>Username</label>
+            <label>
+              Username<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter Username"
               onChange={handleChange}
@@ -52,7 +125,9 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col py-2">
-            <label>Email</label>
+            <label>
+              Email<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter Email"
               onChange={handleChange}
@@ -62,7 +137,9 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col py-2">
-            <label>Phone Number</label>
+            <label>
+              Phone Number<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter Phone Number"
               onChange={handleChange}
@@ -72,7 +149,9 @@ export default function Register() {
             />
           </div>
           <div className="flex flex-col py-2">
-            <label>Password</label>
+            <label>
+              Password<span class="text-red-600"> *</span>
+            </label>
             <input
               placeholder="Enter password"
               onChange={handleChange}
@@ -81,7 +160,6 @@ export default function Register() {
               name="password"
             />
           </div>
-
           <button
             type="submit"
             className="border w-full my-4 py-2 bg-lightprimary hover:bg-greenprimary text-white"

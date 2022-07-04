@@ -29,7 +29,7 @@ function Points() {
                 <div className=" gopay overflow-hidden h-300 shadow border-inherit rounded-md inline-block mx-2 p-2 drop-shadow-xl cursor-pointer	 ">
                     <h6 onClick={GopayReedem} className="text-xl text-black">
                         exchange to
-                        <img className="w-24" src={gopay}/>
+                        <img className="w-24" src={gopay} alt="gopay-logo"/>
                         </h6>
                 </div>
             </section>

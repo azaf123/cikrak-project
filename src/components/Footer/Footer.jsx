@@ -1,5 +1,4 @@
 import React from 'react';
-import NewsLetter from './NewsLetter';
 import Logo from '../../assets/logo2.png';
 import SocialMedia from './SocialMedia';
 const Footer = () => {
@@ -12,7 +11,6 @@ const Footer = () => {
   ];
   return (
     <footer className="pt-20 md:px-24 px-4 bg-lightprimary">
-      <NewsLetter />
       <div className="flex md:flex-row flex-col gap-20">
         <div className="flex-1">
           <img src={Logo} alt="logo" className="h-12" />
