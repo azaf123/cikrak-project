@@ -6,9 +6,8 @@ import plastic from '../../assets/plastic.png';
 import reduceg from '../../assets/reduceg.png';
 import reuseg from '../../assets/reuseg.png';
 import recycleg from '../../assets/recycleg.png';
-import Fade from 'react-reveal/Fade';
 import Jump from 'react-reveal/Jump';
-import Slide from 'react-reveal/Slide';
+
 const FirstEdu = () => {
   return (
     <div>

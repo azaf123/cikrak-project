@@ -103,48 +103,70 @@ export const Register = () => {
                 Name<span class="text-red-600"> *</span>
               </label>
               <input
+              min={3}
                 placeholder="Enter Name"
                 onChange={handleChange}
                 className="border p-2"
                 type="text"
                 name="name"
               />
+              {hasError.name && (
+                <p className="text-red-600 text-xs italic">{errorMessage}</p>
+              )}
             </div>
             <div className="flex flex-col py-2">
               <label>
                 Username<span class="text-red-600"> *</span>
               </label>
               <input
+              min={3}
                 placeholder="Enter Username"
                 onChange={handleChange}
                 className="border p-2"
                 type="text"
                 name="username"
               />
+              {hasError.username && (
+                <p className="text-red-600 text-xs italic">{errorMessage}</p>
+              )}
             </div>
             <div className="flex flex-col py-2">
               <label>
                 Email<span class="text-red-600"> *</span>
               </label>
               <input
+              min={3}
                 placeholder="Enter Email"
                 onChange={handleChange}
                 className="border p-2"
                 type="text"
                 name="email"
               />
+              {
+                hasError.email && (
+                  <p className="text-red-600 text-xs italic">{errorMessage}</p>
+                )
+
+              }
             </div>
             <div className="flex flex-col py-2">
               <label>
                 Phone Number<span class="text-red-600"> *</span>
               </label>
               <input
+              min={3}
                 placeholder="Enter Phone Number"
                 onChange={handleChange}
                 className="border p-2"
                 type="text"
                 name="phone"
               />
+              {
+                hasError.phone && (
+                  <p className="text-red-600 text-xs italic">{errorMessage}</p>
+                )
+
+              }
             </div>
             <div className="flex flex-col py-2">
               <label>
@@ -157,6 +179,12 @@ export const Register = () => {
                 type="password"
                 name="password"
               />
+              {
+                hasError.password && (
+                  <p className="text-red-600 text-xs italic">{errorMessage}</p>
+                )
+
+              }
             </div>
             <button
               type="submit"

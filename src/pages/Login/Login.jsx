@@ -4,12 +4,20 @@ import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../redux/registerSlice';
 import Logo from '../../assets/logo2.png';
 import { Link } from 'react-router-dom';
-
+import Swal from "sweetalert2"; 
 export const Login = () => {
   let { registerData } = useSelector((state) => state.register);
   const dispatch = useDispatch();
   const [userInputs, setInputs] = useState({ email: '', password: '' });
   // email / password
+  const ModalError = () => {
+    Swal.fire({
+      title: 'Error',
+      text: 'Email or password is incorrect',
+      icon: 'error',
+      confirmButtonText: 'OK',
+    });
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -23,6 +31,9 @@ export const Login = () => {
       const data = localStorage.getItem('loggedIn');
       console.log(data);
     }
+    else {
+      ModalError();
+    }
     console.log(userInputs.email + userInputs.password);
     e.target.reset();
   };
@@ -31,6 +42,9 @@ export const Login = () => {
     let { name, value } = e.target;
     setInputs({ ...userInputs, [name]: value });
   };
+
+ 
+
   return (
     <>
       <div className="bg-gray-100 grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
