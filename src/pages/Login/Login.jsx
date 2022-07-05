@@ -5,6 +5,7 @@ import { login } from '../../redux/registerSlice';
 import Logo from '../../assets/logo2.png';
 import { Link } from 'react-router-dom';
 import Swal from "sweetalert2"; 
+import { useNavigate } from 'react-router-dom';
 export const Login = () => {
   let { registerData } = useSelector((state) => state.register);
   const dispatch = useDispatch();
@@ -18,6 +19,11 @@ export const Login = () => {
       confirmButtonText: 'OK',
     });
   }
+  const navigate = useNavigate();
+  const navigateToLandingpage = () => {
+    navigate('/');
+  }
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -26,10 +32,8 @@ export const Login = () => {
       userInputs.password === registerData.password
     ) {
       dispatch(login());
-      // immediately set to true bc dispatch is synchronous
-      window.localStorage.setItem('loggedIn', true);
-      const data = localStorage.getItem('loggedIn');
-      console.log(data);
+      navigateToLandingpage();
+     
     }
     else {
       ModalError();
@@ -42,8 +46,7 @@ export const Login = () => {
     let { name, value } = e.target;
     setInputs({ ...userInputs, [name]: value });
   };
-
- 
+  
 
   return (
     <>
@@ -76,7 +79,7 @@ export const Login = () => {
               />
             </div>
             <button className="border w-full my-4 py-2 bg-lightprimary hover:bg-greenprimary text-white">
-              <a href="/">Sign In</a>
+              Sign In
             </button>
             <div className="flex justify-between">
               <p className="flex items-center">
