@@ -4,16 +4,30 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setRegister } from '../../redux/registerSlice';
 import Logo from '../../assets/logo2.png';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 
 export const Register = () => {
   // use redux
   const dispatch = useDispatch();
   const registerData = useSelector((state) => state.register.registerData);
-
+  const navigate = useNavigate();
+  const navigateToLogin = () => {
+    navigate('/login');
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(setRegister(
+      {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        username: e.target.username.value,
+        password: e.target.password.value,
+        phone: e.target.phone.value,
+      }
+    ));
     e.target.reset();
+    navigateToLogin();
+    
   };
   const [
     hasError = {
@@ -34,10 +48,11 @@ export const Register = () => {
     confirmPassword: false,
   });
 
+
   const [errorMessage, setErrorMessage] = useState('');
   const handleChange = (e) => {
     let { name, value } = e.target;
-    dispatch(setRegister({ ...registerData, [name]: value }));
+   
     //
     if (name === 'name') {
       if (value.length < 3) {
