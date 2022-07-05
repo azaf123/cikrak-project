@@ -21,6 +21,7 @@ export default function Profile() {
     if (update) {
       currentUserData.current = registerData;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 
   const handleSubmit = (e) => {
@@ -60,19 +61,21 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     id="name"
                     name="name"
+                    placeholder="Jane Doe"
                     type="text"
                     defaultValue={registerData.name}
                     onChange={handleChange}
-                    readOnly={!edit}
+                    readOnly={false}
                   />
                 ) : (
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     id="name"
                     name="name"
+                    placeholder="Jane Doe"
                     type="text"
                     value={registerData.name}
-                    readOnly={edit}
+                    readOnly={true}
                     disabled
                   />
                 )}
@@ -89,6 +92,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     id="username"
                     name="username"
+                    placeholder="janedoe18"
                     type="text"
                     defaultValue={registerData.username}
                     onChange={handleChange}
@@ -99,6 +103,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     id="username"
                     name="username"
+                    placeholder="janedoe18"
                     type="text"
                     value={registerData.username}
                     readOnly={true}
@@ -115,8 +120,9 @@ export default function Profile() {
               <div className="w-70 md:w-96 md:mr-10 duration-500">
                 {edit ? (
                   <textarea
-                  id="address"
+                    id="address"
                     name="address"
+                    placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer"
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     defaultValue={registerData.address}
@@ -124,8 +130,9 @@ export default function Profile() {
                   />
                 ) : (
                   <textarea
-                  id="address"
+                    id="address"
                     name="address"
+                    placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer"
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     value={registerData.address}
@@ -146,6 +153,7 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     id="email"
                     name="email"
+                    placeholder="janedoe18@gmail.com"
                     type="text"
                     defaultValue={registerData.email}
                     onChange={handleChange}
@@ -153,12 +161,13 @@ export default function Profile() {
                   />
                 ) : (
                   <input
-                  id="email"
+                    id="email"
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="email"
+                    placeholder="janedoe18@gmail.com"
                     type="text"
                     value={registerData.email}
-                    readOnly={edit}
+                    readOnly={true}
                     disabled
                   />
                 )}
@@ -175,19 +184,21 @@ export default function Profile() {
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none "
                     id="phone"
                     name="phone"
+                    placeholder="081342536442"
                     type="text"
                     defaultValue={registerData.phone}
                     onChange={handleChange}
-                    readOnly={!edit}
+                    readOnly={false}
                   />
                 ) : (
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     id="phone"
                     name="phone"
+                    placeholder="081342536442"
                     type="text"
                     defaultValue={registerData.phone}
-                    readOnly={edit}
+                    readOnly={true}
                     disabled
                   />
                 )}

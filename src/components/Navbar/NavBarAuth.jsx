@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavLinks from "../../data/NavLinks";
 import Logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,27 +6,41 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import NotificationArea from "../NotificationArea";
 import { Link, useNavigate } from "react-router-dom";
 
+// navbar when user is logged in
 const NavBarAuth = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [showNotif, setShowNotif] = useState(false);
 
   const mapLinks = () => {
     return NavLinks.map((link, i) => (
-      <li key={i} className={`$font-semibold text-base text-white hover:text-mid-green`}>
-        {i >3 ? (
+      <li
+        key={i}
+        className={`$font-semibold text-base text-white hover:text-mid-green`}
+      >
+        {i > 3 ? (
           <button
-            className="active:bg-blue-300 focus:bg-blue-300"
+            className="active:bg-blue-300 focus:bg-blue-300 cursor-pointer"
             onClick={() => {
-              i === 4 && setShowNotif(!showNotif); i===5 && navigate("/profile")
+              i === 5 && navigate("/profile");
             }}
           >
-            <span className="flex flex-row">
+            <span
+              onMouseOver={() => {
+                i === 4 && setShowNotif(true);
+                console.log("hovered");
+              }}
+              onMouseLeave={() => {
+                i === 4 && setTimeout(() => setShowNotif(false), 1500);
+                console.log("left");
+              }}
+              className="flex flex-row"
+            >
               <FontAwesomeIcon icon={link.icon} />
             </span>
           </button>
         ) : (
-          i !== 3 && (<a href={link.link}>{link.name}</a>)
+          i !== 3 && <a href={link.link}>{link.name}</a>
         )}
       </li>
     ));
@@ -53,9 +67,9 @@ const NavBarAuth = () => {
       </div>
 
       {/* show notif area */}
-      {showNotif && <NotificationArea />}
+      {showNotif && <NotificationArea setShowNotif={setShowNotif}/>}
     </nav>
   );
-}
+};
 
 export default NavBarAuth;
