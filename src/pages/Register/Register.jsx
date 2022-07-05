@@ -1,14 +1,12 @@
-import React, { useEffect } from 'react';
-
+import React from 'react';
 import registerImg from '../../assets/register.png';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setRegister } from '../../redux/registerSlice';
 import Logo from '../../assets/logo2.png';
 import { Link } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
 
-export default function Register() {
+export const Register = () => {
   // use redux
   const dispatch = useDispatch();
   const registerData = useSelector((state) => state.register.registerData);
@@ -87,95 +85,98 @@ export default function Register() {
       }
     }
   };
-
   return (
-    <div className="bg-gray-100 grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
-      <div className="hidden sm:block">
-        <img className="h-4/5 w-4/5 mt-12 ml-24" src={registerImg} alt="" />
-      </div>
+    <>
+      <div className="bg-gray-100 grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
+        <div className="hidden sm:block">
+          <img className="h-4/5 w-4/5 mt-12 ml-24" src={registerImg} alt="" />
+        </div>
 
-      <div className="bg-gray-100 flex flex-col justify-center">
-        <form
-          onSubmit={handleSubmit}
-          className="max-w-[400px] w-full mx-auto bg-white p-4"
-        >
-          <img src={Logo} alt="logo" className="h-16 ml-32" />
-          <div className="flex flex-col py-2">
-            <label>
-              Name<span class="text-red-600"> *</span>
-            </label>
-            <input
-              placeholder="Enter Name"
-              onChange={handleChange}
-              className="border p-2"
-              type="text"
-              name="name"
-            />
-          </div>
-          <div className="flex flex-col py-2">
-            <label>
-              Username<span class="text-red-600"> *</span>
-            </label>
-            <input
-              placeholder="Enter Username"
-              onChange={handleChange}
-              className="border p-2"
-              type="text"
-              name="username"
-            />
-          </div>
-          <div className="flex flex-col py-2">
-            <label>
-              Email<span class="text-red-600"> *</span>
-            </label>
-            <input
-              placeholder="Enter Email"
-              onChange={handleChange}
-              className="border p-2"
-              type="text"
-              name="email"
-            />
-          </div>
-          <div className="flex flex-col py-2">
-            <label>
-              Phone Number<span class="text-red-600"> *</span>
-            </label>
-            <input
-              placeholder="Enter Phone Number"
-              onChange={handleChange}
-              className="border p-2"
-              type="text"
-              name="phone"
-            />
-          </div>
-          <div className="flex flex-col py-2">
-            <label>
-              Password<span class="text-red-600"> *</span>
-            </label>
-            <input
-              placeholder="Enter password"
-              onChange={handleChange}
-              className="border p-2"
-              type="password"
-              name="password"
-            />
-          </div>
-          <button
-            type="submit"
-            className="border w-full my-4 py-2 bg-lightprimary hover:bg-greenprimary text-white"
+        <div className="bg-gray-100 flex flex-col justify-center">
+          <form
+            onSubmit={handleSubmit}
+            className="max-w-[400px] w-full mx-auto bg-white p-4"
           >
-            Register
-          </button>
-          <div className="flex justify-between">
-            <p className="text-center mt-8 text-gray-400">
-              Already a member?{' '}
-              <Link to="/login">
-                <span className="text-lightprimary">Sign In</span>
-              </Link>
-            </p>
-          </div>
-        </form>
+            <img src={Logo} alt="logo" className="h-16 ml-32" />
+            <div className="flex flex-col py-2">
+              <label>
+                Name<span class="text-red-600"> *</span>
+              </label>
+              <input
+                placeholder="Enter Name"
+                onChange={handleChange}
+                className="border p-2"
+                type="text"
+                name="name"
+              />
+            </div>
+            <div className="flex flex-col py-2">
+              <label>
+                Username<span class="text-red-600"> *</span>
+              </label>
+              <input
+                placeholder="Enter Username"
+                onChange={handleChange}
+                className="border p-2"
+                type="text"
+                name="username"
+              />
+            </div>
+            <div className="flex flex-col py-2">
+              <label>
+                Email<span class="text-red-600"> *</span>
+              </label>
+              <input
+                placeholder="Enter Email"
+                onChange={handleChange}
+                className="border p-2"
+                type="text"
+                name="email"
+              />
+            </div>
+            <div className="flex flex-col py-2">
+              <label>
+                Phone Number<span class="text-red-600"> *</span>
+              </label>
+              <input
+                placeholder="Enter Phone Number"
+                onChange={handleChange}
+                className="border p-2"
+                type="text"
+                name="phone"
+              />
+            </div>
+            <div className="flex flex-col py-2">
+              <label>
+                Password<span class="text-red-600"> *</span>
+              </label>
+              <input
+                placeholder="Enter password"
+                onChange={handleChange}
+                className="border p-2"
+                type="password"
+                name="password"
+              />
+            </div>
+            <button
+              type="submit"
+              className="border w-full my-4 py-2 bg-lightprimary hover:bg-greenprimary text-white"
+            >
+              Register
+            </button>
+            <div className="flex justify-between">
+              <p className="text-center mt-8 text-gray-400">
+                Already a member?{' '}
+                <Link to="/login">
+                  <span className="text-lightprimary">Sign In</span>
+                </Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Register;

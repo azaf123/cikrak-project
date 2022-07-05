@@ -5,8 +5,8 @@ import { login } from '../../redux/registerSlice';
 import Logo from '../../assets/logo2.png';
 import { Link } from 'react-router-dom';
 
-export default function Login() {
-  let { isLoggedIn, registerData } = useSelector((state) => state.register);
+export const Login = () => {
+  let { registerData } = useSelector((state) => state.register);
   const dispatch = useDispatch();
   const [userInputs, setInputs] = useState({ email: '', password: '' });
   // email / password
@@ -31,14 +31,12 @@ export default function Login() {
     let { name, value } = e.target;
     setInputs({ ...userInputs, [name]: value });
   };
-
   return (
     <>
       <div className="bg-gray-100 grid grid-cols-1 sm:grid-cols-2 h-screen w-full">
         <div className="hidden sm:block">
           <img className="h-4/5 w-4/5 mt-12 ml-24" src={loginImg} alt="" />
         </div>
-
         <div className="bg-gray-100 flex flex-col justify-center">
           <form
             className="max-w-[400px] w-full mx-auto bg-white p-4"
@@ -80,4 +78,6 @@ export default function Login() {
       </div>
     </>
   );
-}
+};
+
+export default Login;

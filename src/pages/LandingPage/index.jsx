@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 // components
-import ButtonFill from '../../components/ButtonFill';
-import Companies from '../../components/Companies';
-import Review from '../../components/Review';
+import ButtonFill from '../../components/ButtonFill/ButtonFill';
+import Companies from '../../components/Companies/Companies';
+import Review from '../../components/Review/Review';
 import Footer from '../../components/Footer/Footer';
 import { ScrollToTop } from '../../components/scroll';
 import { FormModal } from '../../components/FormModal';

@@ -1,27 +1,27 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 // components
-import { PrivateRoute } from "../components/PrivateRoute";
-import Nav from "../components/Navbar/Nav";
-import NavBarAuth from "../components/Navbar/NavBarAuth";
+import { PrivateRoute } from '../components/PrivateRoute';
+import Nav from '../components/Navbar/Nav';
+import NavBarAuth from '../components/Navbar/NavBarAuth';
 // pages
-import LandingPage from "../pages/LandingPage";
-import Profile from "../pages/Profile";
-import History from "../pages/History";
-import ChangePassword from "../pages/ChangePassword";
-import { PaymentSuccess } from "../pages/PaymentSuccess";
-import { PaymentPage } from "../pages/PaymentPage";
-import { GopayPage } from "../pages/GopayPage";
-import NotFound from "../pages/NotFound/index.tsx";
-import HomeEdu from "../pages/HomeEducation";
-import FirstEdu from "../pages/edu1";
-import SecondEdu from "../pages/edu2";
-import ThirdEdu from "../pages/edu3";
-import AboutUs from "../pages/AboutUs";
-import CardProfil from "../pages/ReedemVoucher";
-import Voucher from "../pages/BrowseVoucher";
-import Login from "../pages/Login/Login";
-import Register from "../pages/Register/Register";
+import LandingPage from '../pages/LandingPage';
+import Profile from '../pages/Profile';
+import History from '../pages/History';
+import ChangePassword from '../pages/ChangePassword';
+import PaymentSuccess from '../pages/PaymentSuccess';
+import PaymentPage from '../pages/PaymentPage';
+import GopayPage from '../pages/GopayPage';
+import NotFound from '../pages/NotFound/index.tsx';
+import HomeEdu from '../pages/HomeEducation';
+import FirstEdu from '../pages/edu1';
+import SecondEdu from '../pages/edu2';
+import ThirdEdu from '../pages/edu3';
+import AboutUs from '../pages/AboutUs';
+import CardProfil from '../pages/ReedemVoucher';
+import Voucher from '../pages/BrowseVoucher';
+import Login from '../pages/Login/Login';
+import Register from '../pages/Register/Register';
 
 const Routing = () => {
   const { isLoggedIn } = useSelector((state) => state.register);
@@ -47,13 +47,62 @@ const Routing = () => {
             </PrivateRoute>
           }
         />
-        <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
-        <Route path="/history" element={<PrivateRoute><History /></PrivateRoute>} />
-        <Route path="/change-password" element={<PrivateRoute><ChangePassword /></PrivateRoute>} />
-        <Route path="/redeem" element={<PrivateRoute><CardProfil /></PrivateRoute>} />
-        <Route path="/voucher" element={<PrivateRoute><Voucher /></PrivateRoute>} />
-        <Route path="/gopaypage" element={<PrivateRoute><GopayPage /></PrivateRoute>} />
-        <Route path="/success" element={<PrivateRoute><PaymentSuccess /></PrivateRoute>} />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/history"
+          element={
+            <PrivateRoute>
+              <History />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/change-password"
+          element={
+            <PrivateRoute>
+              <ChangePassword />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/redeem"
+          element={
+            <PrivateRoute>
+              <CardProfil />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/voucher"
+          element={
+            <PrivateRoute>
+              <Voucher />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/gopaypage"
+          element={
+            <PrivateRoute>
+              <GopayPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/success"
+          element={
+            <PrivateRoute>
+              <PaymentSuccess />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
