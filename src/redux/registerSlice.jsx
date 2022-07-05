@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 // slice for registered user 
 
 const initialState = {
-    //local storage
     registerData:
     localStorage.getItem("registerData")
         ? JSON.parse(localStorage.getItem("registerData"))
@@ -16,11 +15,9 @@ const initialState = {
     ,
     isLoggedIn: localStorage.getItem("isLoggedIn")
         ? JSON.parse(localStorage.getItem("isLoggedIn"))
-        : false,
-
-    //local storage
-    
+        : false,    
 };
+
 const registerSlice = createSlice({
     name: "register",
     initialState,
@@ -46,7 +43,6 @@ const registerSlice = createSlice({
           },
           logout: (state) => {
             state.isLoggedIn = false;
-            // remove
             localStorage.removeItem("registerData");
             localStorage.removeItem("isLoggedIn");
           },

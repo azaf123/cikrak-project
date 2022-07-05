@@ -3,8 +3,8 @@ import NotificationData from "../../data/NotificationData";
 function NotificationArea({ setShowNotif }) {
   const onMouseOver = () => {
     setShowNotif(true);
-    console.log("hovered notif");
-    };
+  };
+
   return (
     <>
         <div onMouseOver={onMouseOver} className="absolute right-0 mt-10 mr-3 bg-white rounded-md shadow-lg overflow-hidden z-20 duration-100">

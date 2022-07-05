@@ -1,14 +1,13 @@
 import React, {useState} from "react";
-import voucher from "../../data/ListVoucer";
+import voucher from "../../data/ListVoucher";
 import Modal from "../../components/Reedem/ModalVoucher";
 import Points from "../../components/Reedem/CardPoint";
-import NavBarAuth from "../../components/Navbar/NavBarAuth";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faStar} from '@fortawesome/free-solid-svg-icons'
 
 
-const CardProfil = ()=>{
+const RedeemVoucher = ()=>{
     const [modal,setModal]= useState(false);
     const [tempVoucher, setTempvoucher]= useState([]);
 
@@ -33,13 +32,13 @@ const CardProfil = ()=>{
                 <h2 className=" font-bold">New Vouchers</h2>
                 </div>
                 <div className=" rounded-xl  m-4 p-2 bg-blue-100 shadow-inner   ">
-            <div className=" grid grid-cols-3 m-2 ">
+            <div className="grid grid-cols-3 m-2 ">
             {voucher.FoodBeverage.map((item,index)=>{
                 return(
                     <div className=" my-2 cursor-pointer z-0 " key={index}> 
                         <div className="card rounded-xl w-56 m-8 h-72  p-2  shadow bg-white" onClick={() => getVoucher
                         (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className=" rounded-t-xl h-40" /> 
+                            <img src={item.image} alt="item" className="rounded-t-xl h-40" /> 
                             <div className="m-2">
                             <h3 className=" text-lg   ">{item.voucher}</h3> 
                             <h1 className=" text-sm absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
@@ -77,4 +76,4 @@ const CardProfil = ()=>{
 </>
     )
 }    
-    export default CardProfil;
+    export default RedeemVoucher;

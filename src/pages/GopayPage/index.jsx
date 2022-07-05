@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { GopayModal } from '../../components/GopayModal';
-import useLoader from '../../lib/useLoader';
+import { useLoader } from "../../lib/customHooks";
 
 export const GopayPage = (props) => {
   const location = useLocation();

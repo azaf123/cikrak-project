@@ -2,6 +2,7 @@ import React from "react";
 import com1 from "../assets/com-1.png";
 import com2 from "../assets/com-2.png";
 import com3 from "../assets/com-3.png";
+
 const Companies = () => {
   return (
     <section className="text-center -z-20">

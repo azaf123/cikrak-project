@@ -4,7 +4,7 @@ import BlueButton from "../../components/BlueButton";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
 import { updateUser } from "../../redux/registerSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
-import useLoader from "../../lib/useLoader";
+import { useLoader } from "../../lib/customHooks";
 // third-party
 import { useSelector, useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";

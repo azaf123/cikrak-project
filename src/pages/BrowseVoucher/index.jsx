@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../../components/Reedem/CardVoucer';
+import Card from '../../components/Reedem/CardVoucher';
 import Points from '../../components/Reedem/CardPoint';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';

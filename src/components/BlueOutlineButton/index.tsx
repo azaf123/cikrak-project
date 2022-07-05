@@ -5,7 +5,7 @@ type ButtonProps = {
   btnText: string
 }
 
-function BlueOutlineButton(props: ButtonProps) {
+const BlueOutlineButton = (props: ButtonProps) => {
   return (
     <>
       <button

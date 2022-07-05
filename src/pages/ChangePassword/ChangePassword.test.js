@@ -17,7 +17,6 @@ const MockPasswordForm = () => {
   );
 };
 
-
 test("should be able to type in field", () => {
   render(<MockPasswordForm />);
   const passwordInputElement = screen.getByLabelText("Old Password");

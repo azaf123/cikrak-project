@@ -6,7 +6,7 @@ type ButtonProps = {
   btnText: string;
 };
 
-function BlueButton(props: ButtonProps) {
+const BlueButton = (props: ButtonProps) => {
   return (
     <>
       <button
