@@ -9,7 +9,7 @@ import { updatePassword } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import toast, {Toaster} from 'react-hot-toast';
 
-function ChangePassword() {
+const ChangePassword = () => {
   const [success, setSuccess] = useState(false); // to check if old password entered is correct
   const [newPwd, setNewPwd] = useState(''); // to store new password to check for samePwd state
   const [samePwd, setSamePwd] = useState(true); // to check if new password fields are the same
@@ -144,9 +144,9 @@ function ChangePassword() {
             </div>
             <div className="flex mt-8 mr-auto float-right md:pr-20">
               {empty ? (
-                <BlueButton btnText="Change Password" disabled={true} />
+                <BlueButton type="submit" btnText="Change Password" disabled={true} />
               ) : (
-                <BlueButton btnText="Change Password" disabled={false} />
+                <BlueButton type="submit" btnText="Change Password" disabled={false} />
               )}
             </div>
           </form>

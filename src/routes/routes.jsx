@@ -24,9 +24,8 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 
 const Routing = () => {
-  // is logged in registerData
   const { isLoggedIn } = useSelector((state) => state.register);
-  console.log('is log?', isLoggedIn);
+
   return (
     <BrowserRouter>
       {isLoggedIn ? <NavBarAuth /> : <Nav />}

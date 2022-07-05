@@ -9,7 +9,7 @@ import { useLoader } from "../../lib/customHooks";
 import { useSelector, useDispatch } from "react-redux";
 import toast, { Toaster } from "react-hot-toast";
 
-export default function Profile() {
+const Profile = () => {
   const { registerData } = useSelector((state) => state.register);
   const dispatch = useDispatch();
   const [edit, isEdit] = useState(false); // to check if form is in edit mode
@@ -22,11 +22,15 @@ export default function Profile() {
     if (update) {
       currentUserData.current = registerData;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
+
+    console.log(registerData);
+    console.log(currentUserData.current);
 
     // TODO: toast suddenly not working
     if (!edit && registerData !== currentUserData.current) {
@@ -36,6 +40,16 @@ export default function Profile() {
         position: "top-right",
       });
     }
+
+    const handleToast = () => {
+      if (!edit && registerData !== currentUserData.current) {
+        console.log("he");
+        toast.success("Profile updated!", {
+          duration: 2000,
+          position: "top-right",
+        });
+      }
+    };
   };
 
   const handleChange = (e) => {
@@ -46,6 +60,7 @@ export default function Profile() {
   return (
     <>
       {showLoader}
+      <Toaster />
       <div className="flex">
         <ProfileSidebar />
         <div>
@@ -153,6 +168,7 @@ export default function Profile() {
 
               <div className="flex mt-16 pb-8 float-right md:pr-5">
                 <BlueButton
+                  type="button"
                   onClick={() => {
                     isEdit(!edit);
                     updateData(false);
@@ -263,6 +279,7 @@ export default function Profile() {
 
                 <div className="md:pr-5">
                   <BlueButton
+                    type="button"
                     onClick={() => {
                       isEdit(!edit);
                       updateData(true);
@@ -275,7 +292,7 @@ export default function Profile() {
           )}
         </div>
       </div>
-      <Toaster />
     </>
   );
-}
+};
+export default Profile;

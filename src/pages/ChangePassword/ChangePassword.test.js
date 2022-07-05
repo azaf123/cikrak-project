@@ -45,7 +45,6 @@ test("button should be disabled if fields are empty", () => {
   const newPwdInput = screen.getByLabelText("New Password");
   const confirmNewPwdInput = screen.getByLabelText("Confirm New Password");
 
-  // ignore console error bug; not related to test
   userEvent.type(oldPwdInput, "");
   userEvent.type(newPwdInput, "");
   userEvent.type(confirmNewPwdInput, "");

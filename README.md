@@ -57,5 +57,7 @@
 
 Use the following dummy data to login:
 
-- Username: janedoe18@gmail.com
-- Password: test
+- Create an account by clicking “Get Started” and then sign up.
+- Login using details inputted during sign up.
+- Access all the available features 😊
+

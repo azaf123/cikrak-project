@@ -3,7 +3,7 @@ import HistoryCard from "../../components/HistoryCard";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import HistoryData from "../../data/HistoryData";
 
-export default function History() {
+const History = () => {
   return (
     <>
       <div className="flex">
@@ -13,12 +13,10 @@ export default function History() {
           <div className="text-2xl font-bold mt-14 ml-16 mb-5 text-main-blue">
             History
           </div>
-          {/* history area */}
           <div className="pb-3">
             {HistoryData.map((data, index) => (
               <HistoryCard
                 key={index}
-                data-testid="history-card"
                 title={data.type}
                 date={data.date}
                 text={data.mainDetails}
@@ -32,3 +30,5 @@ export default function History() {
     </>
   );
 }
+
+export default History;
