@@ -2,11 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 // components
 import BlueButton from "../../components/BlueButton";
 import BlueOutlineButton from "../../components/BlueOutlineButton";
-// third-party
-import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../../redux/registerSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import useLoader from "../../lib/useLoader";
+// third-party
+import { useSelector, useDispatch } from "react-redux";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Profile() {
   const { registerData } = useSelector((state) => state.register);
@@ -27,6 +28,12 @@ export default function Profile() {
   const handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
+    if (!edit && (registerData !== currentUserData.current)) {
+      toast.success("Profile updated!", {
+        duration: 2000,
+        position: "top-right",
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -122,7 +129,8 @@ export default function Profile() {
                   <textarea
                     id="address"
                     name="address"
-                    placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer"
+                    placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer, Pemecutan Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80118
+                    "
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     defaultValue={registerData.address}
@@ -132,7 +140,8 @@ export default function Profile() {
                   <textarea
                     id="address"
                     name="address"
-                    placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer"
+                    placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer, Pemecutan Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80118
+                    "
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     value={registerData.address}
@@ -230,6 +239,7 @@ export default function Profile() {
             </div>
           </form>
         </div>
+        <Toaster />
       </div>
     </>
   );
