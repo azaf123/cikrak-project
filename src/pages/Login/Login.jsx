@@ -10,6 +10,7 @@ export const Login = () => {
   let { registerData } = useSelector((state) => state.register);
   const dispatch = useDispatch();
   const [userInputs, setInputs] = useState({ email: '', password: '' });
+ 
   // email / password
   const ModalError = () => {
     Swal.fire({
@@ -38,13 +39,14 @@ export const Login = () => {
     else {
       ModalError();
     }
-    console.log(userInputs.email + userInputs.password);
+  
     e.target.reset();
   };
 
   const handleChange = (e) => {
     let { name, value } = e.target;
     setInputs({ ...userInputs, [name]: value });
+
   };
   
 
@@ -67,6 +69,11 @@ export const Login = () => {
                 name="email"
                 type="text"
                 onChange={handleChange}
+                placeholder="Enter Email or Username"
+                
+                
+
+                
               />
             </div>
             <div className="flex flex-col py-2">
@@ -76,6 +83,7 @@ export const Login = () => {
                 type="password"
                 name="password"
                 onChange={handleChange}
+                placeholder="Enter Password"
               />
             </div>
             <button className="border w-full my-4 py-2 bg-lightprimary hover:bg-greenprimary text-white">
