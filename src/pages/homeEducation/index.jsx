@@ -113,6 +113,7 @@ const HomeEdu = () => {
                         </div>
                     </div>
                 </div>
+               
             </div>
             <Footer />
         </div>

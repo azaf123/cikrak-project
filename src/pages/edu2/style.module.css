@@ -177,4 +177,168 @@
   justify-content: center;
   margin-top: 8%;
 }
+/* responsive 423px */
+@media screen and (max-width: 423px) {
+  .content_item_textmaster_1{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin-right: 20%;
+    margin-left: -25%;
+  }
+  .container{
+    padding: 50px;
+  }
+  .content_item_image_1 img {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_image_2 img {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_imageMaster img {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_imageMaster_2 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .content_item_icon_1 img {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_icon_2 img {
+    width: 100%;
+    height: auto;
+  }
+  .content1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 10%;
+    gap: 10px;
+  }
+  .content2 {
+    display: grid;
+    border-radius: 20px;
+    padding: 70px;
+    background: #a8ff78; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #78ffd6,
+      #a8ff78
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #78ffd6,
+      #a8ff78
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .content3 {
+    display: grid;
+  }
+  .content_item_textmaster {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255,
+      0.3);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 10px;
+    transition: all 0.5s;
+  }
+  /* hover */
+
+  .content_item_textmaster:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    /* ease in */
+  }
+
+}
+/* responsive 768px */
+@media screen and (max-width: 768px) {
+  .content_item_textmaster_1{
+    display: grid;
+    grid-template-columns: 1fr;
+ 
+  }
+  .container{
+    padding: 50px;
+  }
+  .content_item_image_1 img {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_image_2 img {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_imageMaster img {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_imageMaster_2 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .content_item_icon_1 img {
+    width: 100%;
+    height: auto;
+  }
+  .content_item_icon_2 img {
+    width: 100%;
+    height: auto;
+  }
+  .content1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 10%;
+    gap: 10px;
+  }
+  .content2 {
+    display: grid;
+    border-radius: 20px;
+    padding: 70px;
+    background: #a8ff78; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #78ffd6,
+      #a8ff78
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #78ffd6,
+      #a8ff78
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  .content3 {
+    display: grid;
+  }
+  .content_item_textmaster {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255,
+      0.3);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 10px;
+    transition: all 0.5s;
+  }
+  /* hover */
+  .content_item_textmaster:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+    /* ease in */
+  }
+}
 
