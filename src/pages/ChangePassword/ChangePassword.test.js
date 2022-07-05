@@ -17,16 +17,6 @@ const MockPasswordForm = () => {
   );
 };
 
-test("inputs should be initially empty", () => {
-  render(<MockPasswordForm />);
-  const oldPwdInput = screen.getByLabelText("Old Password");
-  const newPwdInput = screen.getByLabelText("New Password");
-  const confirmNewPwdInput = screen.getByLabelText("Confirm New Password");
-
-  expect(oldPwdInput.value).toBe("");
-  expect(newPwdInput.value).toBe("");
-  expect(confirmNewPwdInput.value).toBe("");
-});
 
 test("should be able to type in field", () => {
   render(<MockPasswordForm />);
@@ -56,6 +46,7 @@ test("button should be disabled if fields are empty", () => {
   const newPwdInput = screen.getByLabelText("New Password");
   const confirmNewPwdInput = screen.getByLabelText("Confirm New Password");
 
+  // ignore console error bug; not related to test
   userEvent.type(oldPwdInput, "");
   userEvent.type(newPwdInput, "");
   userEvent.type(confirmNewPwdInput, "");
