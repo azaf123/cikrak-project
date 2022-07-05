@@ -8,7 +8,7 @@ import { logout } from "../../redux/registerSlice";
 
 const ProfileSidebar = () => {
   const { userData } = useSelector((state) => state.user);
-  const {registerData} = useSelector((state) => state.register);
+  const { registerData } = useSelector((state) => state.register);
   let location = useLocation();
   const dispatch = useDispatch();
 
@@ -31,7 +31,9 @@ const ProfileSidebar = () => {
           </div>
           <div className="text-sm font-bold hidden  text-main-yellow text-center md:block">
             <span className="pr-1">
-            <a href="/redeem"><FontAwesomeIcon icon={faStar} /></a>
+              <a href="/redeem">
+                <FontAwesomeIcon icon={faStar} />
+              </a>
             </span>
             {userData.points} points
           </div>
@@ -40,30 +42,29 @@ const ProfileSidebar = () => {
         {/* menu area */}
         <ul>
           {SidebarItems.map((menuItem, index) => (
-            <>
-              <Link
-                to={menuItem.link}
-                onClick={() => {
-                  index === 4 && logoutFunction();
-                }}
+            <Link
+              key={index}
+              to={menuItem.link}
+              onClick={() => {
+                index === 4 && logoutFunction();
+              }}
+            >
+              <li
+                key={index}
+                className={`text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green hover:text-main-green ${
+                  location.pathname === menuItem.link
+                    ? "bg-mid-green text-main-green"
+                    : ""
+                }`}
               >
-                <li
-                  key={index}
-                  className={`text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-mid-green hover:text-main-green ${
-                    location.pathname === menuItem.link
-                      ? "bg-mid-green text-main-green"
-                      : ""
-                  }`}
-                >
-                  <span className="text-lg text-center w-4">
-                    <FontAwesomeIcon icon={menuItem.icon} />
-                  </span>
-                  <span className={`text-base hidden md:flex`}>
-                    {menuItem.name}
-                  </span>
-                </li>
-              </Link>
-            </>
+                <span className="text-lg text-center w-4">
+                  <FontAwesomeIcon icon={menuItem.icon} />
+                </span>
+                <span className={`text-base hidden md:flex`}>
+                  {menuItem.name}
+                </span>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

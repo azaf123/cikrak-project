@@ -22,13 +22,15 @@ export default function Profile() {
     if (update) {
       currentUserData.current = registerData;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
-    if (!edit && (registerData !== currentUserData.current)) {
+
+    // TODO: toast suddenly not working
+    if (!edit && registerData !== currentUserData.current) {
+      console.log("he");
       toast.success("Profile updated!", {
         duration: 2000,
         position: "top-right",
@@ -56,167 +58,199 @@ export default function Profile() {
             </p>
           )}
 
-          {/* profile form area */}
-          <form onSubmit={handleSubmit}>
-            <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 mb-2 w-60 font-medium">
-                <label htmlFor="name">Name</label>
-              </div>
-              <div className="w-64">
-                {edit ? (
+          {!edit ? ( // view only profile area
+            <div>
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 mb-2 w-60 font-medium">
+                  <label htmlFor="name">Name</label>
+                </div>
+                <div className="w-64">
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     id="name"
                     name="name"
                     placeholder="Jane Doe"
                     type="text"
                     defaultValue={registerData.name}
-                    onChange={handleChange}
-                    readOnly={false}
-                  />
-                ) : (
-                  <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
-                    id="name"
-                    name="name"
-                    placeholder="Jane Doe"
-                    type="text"
-                    value={registerData.name}
-                    readOnly={true}
+                    readOnly={edit}
                     disabled
                   />
-                )}
+                </div>
               </div>
-            </div>
 
-            <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 mb-2 w-60 font-medium">
-                <label htmlFor="username">Username</label>
-              </div>
-              <div className="w-64">
-                {edit ? (
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 mb-2 w-60 font-medium">
+                  <label htmlFor="username">Username</label>
+                </div>
+                <div className="w-64">
                   <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     id="username"
                     name="username"
                     placeholder="janedoe18"
                     type="text"
                     defaultValue={registerData.username}
-                    onChange={handleChange}
-                    readOnly={false}
+                    readOnly={edit}
+                    disabled
                   />
-                ) : (
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 mb-2 w-60 font-medium">
+                  <label htmlFor="address">Address</label>
+                </div>
+                <div className="w-70 md:w-96 md:mr-10 duration-500">
+                  <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer, Pemecutan Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80118
+                    "
+                    rows={5}
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
+                    defaultValue={registerData.address}
+                    readOnly
+                    disabled
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 mb-2 w-60 font-medium">
+                  <label htmlFor="email">Email</label>
+                </div>
+                <div className="w-64">
+                  <input
+                    id="email"
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
+                    name="email"
+                    placeholder="janedoe18@gmail.com"
+                    type="text"
+                    defaultValue={registerData.email}
+                    readOnly={edit}
+                    disabled
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 w-60 font-medium">
+                  <label htmlFor="phone">Phone</label>
+                </div>
+                <div className="w-64">
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
+                    id="phone"
+                    name="phone"
+                    placeholder="081342536442"
+                    type="text"
+                    defaultValue={registerData.phone}
+                    readOnly={edit}
+                    disabled
+                  />
+                </div>
+              </div>
+
+              <div className="flex mt-16 pb-8 float-right md:pr-5">
+                <BlueButton
+                  onClick={() => {
+                    isEdit(!edit);
+                    updateData(false);
+                  }}
+                  btnText="Edit Profile"
+                />
+              </div>
+            </div>
+          ) : (
+            // edit profile form area
+            <form onSubmit={handleSubmit}>
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 mb-2 w-60 font-medium">
+                  <label htmlFor="name">Name</label>
+                </div>
+                <div className="w-64">
+                  <input
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
+                    id="name"
+                    name="name"
+                    placeholder="Jane Doe"
+                    type="text"
+                    value={registerData.name}
+                    onChange={handleChange}
+                    readOnly={!edit}
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 mb-2 w-60 font-medium">
+                  <label htmlFor="username">Username</label>
+                </div>
+                <div className="w-64">
+                  <input
+                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     id="username"
                     name="username"
                     placeholder="janedoe18"
                     type="text"
                     value={registerData.username}
-                    readOnly={true}
-                    disabled
+                    onChange={handleChange}
+                    readOnly={!edit}
                   />
-                )}
+                </div>
               </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 mb-2 w-60 font-medium">
-                <label htmlFor="address">Address</label>
-              </div>
-              <div className="w-70 md:w-96 md:mr-10 duration-500">
-                {edit ? (
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 mb-2 w-60 font-medium">
+                  <label htmlFor="address">Address</label>
+                </div>
+                <div className="w-70 md:w-96 md:mr-10 duration-500">
                   <textarea
                     id="address"
                     name="address"
                     placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer, Pemecutan Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80118
-                    "
+          "
                     rows={5}
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
-                    defaultValue={registerData.address}
-                    onChange={handleChange}
-                  />
-                ) : (
-                  <textarea
-                    id="address"
-                    name="address"
-                    placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer, Pemecutan Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80118
-                    "
-                    rows={5}
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     value={registerData.address}
-                    readOnly
-                    disabled
+                    onChange={handleChange}
                   />
-                )}
+                </div>
               </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 mb-2 w-60 font-medium">
-                <label htmlFor="email">Email</label>
-              </div>
-              <div className="w-64">
-                {edit ? (
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 mb-2 w-60 font-medium">
+                  <label htmlFor="email">Email</label>
+                </div>
+                <div className="w-64">
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none"
                     id="email"
-                    name="email"
-                    placeholder="janedoe18@gmail.com"
-                    type="text"
-                    defaultValue={registerData.email}
-                    onChange={handleChange}
-                    readOnly={false}
-                  />
-                ) : (
-                  <input
-                    id="email"
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
                     name="email"
                     placeholder="janedoe18@gmail.com"
                     type="text"
                     value={registerData.email}
-                    readOnly={true}
-                    disabled
+                    onChange={handleChange}
+                    readOnly={!edit}
                   />
-                )}
+                </div>
               </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
-              <div className="mt-1 mr-5 w-60 font-medium">
-                <label htmlFor="phone">Phone</label>
-              </div>
-              <div className="w-64">
-                {edit ? (
+              <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
+                <div className="mt-1 mr-5 w-60 font-medium">
+                  <label htmlFor="phone">Phone</label>
+                </div>
+                <div className="w-64">
                   <input
                     className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none "
                     id="phone"
                     name="phone"
                     placeholder="081342536442"
                     type="text"
-                    defaultValue={registerData.phone}
+                    value={registerData.phone}
                     onChange={handleChange}
-                    readOnly={false}
+                    readOnly={!edit}
                   />
-                ) : (
-                  <input
-                    className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-none cursor-not-allowed"
-                    id="phone"
-                    name="phone"
-                    placeholder="081342536442"
-                    type="text"
-                    defaultValue={registerData.phone}
-                    readOnly={true}
-                    disabled
-                  />
-                )}
+                </div>
               </div>
-            </div>
-
-            <div className="flex mt-16 pb-8 float-right">
-              {edit && (
-                <div className="pr-5">
+              <div className="flex mt-16 pb-8 float-right pr-5">
+                <div className="mr-5">
                   <BlueOutlineButton
                     onClick={() => {
                       isEdit(false);
@@ -226,21 +260,22 @@ export default function Profile() {
                     btnText="Cancel"
                   />
                 </div>
-              )}
-              <div className="md:pr-5">
-                <BlueButton
-                  onClick={() => {
-                    isEdit(!edit);
-                    edit ? updateData(true) : updateData(false);
-                  }}
-                  btnText={`${edit ? "Save Changes" : "Edit Profile"}`}
-                />
+
+                <div className="md:pr-5">
+                  <BlueButton
+                    onClick={() => {
+                      isEdit(!edit);
+                      updateData(true);
+                    }}
+                    btnText="Save Changes"
+                  />
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          )}
         </div>
-        <Toaster />
       </div>
+      <Toaster />
     </>
   );
 }
