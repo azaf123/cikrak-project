@@ -40,16 +40,6 @@ const Profile = () => {
         position: "top-right",
       });
     }
-
-    const handleToast = () => {
-      if (!edit && registerData !== currentUserData.current) {
-        console.log("he");
-        toast.success("Profile updated!", {
-          duration: 2000,
-          position: "top-right",
-        });
-      }
-    };
   };
 
   const handleChange = (e) => {
