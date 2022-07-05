@@ -5,11 +5,7 @@ import {faStar} from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2'
 export default class Modal extends Component{
     render(){
-        let modalStyle={
-            display : 'block',
-            backgroundColor:'rgba(0,0,0,0.5)',
-        }
-        
+
         function success(){
           Swal.fire({
             title: 'Are you sure',
@@ -34,7 +30,7 @@ export default class Modal extends Component{
       }
     
         return(
-            <div className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full" style={modalStyle}>
+            <div className="block overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
             <div className="relative m-auto p-4 w-full max-w-lg h-full md:h-auto">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
