@@ -16,6 +16,7 @@ const MockPasswordForm = () => {
     </Provider>
   );
 };
+
 test("inputs should be initially empty", () => {
   render(<MockPasswordForm />);
   const oldPwdInput = screen.getByLabelText("Old Password");
@@ -34,7 +35,7 @@ test("should be able to type in field", () => {
   expect(passwordInputElement.value).toBe("test");
 });
 
-test("button should be enabled after filling all fields", async () => {
+test("button should be enabled after filling all fields", () => {
   render(<MockPasswordForm />);
 
   const oldPwdInput = screen.getByLabelText("Old Password");
@@ -48,18 +49,19 @@ test("button should be enabled after filling all fields", async () => {
   expect(screen.getByRole("button", { name: "Change Password" })).toBeEnabled();
 });
 
-test("should prompt toast notification after submitting form",  () => {
+test("button should be disabled if fields are empty", () => {
   render(<MockPasswordForm />);
 
   const oldPwdInput = screen.getByLabelText("Old Password");
   const newPwdInput = screen.getByLabelText("New Password");
   const confirmNewPwdInput = screen.getByLabelText("Confirm New Password");
 
-  userEvent.type(oldPwdInput, "oldpassword");
-  userEvent.type(newPwdInput, "newpassword");
-  userEvent.type(confirmNewPwdInput, "newpassword");
+  userEvent.type(oldPwdInput, "");
+  userEvent.type(newPwdInput, "");
+  userEvent.type(confirmNewPwdInput, "");
 
-  const submitButton = screen.getByRole("button", { name: "Change Password" });
-  userEvent.click(submitButton);
-  expect(screen.getByTestId("toast")).toBeInTheDocument();
+  expect(
+    screen.getByRole("button", { name: "Change Password" })
+  ).toBeDisabled();
 });
+
