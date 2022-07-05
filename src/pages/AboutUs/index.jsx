@@ -40,7 +40,7 @@ const About = () => {
           <div className="col-span-2">
             <div className="card grid lg:grid-cols-2 md:grid-cols-2 sc:grid-cols-1">
               <div className="card-image p-5">
-                <img className="" src={leona} alt="reduce" />
+                <img src={leona} alt="reduce" />
               </div>
               <div className="card-content content-center grid justify-items-center ">
                 <h1 className="lg:text-3xl md:text-2xl sc:text-xl">
