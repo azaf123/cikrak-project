@@ -1,3 +1,17 @@
+.slick-prev:before {
+    background-color: black;
+    display: inline-block;
+    border-radius: 100%;
+    content:"";
+}
+.slick-next:before {
+    background-color: black;
+    display: inline-block;
+    border-radius: 100%;
+    content:"";
+}
+
+
 @media (max-width: 640px) {
     .redeem-page{
         margin-left: -20px;

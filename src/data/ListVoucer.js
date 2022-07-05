@@ -65,6 +65,12 @@ const voucher=
                 "date":"valid until 30 July 2022",
                 "image":teater,
                 "points":"200 Points"
+            },{
+                "id":"avvsaf",
+                "voucher":"20% off Coupon at CGV",
+                "date":"valid until 30 July 2022",
+                "image":teater,
+                "points":"200 Points"
             }
         ],
         HealthyBeauty:[
@@ -86,6 +92,12 @@ const voucher=
                 "date":"valid until 30 July 2022",
                 "image":skincare,
                 "points":"200 Points"
+            },{
+                "id":"aew2asdag",
+                "voucher":"12% off Coupon at Dan+Dan",
+                "date":"valid until 30 July 2022",
+                "image":skincare,
+                "points":"100 Points"
             }
         ]
     }

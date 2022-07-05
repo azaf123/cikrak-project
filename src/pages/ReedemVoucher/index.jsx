@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import voucher from "../../data/data";
-import Modal from "../../components/card/modal";
-import Points from "../../components/card/points";
+import voucher from "../../data/ListVoucer";
+import Modal from "../../components/Reedem/ModalVoucher";
+import Points from "../../components/Reedem/CardPoint";
 import NavBarAuth from "../../components/Navbar/NavBarAuth";
 import ProfileSidebar from "../../components/ProfileSidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
