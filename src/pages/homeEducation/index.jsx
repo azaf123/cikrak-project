@@ -1,13 +1,8 @@
 import Style from "./style.module.css";
 import imageGreen from "../../assets/ggreen.png";
-import trash from "../../assets/trash.png";
 import reduce from "../../assets/reduce.png";
 import cup from "../../assets/cup.png";
 import green from "../../assets/33.jpg";
-import compost from "../../assets/tanah.jpg";
-import background from "../../assets/Polygon1.png";
-import App from "../../App";
-import Shake from "react-reveal/Shake";
 import Slide from "react-reveal/Slide";
 import Footer from "../../components/Footer/Footer";
 
