@@ -1,13 +1,11 @@
 import './style.css';
 import Avatar from '../../assets/avatar.png';
-import leona from "../../assets/leona.jpeg";
-import './style.css'
-import Nav from "../../components/Navbar/Nav"
-import faza from "../../assets//fazaa.JPG";
-import adel from "../../assets/adel.jpeg";
-import kukuh from "../../assets/kukuh.jpeg";
-import Footer from "../../components/Footer/Footer";
-
+import leona from '../../assets/leona.jpeg';
+import './style.css';
+import faza from '../../assets//fazaa.JPG';
+import adel from '../../assets/adel.jpeg';
+import kukuh from '../../assets/kukuh.jpeg';
+import Footer from '../../components/Footer/Footer';
 
 const About = () => {
   return (
@@ -92,7 +90,7 @@ const About = () => {
               </div>
               <div className="card-content content-center grid justify-items-center">
                 <h1 className="lg:text-3xl md:text-2xl sc:text-xl">
-                 Rezky Kukuh W
+                  Rezky Kukuh W
                 </h1>
                 <p className="lg:text-lg md:text-base sc:text-base">
                   Front End Developer
