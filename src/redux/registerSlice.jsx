@@ -50,8 +50,6 @@ const registerSlice = createSlice({
             localStorage.removeItem("registerData");
             localStorage.removeItem("isLoggedIn");
           },
-         
-
     }
 });
 export const { setRegister, login, updateUser, updatePassword,logout } = registerSlice.actions;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // components
 import BlueButton from '../../components/BlueButton';
 // third-party
@@ -7,10 +7,9 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { updatePassword } from "../../redux/userSlice";
 import ProfileSidebar from "../../components/ProfileSidebar";
-// import Toast from "../../components/Toast";
 import toast, {Toaster} from 'react-hot-toast';
 
-function ChangePassword(props) {
+function ChangePassword() {
   const [success, setSuccess] = useState(false); // to check if old password entered is correct
   const [newPwd, setNewPwd] = useState(''); // to store new password to check for samePwd state
   const [samePwd, setSamePwd] = useState(true); // to check if new password fields are the same

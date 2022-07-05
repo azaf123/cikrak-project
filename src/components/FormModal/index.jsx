@@ -1,37 +1,37 @@
-import React, { useState } from 'react';
-import cross from '../../assets/cross.png';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import cross from "../../assets/cross.png";
+import { Link } from "react-router-dom";
 
 export const FormModal = ({ open, onClose, props }) => {
-  const [number, setNumber] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [typeWaste, setTypeWaste] = useState([]);
   const [organic, setOragnic] = useState(true);
   const [paper, setPaper] = useState(true);
   const [plastic, setPlastic] = useState(true);
   const [styrofoam, setStyrofoam] = useState(true);
   const [metalcans, setMetalCans] = useState(true);
-  const [address, setAddress] = useState('');
+  const [address, setAddress] = useState("");
   const [agree, setAgree] = useState(false);
 
   let result = [];
   function generateTypeWaste() {
     if (!organic) {
-      result.push('organic');
+      result.push("organic");
     }
     if (!paper) {
-      result.push('paper');
+      result.push("paper");
     }
     if (!styrofoam) {
-      result.push('styrofoam');
+      result.push("styrofoam");
     }
     if (!plastic) {
-      result.push('plastic');
+      result.push("plastic");
     }
     if (!metalcans) {
-      result.push('metalcans');
+      result.push("metalcans");
     }
     console.log(result);
     return result;
@@ -42,7 +42,7 @@ export const FormModal = ({ open, onClose, props }) => {
   };
 
   const checkInput = (e) => {
-    const onlyDigits = e.target.value.replace(/\D/g, '');
+    const onlyDigits = e.target.value.replace(/\D/g, "");
     setNumber(onlyDigits);
   };
 
@@ -197,7 +197,7 @@ export const FormModal = ({ open, onClose, props }) => {
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
               id="exampleFormControlTextarea13"
               rows="3"
-              placeholder="jl. Cemp. Biru Selatan I No.10X, Panjer, "
+              placeholder="Jl. Cemp. Biru Selatan I No.10X, Panjer, Pemecutan Kaja, Kec. Denpasar Utara, Kota Denpasar, Bali 80118"
               onChange={(e) => {
                 setAddress(e.target.value);
               }}
@@ -221,7 +221,7 @@ export const FormModal = ({ open, onClose, props }) => {
             {!agree ? (
               <p className="text-red-700">Must be checked first. *</p>
             ) : (
-              ''
+              ""
             )}
           </div>
           <div className="flex justify-end">
