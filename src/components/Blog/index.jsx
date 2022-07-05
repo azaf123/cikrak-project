@@ -1,4 +1,4 @@
-import ButtonFill from '../ButtonFill';
+import ButtonFill from '../ButtonFill/ButtonFill';
 
 // TODO: copy open modal passing props **** done but check logic again
 const Blog = ({

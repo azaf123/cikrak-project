@@ -1,7 +1,7 @@
-import React from "react";
-import HistoryCard from "../../components/HistoryCard";
-import ProfileSidebar from "../../components/ProfileSidebar";
-import HistoryData from "../../data/HistoryData";
+import React from 'react';
+import HistoryCard from '../../components/HistoryCard';
+import ProfileSidebar from '../../components/ProfileSidebar';
+import HistoryData from '../../data/HistoryData';
 
 export default function History() {
   return (
