@@ -17,57 +17,42 @@ const RedeemVoucher = ()=>{
         return setModal(true);
     }
 
+    const mapFood = () => {
+        return voucher.FoodBeverage.map((item,index)=> (
+            <div className=" my-2 cursor-pointer z-0   " key={index}> 
+                <div className="card rounded-xl md:h-72 md:w-56 w-40 mx-auto md:m-5   p-2    shadow-inner  bg-blue-50" onClick={() => getVoucher
+                    (item.image, item.voucher, item.date, item.points)}>
+                    <img src={item.image} className=" rounded-t-xl xl:full" /> 
+                    <div className="m-2">
+                        <h3 className="xl:text-lg md:text-sm">{item.voucher}</h3> 
+                        <h1 className="xl:text-sm md:block hidden absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
+                     </div>
+                </div>
+            </div>                            
+            )    
+        )}
+
     return(
         <>
-
-            <div className=" flex">
-                <ProfileSidebar />
-            <div>
-            <div className="redeem-page font-bold  ">
-            <Points/>
-            </div>
-            <section className="voucer ml-8 w-6/6 bg-white ">
-                <div className="  text-2xl">
-                <a href="./voucher" className=" float-right text-sm text-blue-700" >Browse More</a>   
-                <h2 className=" font-bold">New Vouchers</h2>
+        <div className="flex">
+            <div><ProfileSidebar/></div>
+            
+            <div className="redeem">
+                <div className="redeem-page py-10  ">
+                <h4 className="reedem text-2xl mx-10 md:mx-20 font-bold text-main-blue "> Reedem Points</h4>
+                    <Points />
                 </div>
-                <div className=" rounded-xl  m-4 p-2 bg-blue-100 shadow-inner   ">
-            <div className="grid grid-cols-3 m-2 ">
-            {voucher.FoodBeverage.map((item,index)=>{
-                return(
-                    <div className=" my-2 cursor-pointer z-0 " key={index}> 
-                        <div className="card rounded-xl w-56 m-8 h-72  p-2  shadow bg-white" onClick={() => getVoucher
-                        (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} alt="item" className="rounded-t-xl h-40" /> 
-                            <div className="m-2">
-                            <h3 className=" text-lg   ">{item.voucher}</h3> 
-                            <h1 className=" text-sm absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
-                           </div>
-                        </div>
-                    </div>                            
-                )
-            })}
+            <div className="voucer mx-10 md:mx-20 w-5/6 bg-white ">
+                <div className="  text-2xl">
+                    <a href="./voucher" className=" float-right text-sm m-10 md:m-0 text-main-blue" >Browse More</a>   
+                    <h2 className=" font-bold">New Vouchers</h2>
+                </div>
+                <div className=" rounded-xl w-2/2 m-4 p-2 ">
+                    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ">
+                    {mapFood()}
+                    </div>
+                </div>
             </div>
-        </div>
-                {/* <div className="new-voucher row cursor-pointer mx-2 ">
-                    {voucher.FoodBeverage.map((item,index)=>{
-                        return(
-                            <div className="col-6 my-2 float-left " key={index}> 
-                                <div className=" rounded-xl bg-blue-200 p-2 inline-block  overflow-hidden h-300 shadow " 
-                                onClick={() => getVoucher(item.image, item.voucher, item.date, item.points)}>
-                                    <img src={item.image} /> 
-                                    <div className="card-body mb-3">
-                                        <h3 className="card-title text-lg">{item.voucher}</h3> 
-                                        <div className="poin  float-right ">
-                                        <p className="card-text  "><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                    
-                        )
-                    })}
-                </div> */}
-            </section>
         {
             modal === true?<Modal image={tempVoucher[1]} voucher={tempVoucher[2]} date={tempVoucher[3]} points={tempVoucher[4]} hide={()=>setModal(false)}/>:''
         }

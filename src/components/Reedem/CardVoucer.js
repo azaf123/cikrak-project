@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import voucher from "../../data/ListVoucher";
+import voucher from "../../data/ListVoucer";
 import Modal from "./ModalVoucher";
+import './card.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faStar} from '@fortawesome/free-solid-svg-icons'
 import Slider from 'react-slick';
@@ -37,7 +38,7 @@ const Card = ()=>{
     const mapFood = () => {
         return voucher.FoodBeverage.map((item,index)=> (
             <div className=" my-2 cursor-pointer z-0   " key={index}> 
-                <div className="card rounded-xl md:h-64 md:w-48 w-36 mx-auto md:m-8   p-2  shadow bg-white" onClick={() => getVoucher
+                <div className="card rounded-xl md:h-64 md:w-48 w-48 mx-auto md:m-8   p-2  shadow bg-white" onClick={() => getVoucher
                     (item.image, item.voucher, item.date, item.points)}>
                     <img src={item.image} className="  rounded-t-xl xl:full" /> 
                     <div className="m-2">
@@ -52,7 +53,7 @@ const Card = ()=>{
     const mapEntertaiment=()=>{
         return voucher.Entertaiment.map((item,index)=>(
             <div className="m-auto cursor-pointer z-0 " key={index}> 
-                <div className="card rounded-xl md:h-64 md:w-48 w-36 mx-auto md:m-8  p-2  shadow bg-white" onClick={() => getVoucher
+                <div className="card rounded-xl md:h-64 md:w-48 w-48 mx-auto md:m-8  p-2  shadow bg-white" onClick={() => getVoucher
                     (item.image, item.voucher, item.date, item.points)}>
                     <img src={item.image} className="  rounded-t-xl xl:full" /> 
                     <div className="m-2">
@@ -67,7 +68,7 @@ const Card = ()=>{
     const mapHealtyBeauty=()=>{
         return voucher.HealthyBeauty.map((item,index)=>(
             <div className=" my-2 cursor-pointer z-0  " key={index}> 
-                <div className="card rounded-xl md:h-64 md:w-48 w-36 mx-auto md:m-8   p-2  shadow bg-white" onClick={() => getVoucher
+                <div className="card rounded-xl md:h-64 md:w-48 w-48 mx-auto md:m-8   p-2  shadow bg-white" onClick={() => getVoucher
                     (item.image, item.voucher, item.date, item.points)}>
                     <img src={item.image} className= "rounded-t-xl xl:full" /> 
                     <div className="m-2">
