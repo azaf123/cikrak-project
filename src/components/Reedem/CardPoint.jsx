@@ -14,7 +14,7 @@ function Points() {
 
     }
     return(
-        <section className="konten mx-20 my-2 bg-white "> 
+        <section className="konten mx-10 md:m-20 my-2 bg-white "> 
             <div href="#" className="point inline-block mx-2 drop-shadow-lg my-3 p-6  bg-blue-50 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100">
                 <h5 className="mb-2 text-lg md:text-2xl  flex font-bold tracking-tight text-main-blue dark:text-white">
                     <FontAwesomeIcon icon={faStar} className="text-yellow-400"/>  

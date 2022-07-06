@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import voucher from "../../data/ListVoucher";
+import "./styles.css";
 import Modal from "./ModalVoucher";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faStar} from '@fortawesome/free-solid-svg-icons'
@@ -29,14 +30,14 @@ const Card = ()=>{
     const settings1 = {
         dots: true,
         infinite: true,
-        speed: 200,
+        speed: 100,
         slidesToShow: 1,
-        slidesToScroll: 3
+        slidesToScroll: 1
         };
 
     const mapFood = () => {
         return voucher.FoodBeverage.map((item,index)=> (
-            <div className=" my-2 cursor-pointer z-0   " key={index}> 
+            <div className=" my-2 cursor-pointer md:mx-20 z-0   " key={index}> 
                 <div className="card rounded-xl md:h-64 md:w-48 w-36 mx-auto md:m-8   p-2  shadow bg-white" onClick={() => getVoucher
                     (item.image, item.voucher, item.date, item.points)}>
                     <img src={item.image} className="  rounded-t-xl xl:full" /> 
@@ -51,7 +52,7 @@ const Card = ()=>{
     
     const mapEntertaiment=()=>{
         return voucher.Entertaiment.map((item,index)=>(
-            <div className="m-auto cursor-pointer z-0 " key={index}> 
+            <div className="m-auto cursor-pointer md:mx-20 z-0 " key={index}> 
                 <div className="card rounded-xl md:h-64 md:w-48 w-36 mx-auto md:m-8  p-2  shadow bg-white" onClick={() => getVoucher
                     (item.image, item.voucher, item.date, item.points)}>
                     <img src={item.image} className="  rounded-t-xl xl:full" /> 
@@ -66,7 +67,7 @@ const Card = ()=>{
  
     const mapHealtyBeauty=()=>{
         return voucher.HealthyBeauty.map((item,index)=>(
-            <div className=" my-2 cursor-pointer z-0  " key={index}> 
+            <div className=" my-2 cursor-pointer md:mx-20 z-0  " key={index}> 
                 <div className="card rounded-xl md:h-64 md:w-48 w-36 mx-auto md:m-8   p-2  shadow bg-white" onClick={() => getVoucher
                     (item.image, item.voucher, item.date, item.points)}>
                     <img src={item.image} className= "rounded-t-xl xl:full" /> 
