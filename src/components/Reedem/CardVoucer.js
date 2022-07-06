@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import voucher from "../../data/ListVoucer";
-
 import Modal from "./ModalVoucher";
 import './card.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -21,159 +20,104 @@ const Card = ()=>{
         return setModal(true);
     }
 
-    
     const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 3
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3
     };
-return(
-    <>
-    
-    <section className="konten mx-10 "> 
-        <h4  className=" text-2xl font-bold mb-3 ">List Voucher</h4>
-        <h6 className=" text-xl sticky mx-2 ">Food & Beverage</h6>
-        <div className="w-12/12 rounded-2xl m-5 bg-blue-100">
-        <Slider {...settings}>
-            {voucher.FoodBeverage.map((item,index)=>{
-                return(
-                    <div className=" my-2 cursor-pointer z-0   " key={index}> 
-                        <div className="card rounded-xl h-72 w-56 m-8   p-2  shadow bg-white" onClick={() => getVoucher
-                        (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className=" rounded-t-xl h-40" /> 
-                            <div className="m-2">
-                            <h3 className=" text-lg   ">{item.voucher}</h3> 
-                            <h1 className=" text-sm absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
-                           </div>
-                        </div>
-                    </div>                            
-                )
-            })}
-            </Slider>
-            </div>
-        {/* <div className=" case rounded-xl m-4  overflow-x-auto bg-blue-100 shadow-inner   ">
-            <div className=" flex m-2 ">
-            {voucher.FoodBeverage.map((item,index)=>{
-                return(
-                    <div className=" my-2 cursor-pointer z-0 " key={index}> 
-                        <div className="card rounded-xl h-72 w-56 m-8   p-2  shadow bg-white" onClick={() => getVoucher
-                        (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className=" rounded-t-xl h-40" /> 
-                            <div className="m-2">
-                            <h3 className=" text-lg   ">{item.voucher}</h3> 
-                            <h1 className=" text-sm absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
-                           </div>
-                        </div>
-                    </div>                            
-                )
-            })}
-            </div>
-        </div> */}
+    const settings1 = {
+        dots: true,
+        infinite: true,
+        speed: 200,
+        slidesToShow: 1,
+        slidesToScroll: 3
+        };
 
-        <h6 className=" text-xl sticky mx-2 top-0 ">Entertaiment</h6>
-        <div className="w-12/12 rounded-2xl m-5 bg-slate-200 ">
-        <Slider {...settings}>
-            {voucher.Entertaiment.map((item,index)=>{
-                return(
-                    <div className=" m-auto  cursor-pointer z-0 " key={index}> 
-                        <div className="card rounded-xl h-72 w-56 m-8   p-2  shadow bg-white" onClick={() => getVoucher
-                        (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className=" rounded-t-xl h-40" /> 
-                            <div className="m-2">
-                            <h3 className=" text-lg   ">{item.voucher}</h3> 
-                            <h1 className=" text-sm absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
-                           </div>
-                        </div>
-                    </div>                            
-                )
-            })}
-            </Slider>
-        </div>
-
-        <h6 className=" text-xl sticky mx-2 top-0 ">Healthy & Beauty</h6>
-        <div className=" rounded-2xl bg-blue-100 m-5 ">
-        <Slider {...settings}>
-            {voucher.HealthyBeauty.map((item,index)=>{
-                return(
-                    <div className=" my-2 cursor-pointer z-0  " key={index}> 
-                        <div className="card rounded-xl h-72 w-56 m-8   p-2  shadow bg-white" onClick={() => getVoucher
-                        (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className=" rounded-t-xl h-40" /> 
-                            <div className="m-2">
-                            <h3 className=" text-lg   ">{item.voucher}</h3> 
-                            <h1 className=" text-sm absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
-                           </div>
-                        </div>
-                    </div>                            
-                )
-            })}
-            </Slider>
-            </div>
-        
-
-
-        {/* <h6 className="font-bold text-xl sticky mx-2 top-0 ">Food & Beverage</h6>
-        <div className=" rounded-xl  ml-4  overflow-x-auto p-2 bg-blue-100 shadow-inner   ">
-            <div className="flex m-2">
-            {voucher.FoodBeverage.map((item,index)=>{
-                return(
-                    <div className="col-4 my-2 cursor-pointer z-0 " key={index}> 
-                        <div className="card rounded-xl w-9/12  p-0  shadow bg-white" onClick={() => getVoucher
-                        (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className="card-img-top rounded-t-xl h-40" /> 
-                            <div className="card-body">
-                                <h3 className="card-title text-xl   ">{item.voucher}</h3> 
-                                <p className="card-text float-right text-lg"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</p>
-                            </div>
-                        </div>
-                    </div>                            
-                )
-            })}
-            </div>
-            </div>
-            
-            <h6 className="font-bold text-xl sticky mt-6 mx-2 top-0 ">Entertaiment</h6>
-            <div className="rounded-xl text-xl ml-4 bg-slate-50 p-2 overflow-x-scroll shadow-inner">
-            
-            <div className="flex m-2">
-            {voucher.Entertaiment.map((item,index)=>{
-                return(
-                    <div className="col-4 my-2  z-0 " key={index}> 
-                    <div className="card rounded-xl cursor-pointer inline-block w-9/12  p-0 overflow-hidden shadow bg-white" onClick={() => getVoucher
+    const mapFood = () => {
+        return voucher.FoodBeverage.map((item,index)=> (
+            <div className=" my-2 cursor-pointer z-0   " key={index}> 
+                <div className="card rounded-xl md:h-64 md:w-48 w-48 mx-auto md:m-8   p-2  shadow bg-white" onClick={() => getVoucher
                     (item.image, item.voucher, item.date, item.points)}>
-                        <img src={item.image} className="card-img-top h-40" /> 
-                        <div className="card-body">
-                            <h3 className="card-title text-xl">{item.voucher}</h3> 
-                            <p className="card-text float-right text-lg"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</p>
-                        </div>
+                    <img src={item.image} className="  rounded-t-xl xl:full" /> 
+                    <div className="m-2">
+                        <h3 className="xl:text-lg md:text-sm">{item.voucher}</h3> 
+                        <h1 className="xl:text-sm md:block hidden absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
+                     </div>
+                </div>
+            </div>                            
+            )    
+        )}
+    
+    const mapEntertaiment=()=>{
+        return voucher.Entertaiment.map((item,index)=>(
+            <div className="m-auto cursor-pointer z-0 " key={index}> 
+                <div className="card rounded-xl md:h-64 md:w-48 w-48 mx-auto md:m-8  p-2  shadow bg-white" onClick={() => getVoucher
+                    (item.image, item.voucher, item.date, item.points)}>
+                    <img src={item.image} className="  rounded-t-xl xl:full" /> 
+                    <div className="m-2">
+                        <h3 className="xl:text-lg md:text-sm">{item.voucher}</h3> 
+                        <h1 className="hidden md:block md:text-sm absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
                     </div>
                 </div>
-                )
-            })}
             </div>
+            )    
+        )}
+ 
+    const mapHealtyBeauty=()=>{
+        return voucher.HealthyBeauty.map((item,index)=>(
+            <div className=" my-2 cursor-pointer z-0  " key={index}> 
+                <div className="card rounded-xl md:h-64 md:w-48 w-48 mx-auto md:m-8   p-2  shadow bg-white" onClick={() => getVoucher
+                    (item.image, item.voucher, item.date, item.points)}>
+                    <img src={item.image} className= "rounded-t-xl xl:full" /> 
+                    <div className="m-2">
+                        <h3 className="md:text-lg text-sm  ">{item.voucher}</h3> 
+                        <h1 className="xl:text-sm hidden md:block     absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   
+                   </div>
+                </div>
+            </div>                            
+            )
+        )}
+
+return(
+    <>    
+        <section className="konten mx-20 ">      
+            <div>
+                <h6 className=" text-xl font-bold ">Food & Beverage</h6>
+                <div className="w-12/12 rounded-2xl m-5 bg-blue-100">
+                    <Slider  className="Slider md:block hidden" {...settings}>
+                        {mapFood()}
+                    </Slider>
+                    <Slider className=" md:hidden" {...settings1}>
+                        {mapFood()}
+                    </Slider>
+                </div>
             </div>
-            <h6 className="font-bold text-xl sticky mt-6 mx-2 top-0">Healthy&Beauty</h6>
-            <div className="rounded-xl text-xl  ml-4 p-2 overflow-x-auto bg-blue-100 shadow-inner">
-            
-            <div className="flex m-2">
-            {voucher.HealthyBeauty.map((item,index)=>{
-                return(
-                    <div className=" col-4 my-2 cursor-pointer z-0" key={index}> 
-                        <div className="card rounded-xl inline-block w-9/12  p-0 overflow-hidden shadow bg-white" onClick={() => getVoucher
-                        (item.image, item.voucher, item.date, item.points)}>
-                            <img src={item.image} className="card-img-top h-40 " /> 
-                            <div className="card-body">
-                                <h3 className="card-title text-xl">{item.voucher}</h3> 
-                                <p className="card-text float-right text-lg"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</p>
-                            </div>
-                        </div>
-                    </div>                         
-                )
-            })}
+
+            <div>
+                <h6 className=" text-xl font-bold ">Entertaiment</h6>
+                <div className="w-12/12 rounded-2xl m-5 bg-slate-200 ">
+                    <Slider  className="Slider md:block hidden" {...settings}>
+                        {mapEntertaiment()}
+                    </Slider>
+                    <Slider className=" md:hidden" {...settings1}>
+                        {mapEntertaiment()}
+                    </Slider>
+                </div>
             </div>
-        </div> */}
+
+            <div>
+                <h6 className=" text-xl font-bold">Healthy & Beauty</h6>
+                <div className="w-12/12 rounded-2xl m-5 bg-slate-200 ">
+                <Slider  className="Slider md:block hidden" {...settings}>
+                        {mapHealtyBeauty()}
+                    </Slider>
+                    <Slider className=" md:hidden" {...settings1}>
+                        {mapHealtyBeauty()}
+                    </Slider>
+                </div>
+            </div>
         </section>
         {
             modal === true?<Modal image={tempVoucher[1]} voucher={tempVoucher[2]} date={tempVoucher[3]} points={tempVoucher[4]} hide={()=>setModal(false)}/>:''

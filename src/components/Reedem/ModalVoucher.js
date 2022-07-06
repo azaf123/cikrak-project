@@ -33,8 +33,8 @@ export default class Modal extends Component{
             <div className="bg-slate-300/50 block overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
             <div className="relative m-auto p-4 w-full max-w-lg h-full md:h-auto">
               <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-                  <h5 className="text-xl font-semibold text-gray-900 dark:text-white">Voucher Details</h5>
+                <div className="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
+                  <h5 className="text-xl font-semibold text-main-blue  dark:text-white">Voucher Details</h5>
                   <button type="button" onClick={this.props.hide}><FontAwesomeIcon icon={faX} className="back cursor-pointer text-black fa-2x  float-left "/></button>
                 </div>
                 <div className="m-5 p-2">
