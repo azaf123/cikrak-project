@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import cross from "../../assets/cross.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const FormModal = ({ open, onClose, props }) => {
+  const { registerData } = useSelector((state) => state.register);  
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -68,6 +70,9 @@ export const FormModal = ({ open, onClose, props }) => {
               type="text"
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
               id="exampleInput7"
+              value={
+                registerData.name
+              }
               placeholder="Jane Doe"
               onChange={(e) => {
                 setName(e.target.value);
@@ -82,6 +87,9 @@ export const FormModal = ({ open, onClose, props }) => {
               type="email"
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
               id="exampleInput8"
+              value={
+                registerData.email
+              }
               placeholder="janedoe@gmail.com"
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -95,7 +103,9 @@ export const FormModal = ({ open, onClose, props }) => {
             <input
               type="tel"
               pattern="\d*"
-              value={number}
+              value={
+                registerData.phone
+              }
               maxLength="14"
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
               id="exampleInput8"
