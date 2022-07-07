@@ -22,7 +22,6 @@ export const PaymentModal = ({ open, onClose, paymentData, props }) => {
     });
     return code;
   };
-  console.log(paymentData.typeWaste);
   const ordercode = `${makeWasteCode(paymentData.typeWaste)}-${Math.floor(
     100000 + Math.random() * 900000
   )}`;

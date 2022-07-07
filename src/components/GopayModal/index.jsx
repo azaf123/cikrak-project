@@ -6,7 +6,7 @@ import instructor from '../../assets/gopayInstruction.png';
 import { Link, useLocation } from 'react-router-dom';
 
 export const GopayModal = ({ ordercode }) => {
-  console.log(ordercode);
+  
   const location = useLocation();
   const ref = useRef(null);
   // const [counter, setCounter] = React.useState(1000);

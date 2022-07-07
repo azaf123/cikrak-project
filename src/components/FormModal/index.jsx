@@ -35,7 +35,7 @@ export const FormModal = ({ open, onClose, props }) => {
     if (!metalcans) {
       result.push("metalcans");
     }
-    console.log(result);
+ 
     return result;
   }
 
@@ -72,10 +72,12 @@ export const FormModal = ({ open, onClose, props }) => {
               id="exampleInput7"
               value={
                 registerData.name
+                  
               }
               placeholder="Jane Doe"
               onChange={(e) => {
                 setName(e.target.value);
+              
               }}
             />
           </div>
@@ -129,7 +131,7 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setOragnic(!e.target.checked);
-                console.log(organic);
+                
               }}
             />
             <label
@@ -144,7 +146,7 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setPaper(!e.target.checked);
-                console.log(paper);
+              
               }}
             />
             <label
@@ -159,7 +161,7 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setStyrofoam(!e.target.checked);
-                console.log(styrofoam);
+               
               }}
             />
             <label
@@ -174,7 +176,7 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setPlastic(!e.target.checked);
-                console.log(plastic);
+            
               }}
             />
             <label
@@ -189,7 +191,7 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setMetalCans(!e.target.checked);
-                console.log(metalcans);
+            
               }}
             />
             <label

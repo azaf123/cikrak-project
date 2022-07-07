@@ -29,12 +29,10 @@ const Profile = () => {
     e.preventDefault();
     e.target.reset();
 
-    console.log(registerData);
-    console.log(currentUserData.current);
 
     // TODO: toast suddenly not working
     if (!edit && registerData !== currentUserData.current) {
-      console.log("he");
+      
       toast.success("Profile updated!", {
         duration: 2000,
         position: "top-right",

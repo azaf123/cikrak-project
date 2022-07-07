@@ -12,10 +12,10 @@ const App = () => {
   // hook to persist login & logout states
   useEffect(() => {
     const data = window.localStorage.getItem('loggedIn');
-    console.log('local storage: ' + data);
+  
     if (data) {
       dispatch(login());
-      console.log(data);
+
     } else {
       dispatch(logout());
       window.localStorage.clear();

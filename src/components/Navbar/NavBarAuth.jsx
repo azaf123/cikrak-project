@@ -28,11 +28,11 @@ const NavBarAuth = () => {
             <span
               onMouseOver={() => {
                 i === 4 && setShowNotif(true);
-                console.log("hovered");
+          
               }}
               onMouseLeave={() => {
                 i === 4 && setTimeout(() => setShowNotif(false), 1500);
-                console.log("left");
+         
               }}
               className="flex flex-row"
             >
