@@ -1,13 +1,18 @@
 import React from 'react';
 import Logo from '../../assets/logo2.png';
 import SocialMedia from './SocialMedia';
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const Links = [
     {
       title: 'Location',
       links: ['Jakarta', 'Denpasar', 'Semarang', 'Surabaya'],
     },
-    { title: 'Contact', links: ['About Us', 'Teams', 'Profile', 'FAQ'] },
+    {
+      title: 'Contact',
+      links: [<Link to="/AboutUs">About Us</Link>, 'Teams', 'Profile', 'FAQ'],
+    },
   ];
   return (
     <footer className="pt-20 md:px-24 px-4 bg-lightprimary">

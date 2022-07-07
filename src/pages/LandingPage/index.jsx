@@ -16,6 +16,7 @@ import Info from '../../data/Info';
 import Contents from '../../data/Content';
 // assets
 import HeroImg from '../../assets/Hero.png';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -39,9 +40,10 @@ const LandingPage = () => {
             </p>
             <br />
             <div className="flex md:gap-4 gap-2 flex-wrap">
-              <div onClick={() => setOpenModal(true)}>
+              {/* <div onClick={() => setOpenModal(true)}></div> */}
+              <Link to="/login">
                 <ButtonFill>Let’s Go</ButtonFill>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="flex-1  flex justify-center">

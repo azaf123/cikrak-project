@@ -15,7 +15,7 @@
 - Change Password
 - Waste Pick-up
 - Choose Payment Method
-- Wsate Education
+- Waste Education
 
 ## Powered by
 
@@ -60,4 +60,3 @@ Use the following dummy data to login:
 - Create an account by clicking “Get Started” and then sign up.
 - Login using details inputted during sign up.
 - Access all the available features 😊
-
