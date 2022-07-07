@@ -16,8 +16,6 @@ import Info from "../../data/Info";
 import Contents from "../../data/Content";
 // assets
 import HeroImg from "../../assets/Hero.png";
-import { Link } from "react-router-dom";
-import BlueButton from "../../components/BlueButton";
 
 const LandingPage = () => {
   const [openModal, setOpenModal] = useState(false);
