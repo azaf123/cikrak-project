@@ -20,9 +20,9 @@ const RedeemVoucher = ()=>{
     const mapFood = () => {
         return voucher.FoodBeverage.map((item,index)=> (
             <div className=" my-2 cursor-pointer z-0   " key={index}> 
-                <div className="card rounded-xl md:h-72 md:w-56 w-40 mx-auto md:m-5   p-2    shadow-inner  bg-blue-50" onClick={() => getVoucher
+                <div className="card rounded-xl md:h-72 md:w-56 w-40 mx-auto md:m-5 p-2 shadow-inner  bg-blue-50" onClick={() => getVoucher
                     (item.image, item.voucher, item.date, item.points)}>
-                    <img src={item.image} className=" rounded-t-xl xl:full" /> 
+                    <img src={item.image} alt="Voucher" className="rounded-t-xl xl:full" /> 
                     <div className="m-2">
                         <h3 className="xl:text-lg md:text-sm">{item.voucher}</h3> 
                         <h1 className="xl:text-sm md:block hidden absolute bottom-4 right-3"><FontAwesomeIcon icon={faStar} className="text-yellow-400 inline-block"/>{item.points}</h1>   

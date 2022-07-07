@@ -1,22 +1,23 @@
-import React, { useState, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useRef } from "react";
+import { useSelector } from "react-redux";
 // components
-import ButtonFill from '../../components/ButtonFill/ButtonFill';
-import Companies from '../../components/Companies/Companies';
-import Review from '../../components/Review/Review';
-import Footer from '../../components/Footer/Footer';
-import { ScrollToTop } from '../../components/scroll';
-import { FormModal } from '../../components/FormModal';
-import { EcommerceModal } from '../../components/EcommerceModal';
-import { WaButton } from '../../components/WaButton';
+import ButtonFill from "../../components/ButtonFill/ButtonFill";
+import Companies from "../../components/Companies/Companies";
+import Review from "../../components/Review/Review";
+import Footer from "../../components/Footer/Footer";
+import { ScrollToTop } from "../../components/scroll";
+import { FormModal } from "../../components/FormModal";
+import { EcommerceModal } from "../../components/EcommerceModal";
+import { WaButton } from "../../components/WaButton";
 
-import Blog from '../../components/Blog';
+import Blog from "../../components/Blog";
 // data
-import Info from '../../data/Info';
-import Contents from '../../data/Content';
+import Info from "../../data/Info";
+import Contents from "../../data/Content";
 // assets
-import HeroImg from '../../assets/Hero.png';
-import { Link } from 'react-router-dom';
+import HeroImg from "../../assets/Hero.png";
+import { Link } from "react-router-dom";
+import BlueButton from "../../components/BlueButton";
 
 const LandingPage = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -40,10 +41,13 @@ const LandingPage = () => {
             </p>
             <br />
             <div className="flex md:gap-4 gap-2 flex-wrap">
-              {/* <div onClick={() => setOpenModal(true)}></div> */}
-              <Link to="/login">
+              <div
+                onClick={() => {
+                  isLoggedIn ? setOpenModal(true) :  window.location.href = "/login";
+                }}
+              >
                 <ButtonFill>Let’s Go</ButtonFill>
-              </Link>
+              </div>
             </div>
           </div>
           <div className="flex-1  flex justify-center">

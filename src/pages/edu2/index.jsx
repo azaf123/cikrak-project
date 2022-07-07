@@ -1,5 +1,4 @@
 import Style from './style.module.css';
-import grid from '../../assets/grid.png';
 import EarthDay from '../../assets/earth-day.png';
 import bring from '../../assets/bring.png'
 import hand from '../../assets/hand.jpg'

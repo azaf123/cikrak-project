@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 // components
-import { PrivateRoute } from '../components/PrivateRoute';
+import PrivateRoute from '../components/PrivateRoute';
 import Nav from '../components/Navbar/Nav';
 import NavBarAuth from '../components/Navbar/NavBarAuth';
 // pages
@@ -22,6 +22,7 @@ import CardProfil from '../pages/ReedemVoucher';
 import Voucher from '../pages/BrowseVoucher';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
+import PublicRoute from '../components/PublicRoute';
 
 const Routing = () => {
   const { isLoggedIn } = useSelector((state) => state.register);
@@ -36,8 +37,8 @@ const Routing = () => {
         <Route path="/edu2" element={<SecondEdu />} />
         <Route path="/edu3" element={<ThirdEdu />} />
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
         <Route path="*" element={<NotFound />} />
         <Route
           path="/payment"
