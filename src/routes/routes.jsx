@@ -13,7 +13,7 @@ import PaymentSuccess from '../pages/PaymentSuccess';
 import PaymentPage from '../pages/PaymentPage';
 import GopayPage from '../pages/GopayPage';
 import NotFound from '../pages/NotFound/index.tsx';
-import HomeEdu from '../pages/HomeEducation';
+import HomeEdu from '../pages/homeEducation';
 import FirstEdu from '../pages/edu1';
 import SecondEdu from '../pages/edu2';
 import ThirdEdu from '../pages/edu3';

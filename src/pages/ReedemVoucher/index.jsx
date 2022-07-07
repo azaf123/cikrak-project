@@ -35,7 +35,7 @@ const RedeemVoucher = ()=>{
     return(
         <>
         <div className="flex">
-            <div><ProfileSidebar/></div>
+           <ProfileSidebar/>
             
             <div className="redeem">
                 <div className="redeem-page py-10  ">
