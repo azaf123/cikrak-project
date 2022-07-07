@@ -141,7 +141,7 @@ const ThirdEdu = () => {
                             <li>Ironbase</li>
                             <li>Belong bottles</li>
                             <li>Plastic</li>
-                            <li>and several similar items.</li>
+                            <li>Several similar items</li>
                           </ul>
                         </p>
                       </div>
