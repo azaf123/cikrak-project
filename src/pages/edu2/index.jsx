@@ -129,14 +129,7 @@ Composting at home reduces the volume of garbage sent to landfills and reduces t
                     </div>
 
 
-                <div className={Style.content_item_text}>
-                  <h2> Compost</h2>
-                  <p>
-                    Composting at home reduces the volume of garbage sent to
-                    landfills and reduces the chance of some products becoming
-                    marine debris.{' '}
-                  </p>
-                </div>
+              
               </div>
             </div>
             <Footer />

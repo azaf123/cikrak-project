@@ -65,10 +65,10 @@ const ThirdEdu = () => {
                       <div className="row">
                         <p>
                           <ul className={Style.ulWaste}>
-                            <li>Sandwiches</li>
-                            <li>Cheese</li>
-                            <li>Vegetables</li>
-                            <li>Bread</li>
+                            <li>Coffee filters</li>
+                            <li>Tea Bags</li>
+                            <li>Pizza Boxes</li>
+                            <li>Paper Cups</li>
                           </ul>
                         </p>
                       </div>
@@ -80,10 +80,10 @@ const ThirdEdu = () => {
                       <div className="row">
                         <p>
                           <ul className={Style.ulWaste}>
-                            <li>Sandwiches</li>
-                            <li>Cheese</li>
-                            <li>Vegetables</li>
-                            <li>Bread</li>
+                            <li>Cardboad</li>
+                            <li>Lumber</li>
+                            <li>Pallets</li>
+                            <li>Plywood</li>
                           </ul>
                         </p>
                       </div>
@@ -95,10 +95,10 @@ const ThirdEdu = () => {
                       <div className="row">
                         <p>
                           <ul className={Style.ulWaste}>
-                            <li>Sandwiches</li>
-                            <li>Cheese</li>
-                            <li>Vegetables</li>
-                            <li>Bread</li>
+                            <li>Grass</li>
+                            <li>Cut Flowers</li>
+                            <li>Leaves</li>
+                            <li>Branches</li>
                           </ul>
                         </p>
                       </div>
