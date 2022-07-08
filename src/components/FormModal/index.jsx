@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const FormModal = ({ open, onClose, props }) => {
-  const { registerData } = useSelector((state) => state.register);  
-  const [number, setNumber] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const { registerData } = useSelector((state) => state.register);
+  const [name, setName] = useState(registerData.name || "");
+  const [email, setEmail] = useState(registerData.email || "");
+  const [phone, setPhone] = useState(registerData.phone || 0);
   const [typeWaste, setTypeWaste] = useState([]);
   const [organic, setOragnic] = useState(true);
   const [paper, setPaper] = useState(true);
@@ -35,17 +34,12 @@ export const FormModal = ({ open, onClose, props }) => {
     if (!metalcans) {
       result.push("metalcans");
     }
- 
+
     return result;
   }
 
   const isFilled = () => {
-    return name && email && phone && address && typeWaste && agree;
-  };
-
-  const checkInput = (e) => {
-    const onlyDigits = e.target.value.replace(/\D/g, "");
-    setNumber(onlyDigits);
+   return name && email && phone && address && typeWaste && agree;
   };
 
   if (!open) return null;
@@ -70,14 +64,10 @@ export const FormModal = ({ open, onClose, props }) => {
               type="text"
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
               id="exampleInput7"
-              value={
-                registerData.name
-                  
-              }
               placeholder="Jane Doe"
+value={name}
               onChange={(e) => {
                 setName(e.target.value);
-              
               }}
             />
           </div>
@@ -89,10 +79,8 @@ export const FormModal = ({ open, onClose, props }) => {
               type="email"
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
               id="exampleInput8"
-              value={
-                registerData.email
-              }
               placeholder="janedoe@gmail.com"
+              value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -105,15 +93,12 @@ export const FormModal = ({ open, onClose, props }) => {
             <input
               type="tel"
               pattern="\d*"
-              value={
-                registerData.phone
-              }
               maxLength="14"
+              value={phone}
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
               id="exampleInput8"
               placeholder="081342536442"
               onChange={(e) => {
-                checkInput(e);
                 setPhone(e.target.value);
               }}
             />
@@ -131,13 +116,9 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setOragnic(!e.target.checked);
-                
               }}
             />
-            <label
-              className="form-check-label inline-block text-gray-800 px-2"
-              for="inlineCheckbox1"
-            >
+            <label className="form-check-label inline-block text-gray-800 px-2">
               Organic
             </label>
             <input
@@ -146,13 +127,9 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setPaper(!e.target.checked);
-              
               }}
             />
-            <label
-              className="form-check-label inline-block text-gray-800 px-2"
-              for="inlineCheckbox1"
-            >
+            <label className="form-check-label inline-block text-gray-800 px-2">
               Paper
             </label>
             <input
@@ -161,13 +138,9 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setStyrofoam(!e.target.checked);
-               
               }}
             />
-            <label
-              className="form-check-label inline-block text-gray-800 px-2"
-              for="inlineCheckbox1"
-            >
+            <label className="form-check-label inline-block text-gray-800 px-2">
               Styrofoam
             </label>
             <input
@@ -176,13 +149,9 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setPlastic(!e.target.checked);
-            
               }}
             />
-            <label
-              className="form-check-label inline-block text-gray-800 px-2"
-              for="inlineCheckbox1"
-            >
+            <label className="form-check-label inline-block text-gray-800 px-2">
               Plastic
             </label>
             <input
@@ -191,13 +160,9 @@ export const FormModal = ({ open, onClose, props }) => {
               id="flexCheckDefault"
               onChange={(e) => {
                 setMetalCans(!e.target.checked);
-            
               }}
             />
-            <label
-              className="form-check-label inline-block text-gray-800 px-2"
-              for="inlineCheckbox1"
-            >
+            <label className="form-check-label inline-block text-gray-800 px-2">
               Metal Cans
             </label>
           </div>
@@ -224,10 +189,7 @@ export const FormModal = ({ open, onClose, props }) => {
                 setAgree(e.target.checked);
               }}
             />
-            <label
-              className="form-check-label inline-block text-gray-800 pl-2"
-              for="exampleCheck87"
-            >
+            <label className="form-check-label inline-block text-gray-800 pl-2">
               I agree to the Term of Service and Privacy Policy.
             </label>
             {!agree ? (
@@ -250,7 +212,7 @@ export const FormModal = ({ open, onClose, props }) => {
               <button
                 type="submit"
                 className="w-90 px-6 py-2.5 bg-lightprimary text-white font-medium text-xs leading-tight uppercase rounded
-              shadow-md hover:bg-greenprimary hover:shadow-lg focus:bg-greenprimary focus:shadow-lg focus:outline-none focus:ring-0 active:bg-greenprimary active:shadow-lg transition duration-150 ease-in-out"
+              shadow-md hover:bg-greenprimary hover:shadow-lg focus:bg-greenprimary focus:shadow-lg focus:outline-none focus:ring-0 active:bg-greenprimary active:shadow-lg transition duration-150 ease-in-out disabled:cursor-not-allowed disabled:transition-none disabled:transform-none"
                 disabled={!isFilled()}
               >
                 Submit
