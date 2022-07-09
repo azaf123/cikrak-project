@@ -6,7 +6,6 @@ import instructor from '../../assets/gopayInstruction.png';
 import { Link, useLocation } from 'react-router-dom';
 
 export const GopayModal = ({ ordercode }) => {
-  
   const location = useLocation();
   const ref = useRef(null);
   // const [counter, setCounter] = React.useState(1000);
@@ -63,13 +62,13 @@ export const GopayModal = ({ ordercode }) => {
           <div>
             <div className="flex justify-between items-center form-group mb-6">
               <p>Total payment</p>
-              <span className="text-lightprimary ml-52 sc:ml-5 md:mr-4 lg:ml-6">
+              <span className="text-lightprimary sc:ml-5 md:mr-4 lg:ml-6">
                 IDR 10.000
               </span>
             </div>
             <div className="flex justify-between items-center form-group-inline mb-6">
               <p>Order ID</p>
-              <span className="text-lightprimary ml-52 sc:ml-5 md:mr-4 lg:ml-6">
+              <span className="text-lightprimary sc:ml-5 md:mr-4 lg:ml-6">
                 {location.state.ordercode}
               </span>
             </div>

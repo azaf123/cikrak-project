@@ -6,7 +6,7 @@ export const SuccessModal = ({ open, onClose }) => {
   return (
     <div
       aria-hidden="true"
-      className="w-9/12 overflow-y-auto overflow-x-hidden mx-auto mt-[208px] fixed top-0 right-0 left-0 z-50 block p-6 rounded-lg shadow-lg bg-white"
+      className="w-10/12 overflow-y-auto overflow-x-hidden mx-auto mt-[208px] fixed top-0 right-0 left-0 z-50 block p-6 rounded-lg shadow-lg bg-white"
     >
       <div>
         <div>

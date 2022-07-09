@@ -43,13 +43,11 @@ export const PaymentModal = ({ open, onClose, paymentData, props }) => {
             <div>
               <div className="flex justify-between items-center form-group mb-6">
                 <p>Total payment</p>
-                <span className="text-lightprimary ml-52 md:mr-4">
-                  IDR 10.000
-                </span>
+                <span className="text-lightprimary md:mr-4">IDR 10.000</span>
               </div>
               <div className="flex justify-between items-center form-group-inline mb-6">
                 <p>Order ID</p>
-                <span className="text-lightprimary ml-52 sc:ml-5 md:mr-4 lg:ml-6">
+                <span className="text-lightprimary sc:ml-5 md:mr-4 lg:ml-6">
                   {ordercode}
                 </span>
               </div>
@@ -59,10 +57,8 @@ export const PaymentModal = ({ open, onClose, paymentData, props }) => {
                   <span>{paymentData.name}</span>
                 </div>
                 <div>
-                  <h1 className="text-mx ml-32 sc:ml-5 lg:ml-6">
-                    Phone Number
-                  </h1>
-                  <span className="ml-32 sc:ml-5">{paymentData.phone}</span>
+                  <h1 className="text-mx sc:ml-5 lg:ml-6">Phone Number</h1>
+                  <span className="sc:ml-5">{paymentData.phone}</span>
                 </div>
               </div>
               <div className="mt-3">
@@ -80,16 +76,16 @@ export const PaymentModal = ({ open, onClose, paymentData, props }) => {
                     ordercode: ordercode,
                   }}
                 >
-                  <div className="lg:w-96 flex justify-between items-center w-72 h-20 p-3 bg-slate-200 mb-3 rounded-md">
+                  <div className="lg:w-96 flex justify-between items-center w-64 h-20 p-3 bg-slate-200 mb-3 rounded-md">
                     <img src={gopay} alt="gopay" className="h-5 ml-1" />
                     <h1 className="font-bold text-xl mr-5">Gopay</h1>
                   </div>
                 </Link>
-                <div className="lg:w-96 flex justify-between w-72 h-20 p-4 bg-slate-200 mb-3 rounded-md">
+                <div className="lg:w-96 flex justify-between w-64 h-20 p-4 bg-slate-200 mb-3 rounded-md">
                   <img src={bca} alt="bca" className="h-9 ml-1 mt-2" />
                   <h1 className="font-bold text-xl mt-2 mr-5">m-BCA</h1>
                 </div>
-                <div className="lg:w-96 flex justify-between w-72 h-20 p-4 bg-slate-200 mb-3 rounded-md">
+                <div className="lg:w-96 flex justify-between w-64 h-20 p-4 bg-slate-200 mb-3 rounded-md">
                   <img src={cash} alt="cash" className="h-12  ml-1" />
                   <h1 className="font-bold text-xl mt-2 mr-5">Cash</h1>
                 </div>

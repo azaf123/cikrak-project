@@ -1,45 +1,45 @@
-import React, { useState } from "react";
-import cross from "../../assets/cross.png";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React, { useState } from 'react';
+import cross from '../../assets/cross.png';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const FormModal = ({ open, onClose, props }) => {
   const { registerData } = useSelector((state) => state.register);
-  const [name, setName] = useState(registerData.name || "");
-  const [email, setEmail] = useState(registerData.email || "");
+  const [name, setName] = useState(registerData.name || '');
+  const [email, setEmail] = useState(registerData.email || '');
   const [phone, setPhone] = useState(registerData.phone || 0);
-  const [typeWaste, setTypeWaste] = useState([]);
+  const [typeWaste] = useState([]);
   const [organic, setOragnic] = useState(true);
   const [paper, setPaper] = useState(true);
   const [plastic, setPlastic] = useState(true);
   const [styrofoam, setStyrofoam] = useState(true);
   const [metalcans, setMetalCans] = useState(true);
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useState('');
   const [agree, setAgree] = useState(false);
 
   let result = [];
   function generateTypeWaste() {
     if (!organic) {
-      result.push("organic");
+      result.push('organic');
     }
     if (!paper) {
-      result.push("paper");
+      result.push('paper');
     }
     if (!styrofoam) {
-      result.push("styrofoam");
+      result.push('styrofoam');
     }
     if (!plastic) {
-      result.push("plastic");
+      result.push('plastic');
     }
     if (!metalcans) {
-      result.push("metalcans");
+      result.push('metalcans');
     }
 
     return result;
   }
 
   const isFilled = () => {
-   return name && email && phone && address && typeWaste && agree;
+    return name && email && phone && address && typeWaste && agree;
   };
 
   if (!open) return null;
@@ -65,7 +65,7 @@ export const FormModal = ({ open, onClose, props }) => {
               className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-lightprimary focus:outline-none"
               id="exampleInput7"
               placeholder="Jane Doe"
-value={name}
+              value={name}
               onChange={(e) => {
                 setName(e.target.value);
               }}
@@ -195,7 +195,7 @@ value={name}
             {!agree ? (
               <p className="text-red-700">Must be checked first. *</p>
             ) : (
-              ""
+              ''
             )}
           </div>
           <div className="flex justify-end">
