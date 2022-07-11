@@ -6,10 +6,8 @@ function HistoryCard(props) {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <>        
-      <div
-        className="max-w-screen-md ml-16 mr-10 mb-5"
-      >
+    <>
+      <div className="max-w-screen-md ml-16 mr-10 mb-5">
         <div className="border border-gray-200 bg-slate-50 rounded p-4 flex flex-col justify-between leading-normal">
           <div className="flex justify-between">
             <div className="text-main-blue font-bold text-base mb-2 ">
@@ -30,10 +28,9 @@ function HistoryCard(props) {
 
             <div className="flex pt-3">
               <div className="md:ml-10 mr-3">
-                {/* only show for waste disposal */}
                 {props.title === "Waste Disposal" && (
                   <BlueOutlineButton
-                  data-testid="button-details"
+                    data-testid="button-details"
                     onClick={() => setShowModal(!showModal)}
                     btnText="Details"
                   />
@@ -41,7 +38,6 @@ function HistoryCard(props) {
               </div>
               {props.title !== "Payment" && (
                 <div className="hidden md:inline-block  border-l-2 border-slate-300 pl-3 w-28">
-                  {/* for everything but payment */}
                   <p className="text-xs">
                     points
                     {props.title === "Waste Disposal" ? " earned" : " redeemed"}

@@ -142,7 +142,7 @@ const ChangePassword = () => {
               </div>
               <Toaster/>
             </div>
-            <div className="flex mt-8 mr-auto float-right md:pr-20">
+            <div className="flex mt-8 mr-auto float-right md:pr-20 lg:pr-80 duration-500">
               {empty ? (
                 <BlueButton type="submit" btnText="Change Password" disabled={true} />
               ) : (

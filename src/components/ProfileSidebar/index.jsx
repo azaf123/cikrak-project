@@ -19,7 +19,6 @@ const ProfileSidebar = () => {
   return (
     <>
       <div className="bg-light-green p-5 pt-5 w-20 md:w-64 min-h-screen relative duration-500">
-        {/* profile area */}
         <div className="mt-4 mb-8">
           <img
             className="mx-auto my-auto w-auto md:w-24 md:h-24 rounded-full"

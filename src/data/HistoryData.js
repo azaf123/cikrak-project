@@ -42,10 +42,10 @@ const HistoryData = [
   },
   {
     type: "Payment",
-    date: "08 June 2022",
-    mainDetails: "Pending payment of Rp. 11,000",
+    date: "04 June 2022",
+    mainDetails: "Pending payment of Rp. 20,000",
     details: {
-      other: "Pending payment of Rp. 11,000 due June 20, 2022 / 18:10"
+      other: "Pending payment of Rp. 20,000 due June 5, 2022 / 11:15"
     },
   },
 ];
