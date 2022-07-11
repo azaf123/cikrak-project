@@ -27,12 +27,7 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    e.target.reset();
-
-
-    // TODO: toast suddenly not working
-    if (!edit && registerData !== currentUserData.current) {
-      
+    if (registerData !== currentUserData.current) {
       toast.success("Profile updated!", {
         duration: 2000,
         position: "top-right",
@@ -167,7 +162,7 @@ const Profile = () => {
             </div>
           ) : (
             // edit profile form area
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="flex flex-col md:flex-row mt-5 ml-16 mr-5">
                 <div className="mt-1 mr-5 mb-2 w-60 font-medium">
                   <label htmlFor="name">Name</label>
@@ -267,10 +262,11 @@ const Profile = () => {
 
                 <div className="md:pr-5">
                   <BlueButton
-                    type="button"
-                    onClick={() => {
+                    type="submit"
+                    onClick={(e) => {
                       isEdit(!edit);
                       updateData(true);
+                      handleSubmit(e);
                     }}
                     btnText="Save Changes"
                   />
